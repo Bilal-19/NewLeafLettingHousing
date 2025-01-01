@@ -14,45 +14,50 @@
     {{-- Google Fonts --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
         rel="stylesheet">
 
+    {{-- Slider CDN --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
 </head>
 
 <body>
     <div class="container-fluid">
         <div class="row bg-offwhite">
-            <nav class="navbar navbar-expand-lg">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#">Navbar</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link nav-link-state mx-2 {{ request()->routeIs('Home') ? 'active' : '' }}" aria-current="page"
-                                    href="{{ route('Home') }}">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link nav-link-state mx-2" href="#">About</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link nav-link-state mx-2" href="#">CSR Initiatives</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link nav-link-state mx-2" href="#">Landlords</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link nav-link-state mx-2" href="#">FAQs</a>
-                            </li>
-                        </ul>
-                        <button class="btn-style">Contact Us</button>
+            <div class="col-md-12">
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#">Navbar</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link nav-link-state mx-2 {{ request()->routeIs('Home') ? 'active text-forest-green' : '' }}"
+                                        aria-current="page" href="{{ route('Home') }}">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link nav-link-state mx-2" href="#">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link nav-link-state mx-2" href="#">CSR Initiatives</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link nav-link-state mx-2" href="#">Landlords</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link nav-link-state mx-2" href="#">FAQs</a>
+                                </li>
+                            </ul>
+                            <button class="btn-style">Contact Us</button>
+                        </div>
                     </div>
-                </div>
-            </nav>
+                </nav>
+            </div>
         </div>
     </div>
