@@ -38,6 +38,10 @@ body {
     background-color: #f5f5f5;
 }
 
+.bg-black-shade{
+    background-color: #1E1E1E;
+}
+
 /* Font Family */
 .ff-montserrat {
     font-family: "Montserrat", serif;
@@ -51,7 +55,7 @@ body {
     font-weight: 400;
 }
 
-.fw-medium{
+.fw-medium {
     font-weight: 500;
 }
 .fw-semibold {
@@ -65,7 +69,7 @@ body {
     font-size: 18px;
 }
 
-.fs-20{
+.fs-20 {
     font-size: 20px;
 }
 
@@ -143,6 +147,28 @@ body {
     border-right: 1px solid #e6e5e5;
 }
 
+.service-card {
+    width: 618px;
+    height: 436px;
+    border-radius: 6px;
+    background-color: #f5f5f5;
+    padding: 24px;
+    border: 0.5px solid #88888838;
+}
+
+.service-card > .img-container {
+    padding: 20px;
+    background-color: #e8eee8;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.footer-logo{
+    height: 100px;
+    width: 70%;
+    object-fit: cover;
+}
+
 /* Slider - Testimonials */
 
 .swiper-slide {
@@ -153,7 +179,7 @@ body {
     padding: 24px;
 }
 
-.user-profile{
+.user-profile {
     display: flex;
     align-items: center;
 }
@@ -164,7 +190,7 @@ body {
     border-radius: 50%;
 }
 
-.pagination-arrow{
+.pagination-arrow {
     cursor: pointer;
 }
 /* Media Query */
@@ -191,4 +217,21 @@ body {
         margin-top: 10px;
         margin-bottom: 10px;
     }
+
+    .service-card {
+        width: 400px;
+        height: 400px;
+        padding: 15px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .fs-sm-25{
+        font-size: 25px;
+    }
+
+    .fs-sm-18{
+        font-size: 18px;
+    }
+
 }
