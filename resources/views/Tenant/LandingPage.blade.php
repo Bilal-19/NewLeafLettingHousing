@@ -9,7 +9,7 @@
                 <br>
                 <span class="text-golden-orange">Real Impact.</span>
             </h1>
-            <p class="fs-24 fw-regular">
+            <p class="fs-24 fw-regular fs-sm-18">
                 Empowering landlords with secure income while supporting families in need.
             </p>
             <button class="btn-style">Get Started Today</button>
@@ -22,7 +22,7 @@
     </div>
 
     <div class="row mt-3">
-        <h3 class="text-center fs-44 fw-semibold text-dark">Why Partner with <span class="text-forest-green">
+        <h3 class="text-center fs-44 fw-semibold text-dark fs-sm-28">Why Partner with <span class="text-forest-green">
                 Green Key
             </span>?</h3>
     </div>
@@ -31,7 +31,7 @@
         <div class="col-md-3 cta-card shadow">
             <img src="{{ asset('images/money.png') }}" alt="" class="img-fluid">
             <p class="mt-5 fs-14 ff-source-code-pro">01.</p>
-            <h5 class="text-forest-green fw-semibold fs-24">Guaranteed Rent</h5>
+            <h5 class="text-forest-green fw-semibold fs-24 ">Guaranteed Rent</h5>
             <hr class="border border-secondary w-75">
             <p class="fs-18">We ensure reliable, on-time payments, giving you complete peace of mind.</p>
         </div>
@@ -64,11 +64,11 @@
 
     <div class="row mt-5 bg-offwhite mb-5">
         <div class="col-md-12">
-            <h3 class="fw-semibold fs-44 text-dark text-center mt-5">What Our <span
+            <h3 class="fw-semibold fs-44 text-dark text-center mt-5 fs-sm-28">What Our <span
                     class="text-forest-green">Landlords</span> Are Saying</h3>
         </div>
         <div class="col-md-3 mx-auto">
-            <h4 class="fw-bold fs-32">Testimonials</h4>
+            <h4 class="fw-bold fs-32 fs-sm-25">Testimonials</h4>
         </div>
 
         <div class="row d-flex justify-content-center align-items-center mb-5">
@@ -87,7 +87,7 @@
                                 feels great knowing I'm helping families</p>
                             <p class="user-profile">
                                 <img src="{{ asset('images/male.png') }}" alt="">
-                                <span class="fs-20"><span class="fw-semibold">John</span>, Birmingham</span>
+                                <span class="fs-20 fs-sm-18"><span class="fw-semibold">John</span>, Birmingham</span>
                             </p>
                         </div>
 
@@ -99,7 +99,7 @@
                             </p>
                             <p class="user-profile">
                                 <img src="{{ asset('images/male.png') }}" alt="">
-                                <span class="fs-20"><span class="fw-semibold">Jennifer</span>, Lopez</span>
+                                <span class="fs-20 fs-sm-18"><span class="fw-semibold">Jennifer</span>, Lopez</span>
                             </p>
                         </div>
 
@@ -111,7 +111,7 @@
                             </p>
                             <p class="user-profile">
                                 <img src="{{ asset('images/male.png') }}" alt="">
-                                <span class="fs-20"><span class="fw-semibold">Alex</span>, London</span>
+                                <span class="fs-20 fs-sm-18"><span class="fw-semibold">Alex</span>, London</span>
                             </p>
                         </div>
 
@@ -123,7 +123,7 @@
                             </p>
                             <p class="user-profile">
                                 <img src="{{ asset('images/male.png') }}" alt="">
-                                <span class="fs-20"><span class="fw-semibold">Jennifer</span>, Lopez</span>
+                                <span class="fs-20 fs-sm-18"><span class="fw-semibold">Jennifer</span>, Lopez</span>
                             </p>
                         </div>
 
@@ -135,7 +135,7 @@
                                 feels great knowing I'm helping families</p>
                             <p class="user-profile">
                                 <img src="{{ asset('images/male.png') }}" alt="">
-                                <span class="fs-20"><span class="fw-semibold">John</span>, Birmingham</span>
+                                <span class="fs-20 fs-sm-18"><span class="fw-semibold">John</span>, Birmingham</span>
                             </p>
                         </div>
 
@@ -147,7 +147,7 @@
                             </p>
                             <p class="user-profile">
                                 <img src="{{ asset('images/male.png') }}" alt="">
-                                <span class="fs-20"><span class="fw-semibold">Jennifer</span>, Lopez</span>
+                                <span class="fs-20 fs-sm-18"><span class="fw-semibold">Jennifer</span>, Lopez</span>
                             </p>
                         </div>
 
@@ -177,8 +177,8 @@
     </div>
 
     <div class="row text-center">
-        <h4 class="fs-44 fw-semibold text-dark mb-0">What We Offer</h4>
-        <p class="fs-24 text-dark-gray">Our Services</p>
+        <h3 class="fs-44 fw-semibold text-dark mb-0 fs-sm-28">What We Offer</h3>
+        <p class="fs-24 text-dark-gray fs-sm-18">Our Services</p>
     </div>
 
     <div class="row d-flex justify-content-around align-items-center mb-5">
