@@ -33,6 +33,10 @@ body {
 .text-dark {
     color: #000000;
 }
+
+.text-dark-charcoal{
+    color: #333333;
+}
 /* Background Color */
 .bg-offwhite {
     background-color: #f5f5f5;
@@ -40,6 +44,10 @@ body {
 
 .bg-black-shade{
     background-color: #1E1E1E;
+}
+
+.bg-platinum{
+    background-color: #EEEEEE;
 }
 
 /* Font Family */
@@ -193,6 +201,39 @@ body {
 .pagination-arrow {
     cursor: pointer;
 }
+
+/* About Page */
+#about-bg-image{
+    background-image: url('/images/about_banner.png');
+    background-size: cover;
+}
+
+.company-history{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #EEEEEE;
+    padding: 20px 16px;
+    border-radius: 12px;
+}
+
+.mission-card{
+    background-color: #F3F3F3;
+    height: 295px;
+    width: 420px;
+    padding: 34px 18px;
+    border-radius: 12px;
+}
+
+.team-member-card{
+    height: 576px;
+    width: 431px;
+    padding: 20px 24px;
+    border-radius: 12px;
+    background-color: #F5F5F5;
+    text-align: center;
+}
+
 /* Media Query */
 @media only screen and (max-width: 768px) {
     .cta {
@@ -245,6 +286,20 @@ body {
 
     .fs-sm-16{
         font-size: 16px;
+    }
+    .mission-card{
+        height: 250px;
+        width: 400px;
+        margin-bottom: 25px;
+        /* padding: 34px 18px; */
+    }
+
+    .team-member-card{
+        height: fit-content;
+        width: 80%;
+        /* padding: 10px 12px; */
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
 
 }
