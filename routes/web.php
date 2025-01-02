@@ -37,3 +37,4 @@ Route::get("/csr", [TenantController::class, 'CSR'])->name('CSR');
 Route::get("/landlords", [TenantController::class, 'Landlords'])->name('Landlords');
 Route::get("/faqs", [TenantController::class, 'FAQs'])->name('FAQs');
 Route::get("/contact", [TenantController::class, 'Contact'])->name('Contact');
+Route::get("/properties", [TenantController::class, 'Properties'])->name('Properties');

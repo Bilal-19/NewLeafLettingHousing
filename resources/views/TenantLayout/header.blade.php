@@ -51,6 +51,9 @@
                                     <a class="nav-link nav-link-state mx-2 {{ request()->routeIs('Landlords') ? 'active text-forest-green' : '' }}" href="{{route('Landlords')}}">Landlords</a>
                                 </li>
                                 <li class="nav-item">
+                                    <a class="nav-link nav-link-state mx-2 {{ request()->routeIs('Properties') ? 'active text-forest-green' : '' }}" href="{{route('Properties')}}">Properties</a>
+                                </li>
+                                <li class="nav-item">
                                     <a class="nav-link nav-link-state mx-2 {{ request()->routeIs('FAQs') ? 'active text-forest-green' : '' }}" href="{{route('FAQs')}}">FAQs</a>
                                 </li>
                                 <li class="nav-item">

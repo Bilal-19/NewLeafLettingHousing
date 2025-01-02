@@ -30,4 +30,8 @@ class TenantController extends Controller
     public function Contact(){
         return view('Tenant.Contact');
     }
+
+    public function Properties(){
+        return view('Tenant.Properties');
+    }
 }
