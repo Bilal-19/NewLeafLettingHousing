@@ -10,4 +10,24 @@ class TenantController extends Controller
     {
         return view('Tenant.LandingPage');
     }
+
+    public function About(){
+        return view('Tenant.About');
+    }
+
+    public function CSR(){
+        return view('Tenant.CSR');
+    }
+
+    public function Landlords(){
+        return view('Tenant.Landlords');
+    }
+
+    public function FAQs(){
+        return view('Tenant.FAQs');
+    }
+
+    public function Contact(){
+        return view('Tenant.Contact');
+    }
 }

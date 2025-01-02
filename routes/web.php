@@ -32,3 +32,8 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 Route::get("/", [TenantController::class, 'index'])->name('Home');
+Route::get("/about", [TenantController::class, 'About'])->name('About');
+Route::get("/csr", [TenantController::class, 'CSR'])->name('CSR');
+Route::get("/landlords", [TenantController::class, 'Landlords'])->name('Landlords');
+Route::get("/faqs", [TenantController::class, 'FAQs'])->name('FAQs');
+Route::get("/contact", [TenantController::class, 'Contact'])->name('Contact');

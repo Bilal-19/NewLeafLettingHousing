@@ -42,19 +42,22 @@
                                         aria-current="page" href="{{ route('Home') }}">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link nav-link-state mx-2" href="#">About</a>
+                                    <a class="nav-link nav-link-state mx-2 {{ request()->routeIs('About') ? 'active text-forest-green' : '' }}" href="{{route('About')}}">About</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link nav-link-state mx-2" href="#">CSR Initiatives</a>
+                                    <a class="nav-link nav-link-state mx-2 {{ request()->routeIs('CSR') ? 'active text-forest-green' : '' }}" href="{{route('CSR')}}">CSR Initiatives</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link nav-link-state mx-2" href="#">Landlords</a>
+                                    <a class="nav-link nav-link-state mx-2 {{ request()->routeIs('Landlords') ? 'active text-forest-green' : '' }}" href="{{route('Landlords')}}">Landlords</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link nav-link-state mx-2" href="#">FAQs</a>
+                                    <a class="nav-link nav-link-state mx-2 {{ request()->routeIs('FAQs') ? 'active text-forest-green' : '' }}" href="{{route('FAQs')}}">FAQs</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link nav-link-state mx-2 {{ request()->routeIs('Contact') ? 'active text-forest-green' : '' }}" href="{{route('Contact')}}">Contact Us</a>
                                 </li>
                             </ul>
-                            <button class="btn-style">Contact Us</button>
+                            <button class="btn-style">Sign Up</button>
                         </div>
                     </div>
                 </nav>
