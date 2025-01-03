@@ -37,6 +37,9 @@ body {
 .text-dark-charcoal {
     color: #333333;
 }
+.text-mid-gray{
+    color: #888888;
+}
 /* Background Color */
 .bg-offwhite {
     background-color: #f5f5f5;
@@ -305,6 +308,15 @@ body {
     background-size: cover;
     background-position: center;
 }
+
+/* Contact Us Page */
+#contact-us-card{
+    width: 556px;
+    height: 588px;
+    border-radius: 12px;
+    background-color: #FFFFFF;
+    padding: 20px 30px;
+}
 /* Media Query */
 @media only screen and (max-width: 768px) {
     .cta {
@@ -391,5 +403,9 @@ body {
         /* height: 200px; */
         height: fit-content;
         padding: 17px 18px;
+    }
+
+    #contact-us-card{
+        width: 450px;
     }
 }
