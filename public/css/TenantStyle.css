@@ -34,7 +34,7 @@ body {
     color: #000000;
 }
 
-.text-dark-charcoal{
+.text-dark-charcoal {
     color: #333333;
 }
 /* Background Color */
@@ -42,12 +42,16 @@ body {
     background-color: #f5f5f5;
 }
 
-.bg-black-shade{
-    background-color: #1E1E1E;
+.bg-black-shade {
+    background-color: #1e1e1e;
 }
 
-.bg-platinum{
-    background-color: #EEEEEE;
+.bg-platinum {
+    background-color: #eeeeee;
+}
+
+.bg-white{
+    background-color: #ffffff;
 }
 
 /* Font Family */
@@ -93,7 +97,7 @@ body {
     font-size: 32px;
 }
 
-.fs-34{
+.fs-34 {
     font-size: 34px;
 }
 
@@ -175,7 +179,7 @@ body {
     object-fit: cover;
 }
 
-.footer-logo{
+.footer-logo {
     height: 100px;
     width: 70%;
     object-fit: cover;
@@ -207,47 +211,47 @@ body {
 }
 
 /* About Page */
-#about-bg-image{
-    background-image: url('/images/about_banner.png');
+#about-bg-image {
+    background-image: url("/images/about_banner.png");
     background-size: cover;
 }
 
-.company-history{
+.company-history {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #EEEEEE;
+    background-color: #eeeeee;
     padding: 20px 16px;
     border-radius: 12px;
 }
 
-.mission-card{
-    background-color: #F3F3F3;
+.mission-card {
+    background-color: #f3f3f3;
     height: 295px;
     width: 420px;
     padding: 34px 18px;
     border-radius: 12px;
 }
 
-.team-member-card{
+.team-member-card {
     height: 576px;
     width: 431px;
     padding: 20px 24px;
     border-radius: 12px;
-    background-color: #F5F5F5;
+    background-color: #f5f5f5;
     text-align: center;
 }
 
 /* CSR Page */
-#csr-bg-image{
-    background-image: url('/images/csr_banner.png');
+#csr-bg-image {
+    background-image: url("/images/csr_banner.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
 
-.initiative-card{
-    background-color: #FFFFFF;
+.initiative-card {
+    background-color: #ffffff;
     padding: 12px;
     border-radius: 12px;
     margin: auto;
@@ -257,17 +261,17 @@ body {
     margin-top: 40px;
 }
 
-.partnership-card{
+.partnership-card {
     height: 237px;
     width: 420px;
     border-radius: 12px;
-    background-color: #F3F3F3;
+    background-color: #f3f3f3;
     box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.15); /* 0px horizontal, 4px vertical, 14px blur */
     padding: 34px 18px;
     margin-top: 15px;
 }
 
-.story-card{
+.story-card {
     height: 677px;
     width: 616px;
     background-color: #ffffff;
@@ -277,6 +281,30 @@ body {
     padding: 0;
 }
 
+/* Landlord Page */
+#landlord-bg-image {
+    background-image: url("/images/landlord_banner.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.landlord-card {
+    width: 420px;
+    height: 295px;
+    padding: 34px 18px;
+    border-radius: 12px;
+    background-color: #f3f3f3;
+    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.15); /* 0px horizontal, 4px vertical, 14px blur */
+    margin-top: 30px;
+}
+
+#landlord-footer-bg{
+    background-image: url("/images/landlordFooterBg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
 /* Media Query */
 @media only screen and (max-width: 768px) {
     .cta {
@@ -315,29 +343,29 @@ body {
         margin-bottom: 10px;
     }
 
-    .fs-sm-25{
+    .fs-sm-25 {
         font-size: 25px;
     }
 
-    .fs-sm-18{
+    .fs-sm-18 {
         font-size: 18px;
     }
 
-    .fs-sm-28{
+    .fs-sm-28 {
         font-size: 28px;
     }
 
-    .fs-sm-16{
+    .fs-sm-16 {
         font-size: 16px;
     }
-    .mission-card{
+    .mission-card {
         height: 250px;
         width: 400px;
         margin-bottom: 25px;
         /* padding: 34px 18px; */
     }
 
-    .team-member-card{
+    .team-member-card {
         height: fit-content;
         width: 80%;
         /* padding: 10px 12px; */
@@ -345,17 +373,23 @@ body {
         margin-bottom: 10px;
     }
 
-    .partnership-card{
+    .partnership-card {
         height: 200px;
         padding: 30px 15px;
         margin-top: 15px;
     }
 
-    .story-card{
+    .story-card {
         height: 500px;
         width: 400px;
         padding: 1px;
         margin-top: 30px;
     }
 
+    .landlord-card {
+        width: 350px;
+        /* height: 200px; */
+        height: fit-content;
+        padding: 17px 18px;
+    }
 }

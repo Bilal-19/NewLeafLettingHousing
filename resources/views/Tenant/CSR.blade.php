@@ -17,7 +17,8 @@
                 stronger communities and creating opportunities for those in need
             </p>
             <a href="" class="text-dark fs-20 fs-sm-18 text-decoration-none">
-                Learn More About US
+                Learn More <img src="{{ asset('images/downArrow.png') }}"
+                alt="">
             </a>
         </div>
     </div>

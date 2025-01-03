@@ -31,17 +31,17 @@
         <div class="col-md-3 cta-card shadow">
             <img src="{{ asset('images/money.png') }}" alt="" class="img-fluid">
             <p class="mt-5 fs-14 ff-source-code-pro">01.</p>
-            <h5 class="text-forest-green fw-semibold fs-24 ">Guaranteed Rent</h5>
+            <h5 class="text-forest-green fw-semibold fs-24 fs-sm-18">Guaranteed Rent</h5>
             <hr class="border border-secondary w-75">
-            <p class="fs-18">We ensure reliable, on-time payments, giving you complete peace of mind.</p>
+            <p class="fs-18 fs-sm-16">We ensure reliable, on-time payments, giving you complete peace of mind.</p>
         </div>
 
         <div class="col-md-3 cta-card shadow">
             <img src="{{ asset('images/calendar.png') }}" alt="" class="img-fluid">
             <p class="mt-5 fs-14 ff-source-code-pro">02.</p>
-            <h5 class="text-forest-green fw-semibold fs-24">Stress-Free Management</h5>
+            <h5 class="text-forest-green fw-semibold fs-24 fs-sm-18">Stress-Free Management</h5>
             <hr class="border border-secondary w-75">
-            <p class="fs-18">
+            <p class="fs-18 fs-sm-16">
                 From tenant sourcing to compliance and maintenance, we handle everything for you.
             </p>
         </div>
@@ -49,9 +49,9 @@
         <div class="col-md-3 cta-card shadow">
             <img src="{{ asset('images/support.png') }}" alt="" class="img-fluid">
             <p class="mt-5 fs-14 ff-source-code-pro">03.</p>
-            <h5 class="text-forest-green fw-semibold fs-24">Social Impact</h5>
+            <h5 class="text-forest-green fw-semibold fs-24 fs-sm-18">Social Impact</h5>
             <hr class="border border-secondary w-75">
-            <p class="fs-18">
+            <p class="fs-18 fs-sm-16">
                 Join us in creating stable, secure homes for families facing challenging circumstances.
             </p>
         </div>
