@@ -182,12 +182,6 @@ body {
     object-fit: cover;
 }
 
-.footer-logo {
-    height: 100px;
-    width: 70%;
-    object-fit: cover;
-}
-
 /* Slider - Testimonials */
 
 .swiper-slide {

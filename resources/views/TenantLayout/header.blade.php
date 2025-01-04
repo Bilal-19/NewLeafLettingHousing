@@ -30,7 +30,9 @@
             <div class="col-md-12">
                 <nav class="navbar navbar-expand-lg">
                     <div class="container-fluid">
-                        <a class="navbar-brand" href="#">Navbar</a>
+                        <a class="navbar-brand" href="{{route('Home')}}">
+                            <img src="{{asset('images/greenKeyLogoHeader.png')}}" alt="" class="img-fluid">
+                        </a>
                         <button class="navbar-toggler bg-white text-dark" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
