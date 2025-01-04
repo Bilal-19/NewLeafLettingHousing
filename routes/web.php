@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TenantController;
 use Illuminate\Support\Facades\Route;
@@ -38,3 +39,7 @@ Route::get("/landlords", [TenantController::class, 'Landlords'])->name('Landlord
 Route::get("/faqs", [TenantController::class, 'FAQs'])->name('FAQs');
 Route::get("/contact", [TenantController::class, 'Contact'])->name('Contact');
 Route::get("/properties", [TenantController::class, 'Properties'])->name('Properties');
+
+
+// Admin
+Route::get("/admin", [AdminController::class, 'Dashboard'])->name('Dashboard');
