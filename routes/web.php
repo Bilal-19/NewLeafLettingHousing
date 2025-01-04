@@ -44,6 +44,7 @@ Route::get("/properties", [TenantController::class, 'Properties'])->name('Proper
 // Admin
 Route::get("/admin/dashboard", [AdminController::class, 'Dashboard'])->name('Admin.Dashboard');
 Route::get("/admin/services", [AdminController::class, 'Services'])->name('Admin.Services');
+Route::get("/admin/add/services", [AdminController::class, 'AddService'])->name('Admin.AddService');
 Route::get("/admin/tenants", [AdminController::class, 'Tenants'])->name('Admin.Tenants');
 Route::get("/admin/landlords", [AdminController::class, 'Landlords'])->name('Admin.Landlords');
 Route::get("/admin/stories", [AdminController::class, 'Stories'])->name('Admin.Stories');

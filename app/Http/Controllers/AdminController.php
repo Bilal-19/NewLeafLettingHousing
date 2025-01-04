@@ -15,6 +15,10 @@ class AdminController extends Controller
         return view('Admin.Services');
     }
 
+    public function AddService(){
+        return view('Admin.AddService');
+    }
+
     public function Tenants(){
         return view('Admin.Tenants');
     }
