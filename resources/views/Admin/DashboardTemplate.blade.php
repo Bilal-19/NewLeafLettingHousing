@@ -5,12 +5,11 @@
     <script src="{{ asset('JS/color-modes.js') }}"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sterling Executive International</title>
+    <title>Green Key Housing</title>
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/dashboard/">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
     <link rel="stylesheet" href="{{ asset('css/AdminStyle.css') }}">
     <link href="{{ asset('/css/bootstrap.min.css') }}" rel="stylesheet">
-    {{-- <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}"> --}}
     <!-- Custom styles for this template -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
@@ -19,6 +18,12 @@
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+    {{-- Google Font --}}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -157,35 +162,40 @@
     </svg>
 
     <header class="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow" data-bs-theme="dark">
-        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white" href="#">Company name</a>
+        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white" href="#">
+            Green Key Housing
+        </a>
 
         <ul class="navbar-nav flex-row d-md-none">
-          <li class="nav-item text-nowrap">
-            <button class="nav-link px-3 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSearch"
-              aria-controls="navbarSearch" aria-expanded="false" aria-label="Toggle search">
-              <svg class="bi">
-                <use xlink:href="#search" />
-              </svg>
-            </button>
-          </li>
-          <li class="nav-item text-nowrap">
-            <button class="nav-link px-3 text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu"
-              aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-              <svg class="bi">
-                <use xlink:href="#list" />
-              </svg>
-            </button>
-          </li>
+            <li class="nav-item text-nowrap">
+                <button class="nav-link px-3 text-white" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSearch" aria-controls="navbarSearch" aria-expanded="false"
+                    aria-label="Toggle search">
+                    <svg class="bi">
+                        <use xlink:href="#search" />
+                    </svg>
+                </button>
+            </li>
+            <li class="nav-item text-nowrap">
+                <button class="nav-link px-3 text-white" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <svg class="bi">
+                        <use xlink:href="#list" />
+                    </svg>
+                </button>
+            </li>
         </ul>
 
         <div id="navbarSearch" class="navbar-search w-100 collapse">
-          <input class="form-control w-100 rounded-0 border-0" type="text" placeholder="Search" aria-label="Search">
+            <input class="form-control w-100 rounded-0 border-0" type="text" placeholder="Search"
+                aria-label="Search">
         </div>
-      </header>
+    </header>
 
     <div class="container-fluid">
         <div class="row">
-            <div class="sidebar border border-right col-md-3 col-lg-2 p-0">
+            <div class="sidebar border-right-black col-md-3 col-lg-2 p-0 bg-platinum">
                 <div class="offcanvas-md offcanvas-end" tabindex="-1" id="sidebarMenu"
                     aria-labelledby="sidebarMenuLabel">
                     <div class="offcanvas-header">
@@ -195,60 +205,77 @@
                     </div>
                     <div class="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto">
                         <ul class="nav flex-column">
-                            <li class="nav-item mb-1">
-                                <a class="nav-link ff-poppins text-dark text-sm-dark-green d-flex align-items-center gap-3"
-                                    aria-current="page" href="{{ route('Dashboard') }}">
+                            <li class="nav-item mb-3">
+                                <a class="nav-link text-dark d-flex align-items-center gap-3" aria-current="page"
+                                    href="{{ route('Dashboard') }}">
                                     <i class="fa-solid fa-gauge"></i> Dashboard
                                 </a>
                             </li>
 
-                            <li class="nav-item mb-1">
-                                <a class="nav-link ff-poppins text-dark text-sm-dark-green d-flex align-items-center gap-3"
-                                    aria-current="page" href="#">
-                                    <i class="fa-solid fa-building"></i>
-                                    Apartments
-                                </a>
-                            </li>
-
-                            <li class="nav-item mb-1">
-                                <a class="nav-link ff-poppins text-dark text-sm-dark-green d-flex align-items-center gap-3"
-                                    aria-current="page" href="#">
-                                    <i class="fa-solid fa-building-user"></i>
-                                    Favourite Apartments
-                                </a>
-                            </li>
-
-                            <li class="nav-item mb-1">
-                                <a class="nav-link ff-poppins text-dark text-sm-dark-green d-flex align-items-center gap-3"
-                                    aria-current="page" href="#">
-                                    <i class="fa-solid fa-concierge-bell"></i>
-                                    Amenities
-                                </a>
-                            </li>
-
-                            <li class="nav-item mb-1">
-                                <a class="nav-link ff-poppins d-flex align-items-center gap-3 mb-1 text-dark" href="#">
-                                    <i class="fa-solid fa-newspaper"></i> Blogs
-                                </a>
-                            </li>
-
-                            <li class="nav-item mb-1">
-                                <a class="nav-link ff-poppins d-flex align-items-center gap-3 mb-1 text-dark"
+                            <li class="nav-item mb-3">
+                                <a class="nav-link text-dark d-flex align-items-center gap-3" aria-current="page"
                                     href="#">
-                                    <i class="fa-solid fa-handshake"></i>
-                                   Booking
+                                    <i class="fa-solid fa-building-user"></i>
+                                    Services
                                 </a>
                             </li>
 
-                            <li class="nav-item mb-1">
-                                <a class="nav-link ff-poppins d-flex align-items-center gap-3 mb-1 text-dark" href="#">
-                                    <i class="fa-regular fa-file-alt"></i>Policy
-
+                            <li class="nav-item mb-3">
+                                <a class="nav-link text-dark d-flex align-items-center gap-3" aria-current="page"
+                                    href="#">
+                                    <i class="fa-solid fa-people-roof"></i>
+                                    Tenants
                                 </a>
                             </li>
 
-                            <li class="nav-item mb-1">
-                                <a class="nav-link ff-poppins d-flex align-items-center gap-3 mb-1 text-dark" href="#">
+                            <li class="nav-item mb-3">
+                                <a class="nav-link text-dark d-flex align-items-center gap-3" aria-current="page"
+                                    href="#">
+                                    <i class="fa-solid fa-handshake-simple"></i>
+                                    Landlords
+                                </a>
+                            </li>
+
+                            <li class="nav-item mb-3">
+                                <a class="nav-link d-flex align-items-center gap-3 text-dark" href="#">
+                                    <i class="fa-solid fa-newspaper"></i> Stories
+                                </a>
+                            </li>
+
+                            <li class="nav-item mb-3">
+                                <a class="nav-link d-flex align-items-center gap-3 text-dark" href="#">
+                                    <i class="fa-solid fa-city"></i>
+                                    Booked Properties
+                                </a>
+                            </li>
+
+                            <li class="nav-item mb-3">
+                                <a class="nav-link d-flex align-items-center gap-3 text-dark" href="#">
+                                    <i class="fa-regular fa-comment"></i>Testimonials
+                                </a>
+                            </li>
+
+
+                            <li class="nav-item mb-3">
+                                <a class="nav-link d-flex align-items-center gap-3 text-dark" href="#">
+                                    <i class="fa-regular fa-circle-question"></i>FAQs
+                                </a>
+                            </li>
+
+                            <li class="nav-item mb-3">
+                                <a class="nav-link d-flex align-items-center gap-3 text-dark" href="#">
+                                    <i class="fa-solid fa-users"></i>Team Members
+                                </a>
+                            </li>
+
+                            <li class="nav-item mb-3">
+                                <a class="nav-link d-flex align-items-center gap-3 text-dark" href="#">
+                                    <i class="fa-solid fa-handshake"></i>Partnerships
+                                </a>
+                            </li>
+
+                            <li class="nav-item mb-3">
+                                <a class="nav-link d-flex align-items-center gap-3 text-dark" href="#">
                                     <i class="fa-regular fa-comment-dots"></i>Customer Inquiries
 
                                 </a>
@@ -300,7 +327,7 @@
                     </div>
                 </div>
             </div>
-            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 bg-platinum">
                 @yield('main-section')
             </main>
         </div>
