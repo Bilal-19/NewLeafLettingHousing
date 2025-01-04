@@ -12,7 +12,7 @@
     <div class="row" id="landlord-bg-image">
         <div class="col-md-8 p-5">
             <h3 class="fs-44 fw-semibold text-dark-charcoal fs-sm-28">
-                Maximize Your Property's Potential with New Leaf Housing
+                Maximize Your Property's Potential with Green Key Housing
             </h3>
             <p class="fs-24 text-dark-gray fs-sm-18">
                 Guaranteed Rent. Expert Management. Real Impact.
@@ -27,7 +27,7 @@
             <img src="{{ asset('images/agreement.png') }}" alt="Agreement between Landlord and Tenant" class="img-fluid">
         </div>
         <div class="col-md-6">
-            <h4 class="fs-32 fs-sm-25 fw-semibold text-dark pt-5">Why Landlords Choose New Leaf?</h4>
+            <h4 class="fs-32 fs-sm-25 fw-semibold text-dark pt-5">Why Landlords Choose Green Key?</h4>
             <p class="fs-24 fs-sm-18 text-dark-gray mt-4">
                 Partner with us to secure reliable income, eliminate the hassle of property management, and make a
                 difference in the lives of families in need. Whether you're a landlord, developer, or property owner, we're
@@ -40,7 +40,7 @@
 
     <div class="row mt-5">
         <div class="col-md-6 mx-auto text-center">
-            <h3 class="fs-32 fs-sm-25 text-dark">The New Leaf Journey</h3>
+            <h3 class="fs-32 fs-sm-25 text-dark">The Green Key Journey</h3>
             <p class="fs-18 fs-sm-16 text-dark-gray">
                 From humble beginnings to trusted housing partners, creating impact every step of the way.
             </p>

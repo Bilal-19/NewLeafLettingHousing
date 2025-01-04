@@ -29,7 +29,7 @@
     </div>
 
     <div class="row text-center">
-        <p class="fs-18 fs-sm-16">Copyright &copy; 2024 New Leaf Housing. <span
+        <p class="fs-18 fs-sm-16">Copyright &copy; 2024 Green Key Housing. <span
                 class="text-decoration-underline fw-medium">All Rights Reserved.</span></p>
     </div>
 </div>

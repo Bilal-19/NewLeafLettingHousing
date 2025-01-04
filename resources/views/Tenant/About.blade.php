@@ -5,7 +5,7 @@
         <div class="col-md-8 p-5">
             <h3 class="fs-44 fw-semibold text-dark-charcoal fs-sm-28">Turning Properties into Opportunities</h3>
             <p class="fs-24 text-dark-gray fs-sm-18">
-                New Leaf Housing bridges the gap between landlords seeking secure income and families in need of stable,
+                Green Key Housing bridges the gap between landlords seeking secure income and families in need of stable,
                 supportive homes.
             </p>
             <a href="" class="text-dark fs-20 fs-sm-18 text-decoration-none">
@@ -103,7 +103,7 @@
             <img src="{{ asset('images/CEO.png') }}" alt="" class="d-block mx-auto">
             <h5 class="fw-semibold fs-32 fs-sm-25 text-dark-charcoal mt-3 mb-0">John Smith</h5>
             <p class="fs-20 fs-sm-18 text-forest-green mt-0">Founder & CEO</p>
-            <p class="fs-20 fs-sm-18 text-dark-gray mx-auto">Leading New Leaf Housing with vision and purpose to make
+            <p class="fs-20 fs-sm-18 text-dark-gray mx-auto">Leading Green Key Housing with vision and purpose to make
                 housing impactful.</p>
             <div class="d-flex justify-content-center align-items-center">
                 <a href="">

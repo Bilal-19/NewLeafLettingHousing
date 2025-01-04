@@ -131,7 +131,7 @@
             <img src="{{ asset('images/bright_future.png') }}" alt="" class="img-fluid">
             <h4 class="fw-semibold fs-34 fs-sm-25 text-dark-charcoal mt-4 mb-2">A Brighter Future for the Johnson Family</h4>
             <p class="fs-24 fs-sm-18 text-dark-gray">Facing housing instability, the Johnson family found security and peace
-                of mind through New Leaf's Guaranteed
+                of mind through Green Key's Guaranteed
                 Rent program. With stable housing, their children could thrive in school, and they could focus on building a
                 better future</p>
         </div>
@@ -142,7 +142,7 @@
                 A Fresh Start for the Thompson Family
             </h4>
             <p class="fs-24 fs-sm-18 text-dark-gray">
-                Struggling with housing uncertainty, the Thompson family gained stability and relief through New Leaf’s
+                Struggling with housing uncertainty, the Thompson family gained stability and relief through Green Key’s
                 Guaranteed Rent program. With a secure home, their children excelled in school, and they could finally focus
                 on creating a brighter, more promising future.
             </p>
