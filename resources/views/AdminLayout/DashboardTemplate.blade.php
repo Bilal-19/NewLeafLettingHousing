@@ -207,14 +207,14 @@
                         <ul class="nav flex-column">
                             <li class="nav-item mb-3">
                                 <a class="nav-link text-dark d-flex align-items-center gap-3" aria-current="page"
-                                    href="{{ route('Dashboard') }}">
+                                    href="{{ route('Admin.Dashboard') }}">
                                     <i class="fa-solid fa-gauge"></i> Dashboard
                                 </a>
                             </li>
 
                             <li class="nav-item mb-3">
                                 <a class="nav-link text-dark d-flex align-items-center gap-3" aria-current="page"
-                                    href="#">
+                                    href="{{route('Admin.Services')}}">
                                     <i class="fa-solid fa-building-user"></i>
                                     Services
                                 </a>
@@ -222,7 +222,7 @@
 
                             <li class="nav-item mb-3">
                                 <a class="nav-link text-dark d-flex align-items-center gap-3" aria-current="page"
-                                    href="#">
+                                    href="{{route('Admin.Tenants')}}">
                                     <i class="fa-solid fa-people-roof"></i>
                                     Tenants
                                 </a>
@@ -230,52 +230,52 @@
 
                             <li class="nav-item mb-3">
                                 <a class="nav-link text-dark d-flex align-items-center gap-3" aria-current="page"
-                                    href="#">
+                                    href="{{route('Admin.Landlords')}}">
                                     <i class="fa-solid fa-handshake-simple"></i>
                                     Landlords
                                 </a>
                             </li>
 
                             <li class="nav-item mb-3">
-                                <a class="nav-link d-flex align-items-center gap-3 text-dark" href="#">
+                                <a class="nav-link d-flex align-items-center gap-3 text-dark" href="{{route('Admin.Stories')}}">
                                     <i class="fa-solid fa-newspaper"></i> Stories
                                 </a>
                             </li>
 
                             <li class="nav-item mb-3">
-                                <a class="nav-link d-flex align-items-center gap-3 text-dark" href="#">
+                                <a class="nav-link d-flex align-items-center gap-3 text-dark" href="{{route('Admin.BookProperties')}}">
                                     <i class="fa-solid fa-city"></i>
                                     Booked Properties
                                 </a>
                             </li>
 
                             <li class="nav-item mb-3">
-                                <a class="nav-link d-flex align-items-center gap-3 text-dark" href="#">
+                                <a class="nav-link d-flex align-items-center gap-3 text-dark" href="{{route('Admin.Testimonials')}}">
                                     <i class="fa-regular fa-comment"></i>Testimonials
                                 </a>
                             </li>
 
 
                             <li class="nav-item mb-3">
-                                <a class="nav-link d-flex align-items-center gap-3 text-dark" href="#">
+                                <a class="nav-link d-flex align-items-center gap-3 text-dark" href="{{route('Admin.FAQs')}}">
                                     <i class="fa-regular fa-circle-question"></i>FAQs
                                 </a>
                             </li>
 
                             <li class="nav-item mb-3">
-                                <a class="nav-link d-flex align-items-center gap-3 text-dark" href="#">
+                                <a class="nav-link d-flex align-items-center gap-3 text-dark" href="{{route('Admin.TeamMembers')}}">
                                     <i class="fa-solid fa-users"></i>Team Members
                                 </a>
                             </li>
 
                             <li class="nav-item mb-3">
-                                <a class="nav-link d-flex align-items-center gap-3 text-dark" href="#">
+                                <a class="nav-link d-flex align-items-center gap-3 text-dark" href="{{route('Admin.PartnerCompanies')}}">
                                     <i class="fa-solid fa-handshake"></i>Partnerships
                                 </a>
                             </li>
 
                             <li class="nav-item mb-3">
-                                <a class="nav-link d-flex align-items-center gap-3 text-dark" href="#">
+                                <a class="nav-link d-flex align-items-center gap-3 text-dark" href="{{route('Admin.CustomerQueries')}}">
                                     <i class="fa-regular fa-comment-dots"></i>Customer Inquiries
 
                                 </a>

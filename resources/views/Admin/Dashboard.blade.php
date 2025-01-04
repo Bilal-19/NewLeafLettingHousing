@@ -1,4 +1,4 @@
-@extends('Admin.DashboardTemplate')
+@extends('AdminLayout.DashboardTemplate')
 @section('main-section')
     <div class="container-fluid">
         <div class="row mt-3">

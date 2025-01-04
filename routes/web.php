@@ -42,4 +42,14 @@ Route::get("/properties", [TenantController::class, 'Properties'])->name('Proper
 
 
 // Admin
-Route::get("/admin", [AdminController::class, 'Dashboard'])->name('Dashboard');
+Route::get("/admin/dashboard", [AdminController::class, 'Dashboard'])->name('Admin.Dashboard');
+Route::get("/admin/services", [AdminController::class, 'Services'])->name('Admin.Services');
+Route::get("/admin/tenants", [AdminController::class, 'Tenants'])->name('Admin.Tenants');
+Route::get("/admin/landlords", [AdminController::class, 'Landlords'])->name('Admin.Landlords');
+Route::get("/admin/stories", [AdminController::class, 'Stories'])->name('Admin.Stories');
+Route::get("/admin/booked/properties", [AdminController::class, 'BookProperties'])->name('Admin.BookProperties');
+Route::get("/admin/testimonials", [AdminController::class, 'Testimonials'])->name('Admin.Testimonials');
+Route::get("/admin/faqs", [AdminController::class, 'FAQs'])->name('Admin.FAQs');
+Route::get("/admin/team/members", [AdminController::class, 'TeamMembers'])->name('Admin.TeamMembers');
+Route::get("/admin/partner/companies", [AdminController::class, 'PartnerCompanies'])->name('Admin.PartnerCompanies');
+Route::get("/admin/customer/inquiries", [AdminController::class, 'CustomerQueries'])->name('Admin.CustomerQueries');
