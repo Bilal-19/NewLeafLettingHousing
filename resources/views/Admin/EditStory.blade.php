@@ -1,0 +1,44 @@
+@extends('AdminLayout.DashboardTemplate')
+@section('main-section')
+    <div class="container-fluid">
+        <div class="row mt-3">
+            <h3 class="fw-bold text-center">Edit <span class="text-forest-green">Story</span></h3>
+        </div>
+
+        <div class="row">
+            <form action="{{ route('Update.Story', ['id' => $findStory->id]) }}" method="post" enctype="multipart/form-data">
+                @csrf
+                <div class="col-md-6 mx-auto mt-3">
+                    <label class="form-label mb-0">Upload Thumbnail Image: </label>
+                    <input type="file" name="thumbnailImg" class="form-control">
+                </div>
+
+                <div class="col-md-6 mx-auto mt-3">
+                    <label class="form-label mb-0">Enter Story Headline: </label>
+                    <input type="text" name="headline" class="form-control" placeholder="Enter story headline"
+                        value="{{ $findStory->headline }}">
+                        <small class="text-danger">
+                            @error('headline')
+                                {{ $message }}
+                            @enderror
+                        </small>
+                </div>
+
+                <div class="col-md-6 mx-auto mt-3">
+                    <label class="form-label mb-0">Enter Story Content: </label>
+                    <textarea name="content" cols="30" rows="6" class="form-control" placeholder="Enter story content"
+                        style="resize:none;">{{$findStory->content}}</textarea>
+                        <small class="text-danger">
+                            @error('content')
+                                {{ $message }}
+                            @enderror
+                        </small>
+                </div>
+
+                <div class="col-md-6 mx-auto mt-3">
+                    <button class="btn btn-dark w-100">Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+@endsection

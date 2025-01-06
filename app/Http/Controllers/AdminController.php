@@ -69,11 +69,10 @@ class AdminController extends Controller
             $timeStampImg = time() . '.' . $request->serviceIcon->getClientOriginalExtension();
             $request->serviceIcon->move('Services', $timeStampImg);
         } else {
-            $isIconExist = DB::table('services')
-                ->select('icon')
+            $fetchRecord = DB::table('services')
                 ->where('id', '=', $id)
                 ->first();
-            $timeStampImg = $isIconExist->icon ?? null;
+            $timeStampImg = $fetchRecord->icon;
         }
         $isUpdated = DB::table('services')
             ->where('id', $id)
@@ -149,6 +148,40 @@ class AdminController extends Controller
             return redirect()->back();
         } else {
             toastr()->error('Something Went Wrong!');
+            return redirect()->back();
+        }
+    }
+
+    public function editStory($id)
+    {
+        $findStory = DB::table('stories')->find($id);
+        return view('Admin.EditStory', with(compact('findStory')));
+    }
+
+    public function updateStory(Request $request, $id)
+    {
+
+        // Check If User Upload an Image
+        if ($request->hasFile('thumbnailImg') && $request->file('thumbnailImg')->isValid()) {
+            $timeStampImg = time() . '.' . $request->file('thumbnailImg')->getClientOriginalExtension();
+            $request->file('thumbnailImg')->move('Story', $timeStampImg);
+        } else {
+            $fetchRec = DB::table('stories')->find($id);
+            $timeStampImg = $fetchRec ? $fetchRec->thumbnail_image : null;
+        }
+        $isUpdated = DB::table('stories')
+            ->where('id', '=',$id)
+            ->update([
+                'thumbnail_image' => $timeStampImg,
+                'headline' => $request->headline,
+                'content' => $request->content
+            ]);
+
+        if ($isUpdated) {
+            toastr()->success('Story record updated successfully');
+            return redirect()->back();
+        } else {
+            toastr()->error('Failed to update record');
             return redirect()->back();
         }
     }

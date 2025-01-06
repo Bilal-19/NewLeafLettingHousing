@@ -32,7 +32,7 @@
                             {{ Str::limit($rec->content, 100) }}
                         </td>
                         <td class="text-center">
-                            <a href="#">
+                            <a href="{{route('Edit.Story', ['id'=>$rec->id])}}">
                                 <i class="fa-solid fa-pen-to-square text-primary"></i>
                             </a>
                         </td>
