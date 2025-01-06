@@ -116,6 +116,10 @@ class AdminController extends Controller
         return view('Admin.Stories');
     }
 
+    public function AddStory(){
+        return view('Admin.AddStory');
+    }
+
     public function BookProperties()
     {
         return view('Admin.BookProperties');

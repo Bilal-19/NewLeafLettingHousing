@@ -51,6 +51,10 @@
     background-color: #ffffff;
 }
 
+.bg-forest-green{
+    background-color: #118d51;
+}
+
 
 i{
     width: 10px;
@@ -59,6 +63,11 @@ i{
 
 .nav-item > .nav-link{
     font-size: 20px;
+    color: #118d51;
+}
+
+.nav-item > .nav-link:hover{
+    color: #118d51;
 }
 
 .border-right-black{
