@@ -6,7 +6,8 @@
         </div>
 
         <div class="row">
-            <form action="">
+            <form action="{{route("Create.Story")}}" method="post" enctype="multipart/form-data">
+                @csrf
                 <div class="col-md-6 mx-auto mt-3">
                     <label class="form-label mb-0">Upload Thumbnail Image: </label>
                     <input type="file" name="thumbnailImg" class="form-control">
@@ -14,12 +15,12 @@
 
                 <div class="col-md-6 mx-auto mt-3">
                     <label class="form-label mb-0">Enter Story Headline: </label>
-                    <input type="text" name="headline" class="form-control" placeholder="Enter story headline">
+                    <input type="text" name="headline" class="form-control" placeholder="Enter story headline" value="{{old("headline")}}">
                 </div>
 
                 <div class="col-md-6 mx-auto mt-3">
                     <label class="form-label mb-0">Enter Story Content: </label>
-                    <textarea name="content" cols="30" rows="6" class="form-control" placeholder="Enter story content" style="resize:none;"></textarea>
+                    <textarea name="content" cols="30" rows="6" class="form-control" placeholder="Enter story content" style="resize:none;" value={{old("content")}}></textarea>
                 </div>
 
                 <div class="col-md-6 mx-auto mt-3">

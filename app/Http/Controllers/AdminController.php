@@ -92,10 +92,11 @@ class AdminController extends Controller
         }
     }
 
-    public function deleteService($id){
+    public function deleteService($id)
+    {
         $isDeleted = DB::table('services')->where('id', $id)->delete();
 
-        if ($isDeleted){
+        if ($isDeleted) {
             toastr()->success("Record deleted successfully");
             return redirect()->back();
         }
@@ -113,11 +114,43 @@ class AdminController extends Controller
 
     public function Stories()
     {
-        return view('Admin.Stories');
+        $fetchAllStories = DB::table('stories')->get();
+        return view('Admin.Stories', with(compact('fetchAllStories')));
     }
 
-    public function AddStory(){
+    public function AddStory()
+    {
         return view('Admin.AddStory');
+    }
+
+    public function createStory(Request $request)
+    {
+        // Form Validation
+        $request->validate([
+            'thumbnailImg' => 'required|file',
+            'headline' => 'required',
+            'content' => 'required'
+        ]);
+
+        // Created image timestamp
+        $timeThumbnailImg = time() . '.' . $request->thumbnailImg->getClientOriginalExtension();
+
+        // Move Image to Public folder
+        $request->thumbnailImg->move('Story', $timeThumbnailImg);
+
+        $isStoryCreated = DB::table('stories')->insert([
+            'thumbnail_image' => $timeThumbnailImg,
+            'headline' => $request->headline,
+            'content' => $request->content
+        ]);
+
+        if ($isStoryCreated) {
+            toastr()->success('New Story Publish Successfully');
+            return redirect()->back();
+        } else {
+            toastr()->error('Something Went Wrong!');
+            return redirect()->back();
+        }
     }
 
     public function BookProperties()

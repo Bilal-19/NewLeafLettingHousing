@@ -62,14 +62,30 @@ i{
 
 
 .nav-item > .nav-link{
-    font-size: 20px;
+    font-size: 16px !important;
     color: #118d51;
+    font-weight: normal !important;
 }
 
 .nav-item > .nav-link:hover{
     color: #118d51;
 }
 
+
+.nav-item > .nav-link.active-link{
+    /* font-weight: bold !important; */
+    background-color: #118d51;
+    color: #eeeeee;
+    border-radius: 2px;
+}
+
 .border-right-black{
     border-right: 1px solid rgb(143, 143, 143);
+}
+
+
+.story-preview-img{
+    height: 100px !important;
+    width: 100px !important;
+    object-fit: cover;
 }

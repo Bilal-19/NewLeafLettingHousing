@@ -33,12 +33,14 @@
                             <td>{{ $record->service_name }}</td>
                             <td>{{ $record->service_description }}</td>
                             <td class="text-center">
-                                <a href="{{ route('Edit.Service', ['id' => $record->id]) }}"><i
-                                        class="fa-solid fa-pen-to-square text-primary"></i></a>
+                                <a href="{{ route('Edit.Service', ['id' => $record->id]) }}">
+                                    <i class="fa-solid fa-pen-to-square text-primary"></i>
+                                </a>
                             </td>
                             <td class="text-center">
-                                <a href="{{ route('Delete.Service', ['id' => $record->id]) }}"><i
-                                        class="fa-solid fa-trash text-danger"></i></a>
+                                <a href="{{ route('Delete.Service', ['id' => $record->id]) }}">
+                                    <i class="fa-solid fa-trash text-danger"></i>
+                                </a>
                             </td>
                         </tr>
                     @endforeach
