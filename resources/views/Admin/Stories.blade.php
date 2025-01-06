@@ -37,7 +37,7 @@
                             </a>
                         </td>
                         <td class="text-center">
-                            <a href="#">
+                            <a href="{{route('Delete.Story', ['id' => $rec->id])}}">
                                 <i class="fa-solid fa-trash text-danger"></i>
                             </a>
                         </td>

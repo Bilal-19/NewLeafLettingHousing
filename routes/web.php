@@ -60,6 +60,7 @@ Route::get("/admin/add/story", [AdminController::class, 'AddStory'])->name('Add.
 Route::post("/admin/create/story", [AdminController::class, 'createStory'])->name('Create.Story');
 Route::get("/admin/edit/story/{id}", [AdminController::class, 'editStory'])->name('Edit.Story');
 Route::post("/admin/edit/story/{id}", [AdminController::class, 'updateStory'])->name('Update.Story');
+Route::get("/admin/delete/story/{id}", [AdminController::class, 'deleteStory'])->name('Delete.Story');
 
 
 Route::get("/admin/booked/properties", [AdminController::class, 'BookProperties'])->name('Admin.BookProperties');

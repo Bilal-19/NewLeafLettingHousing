@@ -170,7 +170,7 @@ class AdminController extends Controller
             $timeStampImg = $fetchRec ? $fetchRec->thumbnail_image : null;
         }
         $isUpdated = DB::table('stories')
-            ->where('id', '=',$id)
+            ->where('id', '=', $id)
             ->update([
                 'thumbnail_image' => $timeStampImg,
                 'headline' => $request->headline,
@@ -182,6 +182,19 @@ class AdminController extends Controller
             return redirect()->back();
         } else {
             toastr()->error('Failed to update record');
+            return redirect()->back();
+        }
+    }
+
+    public function deleteStory($id)
+    {
+        $isRecordDeleted = DB::table('stories')->where('id', '=', $id)->delete();
+
+        if ($isRecordDeleted) {
+            toastr()->success('Story removed successfully');
+            return redirect()->back();
+        } else {
+            toastr()->error('Something went wrong. Please try again later.');
             return redirect()->back();
         }
     }
