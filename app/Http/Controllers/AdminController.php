@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
@@ -11,47 +12,128 @@ class AdminController extends Controller
         return view('Admin.Dashboard');
     }
 
-    public function Services(){
-        return view('Admin.Services');
+    public function Services()
+    {
+        $fetchAllServices = DB::table('services')->get();
+        return view('Admin.Services', with(compact('fetchAllServices')));
     }
 
-    public function AddService(){
+    public function AddService()
+    {
         return view('Admin.AddService');
     }
 
-    public function Tenants(){
+    public function createService(Request $request)
+    {
+        // Form Validation
+        $request->validate([
+            'serviceIcon' => 'required|file',
+            'serviceName' => 'required',
+            'serviceDescription' => 'required'
+        ]);
+
+        // Create Image Timestamp
+        $timeStampImg = time() . '.' . $request->serviceIcon->getClientOriginalExtension();
+
+        $isCreated = DB::table('services')->insert([
+            'icon' => $timeStampImg,
+            'service_name' => $request->serviceName,
+            'service_description' => $request->serviceDescription
+        ]);
+
+        // Store Image to Public folder
+        $request->serviceIcon->move('Services', $timeStampImg);
+
+        if ($isCreated) {
+            toastr()->success("New Service Added Successfully");
+            return redirect()->back();
+        }
+    }
+
+    public function editService($id)
+    {
+        $findService = DB::table('services')->find($id);
+        return view('Admin.EditService', with(compact('findService')));
+    }
+
+    public function updateService(Request $request, $id)
+    {
+
+        $request->validate([
+            'serviceName' => 'required',
+            'serviceDescription' => 'required'
+        ]);
+
+        // Check If User Upload an Image
+        if ($request->file('serviceIcon')) {
+            $timeStampImg = time() . '.' . $request->serviceIcon->getClientOriginalExtension();
+            $request->serviceIcon->move('Services', $timeStampImg);
+        } else {
+            $isIconExist = DB::table('services')
+                ->select('icon')
+                ->where('id', '=', $id)
+                ->first();
+            $timeStampImg = $isIconExist->icon ?? null;
+        }
+        $isUpdated = DB::table('services')
+            ->where('id', $id)
+            ->update([
+                'icon' => $timeStampImg,
+                'service_name' => $request->serviceName,
+                'service_description' => $request->serviceDescription
+            ]);
+
+        if ($isUpdated) {
+            toastr()->success('Service record updated successfully');
+            return redirect()->back();
+        } else {
+            toastr()->error('Failed to update record');
+            return redirect()->back();
+        }
+    }
+
+    public function Tenants()
+    {
         return view('Admin.Tenants');
     }
 
-    public function Landlords(){
+    public function Landlords()
+    {
         return view('Admin.Landlords');
     }
 
-    public function Stories(){
+    public function Stories()
+    {
         return view('Admin.Stories');
     }
 
-    public function BookProperties(){
+    public function BookProperties()
+    {
         return view('Admin.BookProperties');
     }
 
-    public function Testimonials(){
+    public function Testimonials()
+    {
         return view('Admin.Testimonials');
     }
 
-    public function FAQs(){
+    public function FAQs()
+    {
         return view('Admin.FAQs');
     }
 
-    public function TeamMembers(){
+    public function TeamMembers()
+    {
         return view('Admin.TeamMember');
     }
 
-    public function PartnerCompanies(){
+    public function PartnerCompanies()
+    {
         return view("Admin.Partnership");
     }
 
-    public function CustomerQueries(){
+    public function CustomerQueries()
+    {
         return view('Admin.CustomerQueries');
     }
 }
