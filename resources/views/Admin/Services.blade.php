@@ -25,7 +25,7 @@
 
                     @foreach ($fetchAllServices as $record)
                         <tr>
-                            <td>{{$record->id}}</td>
+                            <td>{{ $record->id }}</td>
                             <td>
                                 <img src="{{ asset('Services/' . $record->icon) }}" alt="{{ $record->service_name }}"
                                     class="img-fluid">
@@ -33,10 +33,12 @@
                             <td>{{ $record->service_name }}</td>
                             <td>{{ $record->service_description }}</td>
                             <td class="text-center">
-                                <a href="{{route('Edit.Service', ['id'=>$record->id])}}"><i class="fa-solid fa-pen-to-square text-primary"></i></a>
+                                <a href="{{ route('Edit.Service', ['id' => $record->id]) }}"><i
+                                        class="fa-solid fa-pen-to-square text-primary"></i></a>
                             </td>
                             <td class="text-center">
-                                <a href=""><i class="fa-solid fa-trash text-danger"></i></a>
+                                <a href="{{ route('Delete.Service', ['id' => $record->id]) }}"><i
+                                        class="fa-solid fa-trash text-danger"></i></a>
                             </td>
                         </tr>
                     @endforeach

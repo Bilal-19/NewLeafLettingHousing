@@ -49,6 +49,7 @@ Route::get("/admin/add/services", [AdminController::class, 'AddService'])->name(
 Route::post("/admin/create/service", [AdminController::class, 'createService'])->name('Create.Service');
 Route::get("/admin/edit/service/{id}", [AdminController::class, 'editService'])->name('Edit.Service');
 Route::post("/admin/update/service/{id}", [AdminController::class, 'updateService'])->name('Update.Service');
+Route::get("/admin/delete/service/{id}", [AdminController::class, 'deleteService'])->name('Delete.Service');
 
 
 Route::get("/admin/tenants", [AdminController::class, 'Tenants'])->name('Admin.Tenants');

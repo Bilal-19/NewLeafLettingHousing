@@ -92,6 +92,15 @@ class AdminController extends Controller
         }
     }
 
+    public function deleteService($id){
+        $isDeleted = DB::table('services')->where('id', $id)->delete();
+
+        if ($isDeleted){
+            toastr()->success("Record deleted successfully");
+            return redirect()->back();
+        }
+    }
+
     public function Tenants()
     {
         return view('Admin.Tenants');
