@@ -358,7 +358,7 @@ class AdminController extends Controller
             toastr()->success('Record Updated Successfully');
             return redirect()->route('Admin.TeamMembers');
         } else {
-            toastr()->error('Something went wrong. Please try again later.');
+            toastr()->error('No changes were detected in the record.');
             return redirect()->back();
         }
     }
@@ -406,6 +406,43 @@ class AdminController extends Controller
             return redirect()->route('Admin.PartnerCompanies');
         } else {
             toastr()->error('Something went wrong. Please try again later.');
+            return redirect()->back();
+        }
+    }
+
+    public function editPartner($id)
+    {
+        $findPartnerCompany = DB::table('partnership_organizations')->find($id);
+        return view('Admin.EditPartner', with(compact('findPartnerCompany')));
+    }
+
+    public function updatePartnerCompany(Request $request, $id)
+    {
+        $isRecordUpdated = DB::table("partnership_organizations")->where('id', '=', $id)->update(
+            [
+                'organization_name' => $request->organization_name,
+                'organization_description' => $request->organization_description
+            ]
+        );
+
+        if ($isRecordUpdated) {
+            toastr()->success('Record Updated Successfully');
+            return redirect()->route('Admin.PartnerCompanies');
+        } else {
+            toastr()->error('No changes were detected in the record.');
+            return redirect()->back();
+        }
+    }
+
+    public function deletePartnerCompamy($id)
+    {
+        $isRecordDeleted = DB::table('partnership_organizations')->where('id', '=', $id)->delete();
+
+        if ($isRecordDeleted) {
+            toastr()->success('Record removed successfully');
+            return redirect()->back();
+        } else {
+            toastr()->info('Something went wrong. Please try again later.');
             return redirect()->back();
         }
     }

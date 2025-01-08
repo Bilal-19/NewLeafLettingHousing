@@ -28,12 +28,12 @@
                             <td>{{ $record->organization_name }}</td>
                             <td>{{ $record->organization_description }}</td>
                             <td class="text-center">
-                                <a href="{{ route('Edit.Service', ['id' => $record->id]) }}">
+                                <a href="{{ route('Admin.Edit.Partner', ['id' => $record->id]) }}">
                                     <i class="fa-solid fa-pen-to-square text-primary"></i>
                                 </a>
                             </td>
                             <td class="text-center">
-                                <a href="{{ route('Delete.Service', ['id' => $record->id]) }}">
+                                <a href="{{ route('Admin.Delete.Partner', ['id' => $record->id]) }}">
                                     <i class="fa-solid fa-trash text-danger"></i>
                                 </a>
                             </td>

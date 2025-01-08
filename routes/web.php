@@ -84,6 +84,9 @@ Route::get("/admin/delete/team/{id}", [AdminController::class, 'deleteMember'])-
 Route::get("/admin/partner/companies", [AdminController::class, 'PartnerCompanies'])->name('Admin.PartnerCompanies');
 Route::get("/admin/add/partner/companies", [AdminController::class, 'AddPartner'])->name('Admin.Add.Partner');
 Route::post("/admin/create/partnership", [AdminController::class, 'createPartnership'])->name('Admin.Create.Partnership');
+Route::get("/admin/edit/partner/{id}", [AdminController::class, 'editPartner'])->name('Admin.Edit.Partner');
+Route::post("/admin/update/partner/{id}", [AdminController::class, 'updatePartnerCompany'])->name('Admin.Update.Partner');
+Route::get("/admin/delete/partner/{id}", [AdminController::class, 'deletePartnerCompamy'])->name('Admin.Delete.Partner');
 
 
 Route::get("/admin/customer/inquiries", [AdminController::class, 'CustomerQueries'])->name('Admin.CustomerQueries');
