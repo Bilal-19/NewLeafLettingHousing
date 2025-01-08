@@ -69,6 +69,9 @@ Route::get("/admin/testimonials", [AdminController::class, 'Testimonials'])->nam
 Route::get("/admin/faqs", [AdminController::class, 'FAQs'])->name('Admin.FAQs');
 Route::get("/admin/add/faqs", [AdminController::class, 'AddFAQ'])->name('Add.FAQ');
 Route::post("/admin/create/faq", [AdminController::class, 'createFAQ'])->name('Create.FAQ');
+Route::get("/admin/edit/faq/{id}", [AdminController::class, 'EditFAQ'])->name('Edit.FAQ');
+Route::post("/admin/update/faq/{id}", [AdminController::class, 'updateFAQ'])->name('Update.FAQ');
+Route::get("/admin/delete/faq/{id}", [AdminController::class, 'deleteFAQ'])->name('Delete.FAQ');
 
 
 Route::get("/admin/team/members", [AdminController::class, 'TeamMembers'])->name('Admin.TeamMembers');

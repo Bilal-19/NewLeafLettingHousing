@@ -211,7 +211,8 @@ class AdminController extends Controller
 
     public function FAQs()
     {
-        return view('Admin.FAQs');
+        $fetchAllFAQs = DB::table('faq')->get();
+        return view('Admin.FAQs', with(compact('fetchAllFAQs')));
     }
 
     public function AddFAQ()
@@ -242,6 +243,44 @@ class AdminController extends Controller
         }
     }
 
+    public function EditFAQ($id)
+    {
+        $findFAQ = DB::table('faq')->find($id);
+        return view('Admin.EditFAQ', with(compact('findFAQ')));
+    }
+
+    public function updateFAQ(Request $request, $id)
+    {
+        $request->validate(
+            [
+                'question' => 'required',
+                'answer' => 'required'
+            ]
+        );
+        $isRecordUpdated = DB::table('faq')
+            ->where('id', '=', $id)
+            ->update([
+                'question' => $request->question,
+                'answer' => $request->answer
+            ]);
+
+        if ($isRecordUpdated) {
+            toastr()->success('FAQ Updated Successfully');
+            return redirect()->route('Admin.FAQs');
+        } else {
+            toastr()->error("You didn't make any changes.");
+            return redirect()->back();
+        }
+    }
+
+    public function deleteFAQ($id){
+        $isRecordDeleted = DB::table('faq')->where('id','=',$id)->delete();
+
+        if ($isRecordDeleted){
+            toastr()->success('FAQ deleted successfully');
+            return redirect()->back();
+        }
+    }
     public function TeamMembers()
     {
         return view('Admin.TeamMember');
