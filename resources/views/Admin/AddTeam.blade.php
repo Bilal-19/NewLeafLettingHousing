@@ -6,7 +6,8 @@
         </div>
 
         <div class="row">
-            <form action="" autocomplete="off">
+            <form action="{{route("Admin.Create.Team.Member")}}" method="post" enctype="multipart/form-data" autocomplete="off">
+                @csrf
                 <div class="col-md-6 mx-auto">
                     <label class="form-label mb-0">Member Name: </label>
                     <input type="text" name="name" class="form-control">
@@ -50,31 +51,17 @@
                 <div class="col-md-6 mx-auto mt-3">
                     <label class="form-label mb-0">Linkedin Profile: </label>
                     <input type="text" name="linkedinLink" class="form-control">
-                    <small class="text-danger">
-                        @error('linkedinLink')
-                            {{ $message }}
-                        @enderror
                     </small>
                 </div>
 
                 <div class="col-md-6 mx-auto mt-3">
                     <label class="form-label mb-0">Facebook Profile: </label>
                     <input type="text" name="fbLink" class="form-control">
-                    <small class="text-danger">
-                        @error('fbLink')
-                            {{ $message }}
-                        @enderror
-                    </small>
                 </div>
 
                 <div class="col-md-6 mx-auto mt-3">
                     <label class="form-label mb-0">Instagram Profile: </label>
                     <input type="text" name="instagramLink" class="form-control">
-                    <small class="text-danger">
-                        @error('instagramLink')
-                            {{ $message }}
-                        @enderror
-                    </small>
                 </div>
 
                 <div class="col-md-6 mx-auto mt-3">

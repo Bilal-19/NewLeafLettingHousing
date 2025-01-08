@@ -273,10 +273,11 @@ class AdminController extends Controller
         }
     }
 
-    public function deleteFAQ($id){
-        $isRecordDeleted = DB::table('faq')->where('id','=',$id)->delete();
+    public function deleteFAQ($id)
+    {
+        $isRecordDeleted = DB::table('faq')->where('id', '=', $id)->delete();
 
-        if ($isRecordDeleted){
+        if ($isRecordDeleted) {
             toastr()->success('FAQ deleted successfully');
             return redirect()->back();
         }
@@ -286,8 +287,42 @@ class AdminController extends Controller
         return view('Admin.TeamMember');
     }
 
-    public function AddTeamMember(){
+    public function AddTeamMember()
+    {
         return view("Admin.AddTeam");
+    }
+
+    public function createTeamMember(Request $request)
+    {
+        // Form Validation
+        $request->validate([
+            'name' => 'required',
+            'profile' => 'required|file',
+            'position' => 'required',
+            'description' => 'required',
+        ]);
+
+        $imgPath = time() . '.' . $request->profile->getClientOriginalExtension();
+
+        $request->profile->move('Team', $imgPath);
+
+        $isRecordCreated = DB::table('team_member')->insert([
+            'name' => $request->name,
+            'profile_picture' => $imgPath,
+            'position' => $request->position,
+            'description' => $request->description,
+            'linkedin_profile' => $request->linkedinLink,
+            'facebook_profile' => $request->fbLink,
+            'instagram_profile' => $request->instagramLink
+        ]);
+
+        if ($isRecordCreated) {
+            toastr()->success('New team member added successfully');
+            return redirect()->route('Admin.TeamMembers');
+        } else {
+            toastr()->error('Something went wrong. Please try again later.');
+            return redirect()->back();
+        }
     }
 
     public function PartnerCompanies()
