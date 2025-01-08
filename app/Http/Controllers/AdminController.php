@@ -286,6 +286,10 @@ class AdminController extends Controller
         return view('Admin.TeamMember');
     }
 
+    public function AddTeamMember(){
+        return view("Admin.AddTeam");
+    }
+
     public function PartnerCompanies()
     {
         return view("Admin.Partnership");
