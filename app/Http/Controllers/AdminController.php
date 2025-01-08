@@ -367,7 +367,7 @@ class AdminController extends Controller
     {
         $isRecordDeleted = DB::table('team_member')->where('id', '=', $id)->delete();
 
-        if ($isRecordDeleted){
+        if ($isRecordDeleted) {
             toastr()->success('Record deleted successfully');
             return redirect()->route('Admin.TeamMembers');
         } else {
@@ -378,7 +378,36 @@ class AdminController extends Controller
 
     public function PartnerCompanies()
     {
-        return view("Admin.Partnership");
+        $fetchAllRecords = DB::table('partnership_organizations')->get();
+        return view("Admin.Partnership", with(compact('fetchAllRecords')));
+    }
+
+    public function AddPartner()
+    {
+        return view('Admin.AddPartner');
+    }
+
+    public function createPartnership(Request $request)
+    {
+        $request->validate(
+            [
+                'organization_name' => 'required',
+                'organization_description' => 'required'
+            ]
+        );
+
+        $isRecordAdded = DB::table('partnership_organizations')->insert([
+            'organization_name' => $request->organization_name,
+            'organization_description' => $request->organization_description
+        ]);
+
+        if ($isRecordAdded) {
+            toastr()->success('Partnership Record Addded Successfully');
+            return redirect()->route('Admin.PartnerCompanies');
+        } else {
+            toastr()->error('Something went wrong. Please try again later.');
+            return redirect()->back();
+        }
     }
 
     public function CustomerQueries()
