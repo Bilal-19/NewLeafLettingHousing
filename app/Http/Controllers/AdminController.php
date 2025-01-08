@@ -214,6 +214,34 @@ class AdminController extends Controller
         return view('Admin.FAQs');
     }
 
+    public function AddFAQ()
+    {
+        return view("Admin.AddFAQ");
+    }
+
+    public function createFAQ(Request $request)
+    {
+        // Form Validation
+        $request->validate([
+            'question' => 'required',
+            'answer' => 'required'
+        ]);
+
+        // Add new record
+        $isFAQcreated = DB::table('faq')->insert([
+            'question' => $request->question,
+            'answer' => $request->answer
+        ]);
+
+        if ($isFAQcreated) {
+            toastr()->success('New FAQ Added Successfully!');
+            return redirect()->route('Admin.FAQs');
+        } else {
+            toastr()->error('Failed to add new faq!');
+            return redirect()->back();
+        }
+    }
+
     public function TeamMembers()
     {
         return view('Admin.TeamMember');

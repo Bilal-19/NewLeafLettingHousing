@@ -65,7 +65,12 @@ Route::get("/admin/delete/story/{id}", [AdminController::class, 'deleteStory'])-
 
 Route::get("/admin/booked/properties", [AdminController::class, 'BookProperties'])->name('Admin.BookProperties');
 Route::get("/admin/testimonials", [AdminController::class, 'Testimonials'])->name('Admin.Testimonials');
+
 Route::get("/admin/faqs", [AdminController::class, 'FAQs'])->name('Admin.FAQs');
+Route::get("/admin/add/faqs", [AdminController::class, 'AddFAQ'])->name('Add.FAQ');
+Route::post("/admin/create/faq", [AdminController::class, 'createFAQ'])->name('Create.FAQ');
+
+
 Route::get("/admin/team/members", [AdminController::class, 'TeamMembers'])->name('Admin.TeamMembers');
 Route::get("/admin/partner/companies", [AdminController::class, 'PartnerCompanies'])->name('Admin.PartnerCompanies');
 Route::get("/admin/customer/inquiries", [AdminController::class, 'CustomerQueries'])->name('Admin.CustomerQueries');
