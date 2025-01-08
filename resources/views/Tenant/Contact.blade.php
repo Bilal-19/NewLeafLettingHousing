@@ -12,23 +12,25 @@
             width: 494px;
         }
 
-        input, textarea {
+        input,
+        textarea {
             padding: 22px 28px;
             border-radius: 12px;
             width: 80%;
             border: none;
-            margin-bottom: 20px;
+            display: block;
         }
 
-        input:focus, textarea:focus{
+        input:focus,
+        textarea:focus {
             outline: none;
         }
 
-        textarea{
+        textarea {
             resize: none;
         }
 
-        .submit-btn{
+        .submit-btn {
             background-color: #118D51;
             color: white;
             border-radius: 26px;
@@ -36,12 +38,15 @@
             width: 80%;
             border: none;
         }
+
         @media only screen and (max-width: 768px) {
             iframe {
                 width: 100%;
             }
 
-            form input, form textarea, form button{
+            form input,
+            form textarea,
+            form button {
                 width: 98%;
                 display: block;
                 margin: 10px auto;
@@ -102,19 +107,45 @@
 
         </div>
         <div class="col-md-5">
-            <form action="">
-                <div>
-                    <input type="text" name="fullname" placeholder="Enter your Full Name">
+            <form action="{{ route('Submit.Inquiry') }}" method="post" autocomplete="off">
+                @csrf
+                <div class="mb-3">
+                    <input type="text" name="fullName" placeholder="Enter your Full Name">
+                    <small class="text-danger">
+                        @error('fullName')
+                            {{ $message }}
+                        @enderror
+                    </small>
                 </div>
-                <div>
+
+                <div class="mb-3">
                     <input type="email" name="email" placeholder="Enter your Email">
+                    <small class="text-danger">
+                        @error('email')
+                            {{ $message }}
+                        @enderror
+                    </small>
                 </div>
-                <div>
+
+                <div class="mb-3">
                     <input type="number" name="phoneNumber" placeholder="Enter your Phone Number">
+                    <small class="text-danger">
+                        @error('phoneNumber')
+                            {{ $message }}
+                        @enderror
+                    </small>
                 </div>
-                <div>
+
+
+                <div class="mb-3">
                     <textarea name="message" cols="30" rows="5" placeholder="Enter your message"></textarea>
+                    <small class="text-danger">
+                        @error('message')
+                            {{ $message }}
+                        @enderror
+                    </small>
                 </div>
+
                 <div>
                     <button class="submit-btn">Send Message</button>
                 </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class TenantController extends Controller
 {
@@ -31,6 +32,30 @@ class TenantController extends Controller
         return view('Tenant.Contact');
     }
 
+    public function submitInquiry(Request $request){
+        // Form Validation
+        $request->validate([
+            'fullName' => 'required',
+            'email' => 'required|email',
+            'phoneNumber' => 'required',
+            'message' => 'required'
+        ]);
+
+        $isInquiryCreated = DB::table('inquiry')->insert([
+            'full_name' => $request->fullName,
+            'email' => $request->email,
+            'phone_number' => $request->phoneNumber,
+            'message' => $request->message
+        ]);
+
+        if ($isInquiryCreated){
+            toastr()->success("We've received your information. Our team will contact you soon");
+            return redirect()->back();
+        } else {
+            toastr()->info('Something went wrong. Please try again later.');
+            return redirect()->back();
+        }
+    }
     public function Properties(){
         return view('Tenant.Properties');
     }
