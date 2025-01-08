@@ -59,11 +59,8 @@
                                 <li class="nav-item">
                                     <a class="nav-link nav-link-state mx-2 {{ request()->routeIs('FAQs') ? 'active text-forest-green' : '' }}" href="{{route('FAQs')}}">FAQs</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link nav-link-state mx-2 {{ request()->routeIs('Contact') ? 'active text-forest-green' : '' }}" href="{{route('Contact')}}">Contact Us</a>
-                                </li>
                             </ul>
-                            <button class="btn-style">Sign Up</button>
+                            <a class="btn-style text-decoration-none" href="{{route('Contact')}}">Contact Us</a>
                         </div>
                     </div>
                 </nav>
