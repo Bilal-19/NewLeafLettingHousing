@@ -77,6 +77,9 @@ Route::get("/admin/delete/faq/{id}", [AdminController::class, 'deleteFAQ'])->nam
 Route::get("/admin/team/members", [AdminController::class, 'TeamMembers'])->name('Admin.TeamMembers');
 Route::get("/admin/add/team", [AdminController::class, 'AddTeamMember'])->name('Admin.AddTeam');
 Route::post("/admin/create/team", [AdminController::class, 'createTeamMember'])->name('Admin.Create.Team.Member');
+Route::get("/admin/edit/team/{id}", [AdminController::class, 'editTeamMember'])->name('Admin.EditTeam');
+Route::post("/admin/update/team/{id}", [AdminController::class, 'updateTeamMember'])->name('Admin.Update.Team');
+Route::get("/admin/delete/team/{id}", [AdminController::class, 'deleteMember'])->name('Admin.Delete.Team');
 
 Route::get("/admin/partner/companies", [AdminController::class, 'PartnerCompanies'])->name('Admin.PartnerCompanies');
 Route::get("/admin/customer/inquiries", [AdminController::class, 'CustomerQueries'])->name('Admin.CustomerQueries');

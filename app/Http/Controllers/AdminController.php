@@ -284,7 +284,8 @@ class AdminController extends Controller
     }
     public function TeamMembers()
     {
-        return view('Admin.TeamMember');
+        $fetchTeamRecords = DB::table('team_member')->get();
+        return view('Admin.TeamMember', with(compact('fetchTeamRecords')));
     }
 
     public function AddTeamMember()
@@ -318,6 +319,56 @@ class AdminController extends Controller
 
         if ($isRecordCreated) {
             toastr()->success('New team member added successfully');
+            return redirect()->route('Admin.TeamMembers');
+        } else {
+            toastr()->error('Something went wrong. Please try again later.');
+            return redirect()->back();
+        }
+    }
+
+    public function editTeamMember($id)
+    {
+        $findMemberRecord = DB::table('team_member')->find($id);
+        return view("Admin.EditTeam", with(compact('findMemberRecord')));
+    }
+
+    public function updateTeamMember(Request $request, $id)
+    {
+        if ($request->file('profile')) {
+            $imgPath = time() . '.' . $request->profile->getClientOriginalExtension();
+            $request->profile->move('Team', $imgPath);
+        } else {
+            $findImagePath = DB::table('team_member')
+                ->where('id', '=', $id)
+                ->first();
+            $imgPath = $findImagePath->profile_picture;
+            // dd($imgPath);
+        }
+        $isUpdated = DB::table('team_member')->where('id', '=', $id)->update([
+            'name' => $request->name,
+            'profile_picture' => $imgPath,
+            'position' => $request->position,
+            'description' => $request->description,
+            'linkedin_profile' => $request->linkedinLink,
+            'facebook_profile' => $request->fbLink,
+            'instagram_profile' => $request->instagramLink
+        ]);
+
+        if ($isUpdated) {
+            toastr()->success('Record Updated Successfully');
+            return redirect()->route('Admin.TeamMembers');
+        } else {
+            toastr()->error('Something went wrong. Please try again later.');
+            return redirect()->back();
+        }
+    }
+
+    public function deleteMember($id)
+    {
+        $isRecordDeleted = DB::table('team_member')->where('id', '=', $id)->delete();
+
+        if ($isRecordDeleted){
+            toastr()->success('Record deleted successfully');
             return redirect()->route('Admin.TeamMembers');
         } else {
             toastr()->error('Something went wrong. Please try again later.');
