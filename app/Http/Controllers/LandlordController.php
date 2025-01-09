@@ -63,4 +63,12 @@ class LandlordController extends Controller
             return redirect()->back();
         }
     }
+
+    public function SingOut()
+    {
+        if (Auth::check()) {
+            Auth::logout();
+            return redirect()->route('Landlords');
+        }
+    }
 }
