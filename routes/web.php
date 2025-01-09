@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\LandlordController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TenantController;
 use Illuminate\Support\Facades\Route;
@@ -91,3 +92,7 @@ Route::get("/admin/delete/partner/{id}", [AdminController::class, 'deletePartner
 
 
 Route::get("/admin/customer/inquiries", [AdminController::class, 'CustomerQueries'])->name('Admin.CustomerQueries');
+
+
+// Landlord Dashboard
+Route::get("/landlord/dashboard",[LandlordController::class,'index'])->name('Landlord.Dashboard');

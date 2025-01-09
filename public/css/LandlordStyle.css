@@ -80,10 +80,3 @@ i{
 .border-right-black{
     border-right: 1px solid rgb(143, 143, 143);
 }
-
-
-.story-preview-img{
-    height: 100px !important;
-    width: 100px !important;
-    object-fit: cover;
-}
