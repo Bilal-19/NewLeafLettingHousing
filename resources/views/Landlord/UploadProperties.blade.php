@@ -61,8 +61,8 @@
 
                 <div class="row mt-3">
                     <div class="col-md-11 mx-auto">
-                        <textarea type="text" name="features" class="form-control" placeholder="Write House Features (Comma Separated)" rows="3"
-                            style="resize:none;"></textarea>
+                        <textarea type="text" name="features" class="form-control" placeholder="Write House Features (Comma Separated)"
+                            rows="3" style="resize:none;"></textarea>
                     </div>
                 </div>
 
