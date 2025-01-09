@@ -28,7 +28,7 @@
                 <div class="row mt-3">
                     <div class="col-md-11 mx-auto">
                         <select name="property_type" class="form-select">
-                            <option value="">Property Type</option>
+                            <option value="">Select Property Type</option>
                             <option value="Apartment">Apartment</option>
                             <option value="House">House</option>
                             <option value="Studio">Studio</option>
@@ -39,7 +39,7 @@
                 <div class="row mt-3">
                     <div class="col-md-11 mx-auto">
                         <select name="property_status" class="form-select">
-                            <option value="">Property Status</option>
+                            <option value="">Select Property Status</option>
                             <option value="Available">Available</option>
                             <option value="Rented">Rented</option>
                         </select>
@@ -68,15 +68,30 @@
 
                 <div class="row d-flex justify-content-around mt-3">
                     <div class="col-md-3">
-                        <input type="text" name="bedrooms" class="form-control" placeholder="Bedrooms (eg. 2)">
+                        <select name="bedrooms" class="form-select">
+                            <option value="">Select No of Bedrooms</option>
+                            @for ($i = 0; $i <= 6; $i++)
+                                <option value="{{$i}}">{{$i}}</option>
+                            @endfor
+                        </select>
                     </div>
 
                     <div class="col-md-3">
-                        <input type="text" name="bathrooms" class="form-control" placeholder="Bathrooms (eg. 2)">
+                        <select name="bathrooms" class="form-select">
+                            <option value="">Select No of Bathrooms</option>
+                            @for ($i = 0; $i <= 6; $i++)
+                                <option value="{{$i}}">{{$i}}</option>
+                            @endfor
+                        </select>
                     </div>
 
                     <div class="col-md-3">
-                        <input type="text" name="receptions" class="form-control" placeholder="Reception (eg. 2)">
+                        <select name="receptions" class="form-select">
+                            <option value="">Select No of Receptions</option>
+                            @for ($i = 0; $i <= 6; $i++)
+                                <option value="{{$i}}">{{$i}}</option>
+                            @endfor
+                        </select>
                     </div>
                 </div>
 
@@ -88,7 +103,7 @@
 
                     <div class="col-md-5">
                         <label class="form-label mb-0">Upload Multiple Images:</label>
-                        <input type="file" name="images[]" class="form-control">
+                        <input type="file" name="images[]" class="form-control" multiple>
                     </div>
                 </div>
 
