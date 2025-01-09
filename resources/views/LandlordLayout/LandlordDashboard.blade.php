@@ -9,6 +9,7 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/dashboard/">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
     <link rel="stylesheet" href="{{ asset('css/LandlordStyle.css') }}">
+    @stack('style')
     <link href="{{ asset('/css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
@@ -195,7 +196,7 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="sidebar border-right-black col-md-3 col-lg-2 p-0 bg-platinum">
+            <div class="sidebar border-right-black col-md-3 col-lg-2 p-0 bg-white">
                 <div class="offcanvas-md offcanvas-end" tabindex="-1" id="sidebarMenu"
                     aria-labelledby="sidebarMenuLabel">
                     <div class="offcanvas-header">
@@ -205,14 +206,14 @@
                     </div>
                     <div class="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto">
                         <ul class="nav flex-column">
-                            <li class="nav-item mb-1">
+                            <li class="nav-item mb-4">
                                 <a class="nav-link d-flex align-items-center gap-3 {{ request()->routeIs('Landlord.Dashboard') ? 'active-link' : '' }}" aria-current="page"
                                     href="{{ route('Landlord.Dashboard') }}">
                                     <i class="fa-solid fa-gauge"></i> Dashboard
                                 </a>
                             </li>
 
-                            <li class="nav-item mb-1">
+                            <li class="nav-item mb-4">
                                 <a class="nav-link d-flex align-items-center gap-3 {{ request()->routeIs('Landlord.UploadProperties') ? 'active-link' : '' }}" aria-current="page"
                                     href="{{route('Landlord.UploadProperties')}}">
                                     <i class="fa-solid fa-building-user"></i>
@@ -220,7 +221,7 @@
                                 </a>
                             </li>
 
-                            <li class="nav-item mb-1">
+                            <li class="nav-item mb-4">
                                 <a class="nav-link d-flex align-items-center gap-3 {{ request()->routeIs('Landlord.ManageProperties') ? 'active-link' : '' }}" aria-current="page"
                                     href="{{route('Landlord.ManageProperties')}}">
                                     <i class="fa-solid fa-people-roof"></i>
@@ -228,7 +229,7 @@
                                 </a>
                             </li>
 
-                            <li class="nav-item mb-1">
+                            <li class="nav-item mb-4">
                                 <a class="nav-link d-flex align-items-center gap-3 {{ request()->routeIs('Landlord.ListTenants') ? 'active-link' : '' }}" aria-current="page"
                                     href="{{route('Landlord.ListTenants')}}">
                                     <i class="fa-solid fa-handshake-simple"></i>
@@ -236,7 +237,7 @@
                                 </a>
                             </li>
 
-                            <li class="nav-item mb-1">
+                            <li class="nav-item mb-4">
                                 <a class="nav-link d-flex align-items-center gap-3 {{ request()->routeIs('Landlord.BookedProperties') ? 'active-link' : '' }}" aria-current="page"
                                     href="{{route('Landlord.BookedProperties')}}">
                                     <i class="fa-solid fa-handshake-simple"></i>
@@ -287,7 +288,7 @@
                     </div>
                 </div>
             </div>
-            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 bg-platinum">
                 @yield('main-section')
             </main>
         </div>
