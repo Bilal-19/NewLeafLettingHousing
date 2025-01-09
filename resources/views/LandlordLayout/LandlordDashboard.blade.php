@@ -247,7 +247,7 @@
 
                         <h6
                             class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 text-dark text-uppercase">
-                            <span>Trash</span>
+                            <span>Others</span>
                             <a class="link-dark" href="#" aria-label="Add a new report">
                                 <svg class="bi">
                                     <use xlink:href="#plus-circle" />
@@ -256,9 +256,9 @@
                         </h6>
                         <ul class="nav flex-column mb-auto">
                             <li class="nav-item mb-1">
-                                <a class="nav-link d-flex align-items-center gap-2 text-dark" href="#">
-                                    <i class="fa-solid fa-trash"></i>
-                                    View Trash
+                                <a class="nav-link d-flex align-items-center gap-2 {{ request()->routeIs('Landlord.Profile') ? 'active-link' : '' }}" href="{{route('Landlord.Profile')}}">
+                                    <i class="fa-solid fa-user"></i>
+                                    My Profile
                                 </a>
                             </li>
 

@@ -17,8 +17,9 @@
             <p class="fs-24 text-dark-gray fs-sm-18">
                 Guaranteed Rent. Expert Management. Real Impact.
             </p>
-            <p class="text-dark fs-20 fs-sm-18">Partner with Us Today <img src="{{ asset('images/downArrow.png') }}"
-                    alt=""></p>
+            <a class="text-dark fs-20 fs-sm-18 text-decoration-none" href="{{route("Landlord.Dashboard")}}">
+                Partner with Us Today <img src="{{ asset('images/downArrow.png') }}" alt="">
+            </a>
         </div>
     </div>
 

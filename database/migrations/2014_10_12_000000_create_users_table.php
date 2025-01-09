@@ -18,6 +18,9 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('role')->default('Landlord');
+            $table->string('phone_number')->nullable();
+            $table->string('property_address')->nullable();
+            $table->string('property_type')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

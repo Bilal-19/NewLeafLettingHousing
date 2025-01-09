@@ -31,7 +31,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
 
 Route::get("/", [TenantController::class, 'index'])->name('Home');
 Route::get("/about", [TenantController::class, 'About'])->name('About');
@@ -95,8 +95,10 @@ Route::get("/admin/customer/inquiries", [AdminController::class, 'CustomerQuerie
 
 
 // Landlord Dashboard
-Route::get("/landlord/dashboard",[LandlordController::class,'index'])->name('Landlord.Dashboard');
-Route::get("/landlord/upload/properties",[LandlordController::class,'uploadProperties'])->name('Landlord.UploadProperties');
-Route::get("/landlord/manage/dashboard",[LandlordController::class,'manageProperties'])->name('Landlord.ManageProperties');
-Route::get("/landlord/list/tenants",[LandlordController::class,'listTenants'])->name('Landlord.ListTenants');
-Route::get("/landlord/booked/properties",[LandlordController::class,'bookedProperties'])->name('Landlord.BookedProperties');
+Route::get("/landlord/dashboard", [LandlordController::class, 'index'])->name('Landlord.Dashboard');
+Route::get("/landlord/upload/properties", [LandlordController::class, 'uploadProperties'])->name('Landlord.UploadProperties');
+Route::get("/landlord/manage/dashboard", [LandlordController::class, 'manageProperties'])->name('Landlord.ManageProperties');
+Route::get("/landlord/list/tenants", [LandlordController::class, 'listTenants'])->name('Landlord.ListTenants');
+Route::get("/landlord/booked/properties", [LandlordController::class, 'bookedProperties'])->name('Landlord.BookedProperties');
+Route::get("/landlord/profile", [LandlordController::class, 'myProfile'])->name('Landlord.Profile');
+Route::post("/landlord/update/profile", [LandlordController::class, 'updateProfile'])->name('Landlord.Update.Profile');
