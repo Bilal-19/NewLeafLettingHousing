@@ -213,32 +213,32 @@
                             </li>
 
                             <li class="nav-item mb-1">
-                                <a class="nav-link d-flex align-items-center gap-3 {{ request()->routeIs('Admin.Services') ? 'active-link' : '' }}" aria-current="page"
-                                    href="{{route('Admin.Services')}}">
+                                <a class="nav-link d-flex align-items-center gap-3 {{ request()->routeIs('Landlord.UploadProperties') ? 'active-link' : '' }}" aria-current="page"
+                                    href="{{route('Landlord.UploadProperties')}}">
                                     <i class="fa-solid fa-building-user"></i>
                                     Upload Properties
                                 </a>
                             </li>
 
                             <li class="nav-item mb-1">
-                                <a class="nav-link d-flex align-items-center gap-3 {{ request()->routeIs('Admin.Tenants') ? 'active-link' : '' }}" aria-current="page"
-                                    href="{{route('Admin.Tenants')}}">
+                                <a class="nav-link d-flex align-items-center gap-3 {{ request()->routeIs('Landlord.ManageProperties') ? 'active-link' : '' }}" aria-current="page"
+                                    href="{{route('Landlord.ManageProperties')}}">
                                     <i class="fa-solid fa-people-roof"></i>
                                     Manage Properties
                                 </a>
                             </li>
 
                             <li class="nav-item mb-1">
-                                <a class="nav-link d-flex align-items-center gap-3 {{ request()->routeIs('Admin.Landlords') ? 'active-link' : '' }}" aria-current="page"
-                                    href="{{route('Admin.Landlords')}}">
+                                <a class="nav-link d-flex align-items-center gap-3 {{ request()->routeIs('Landlord.ListTenants') ? 'active-link' : '' }}" aria-current="page"
+                                    href="{{route('Landlord.ListTenants')}}">
                                     <i class="fa-solid fa-handshake-simple"></i>
                                     Tenants List
                                 </a>
                             </li>
 
                             <li class="nav-item mb-1">
-                                <a class="nav-link d-flex align-items-center gap-3 {{ request()->routeIs('Admin.Landlords') ? 'active-link' : '' }}" aria-current="page"
-                                    href="{{route('Admin.Landlords')}}">
+                                <a class="nav-link d-flex align-items-center gap-3 {{ request()->routeIs('Landlord.BookedProperties') ? 'active-link' : '' }}" aria-current="page"
+                                    href="{{route('Landlord.BookedProperties')}}">
                                     <i class="fa-solid fa-handshake-simple"></i>
                                     Booked Properties
                                 </a>

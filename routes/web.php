@@ -96,3 +96,7 @@ Route::get("/admin/customer/inquiries", [AdminController::class, 'CustomerQuerie
 
 // Landlord Dashboard
 Route::get("/landlord/dashboard",[LandlordController::class,'index'])->name('Landlord.Dashboard');
+Route::get("/landlord/upload/properties",[LandlordController::class,'uploadProperties'])->name('Landlord.UploadProperties');
+Route::get("/landlord/manage/dashboard",[LandlordController::class,'manageProperties'])->name('Landlord.ManageProperties');
+Route::get("/landlord/list/tenants",[LandlordController::class,'listTenants'])->name('Landlord.ListTenants');
+Route::get("/landlord/booked/properties",[LandlordController::class,'bookedProperties'])->name('Landlord.BookedProperties');

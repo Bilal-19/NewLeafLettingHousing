@@ -2,7 +2,7 @@
 @section('main-section')
     <div class="container-fluid">
         <div class="row mt-3">
-            <h3 class="fw-bold text-center"><span class="text-forest-green">Landlord Dashboard</span></h3>
+            <h3 class="fw-bold text-center">Upload <span class="text-forest-green">Properties</span></h3>
         </div>
     </div>
 @endsection
