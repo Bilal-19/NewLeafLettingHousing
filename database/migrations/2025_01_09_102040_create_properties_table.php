@@ -17,13 +17,13 @@ return new class extends Migration {
             $table->string('property_type');
             $table->string('property_status');
             $table->string('monthly_rent');
-            $table->string('property_description');
+            $table->text('property_description');
             $table->string('property_features');
             $table->string('bedrooms');
             $table->string('bathrooms');
             $table->string('reception');
             $table->string('property_thumbnail');
-            $table->string('property_images');
+            $table->text('property_images');
 
             $table->unsignedBigInteger('user_id');
 

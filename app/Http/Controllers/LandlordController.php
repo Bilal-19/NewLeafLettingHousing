@@ -23,6 +23,70 @@ class LandlordController extends Controller
         return view("Landlord.UploadProperties");
     }
 
+    public function createProperties(Request $request)
+    {
+        // Form Validation
+        $request->validate([
+            'name' => 'required',
+            'address' => 'required',
+            'property_type' => 'required',
+            'property_status' => 'required',
+            'rent' => 'required',
+            'description' => 'required',
+            'features' => 'required',
+            'bedrooms' => 'required',
+            'bathrooms' => 'required',
+            'receptions' => 'required',
+            'thumbnail' => 'required|file|image',
+            'images.*' => 'required|file'
+        ]);
+
+        // Create timestamp of thumbnail image
+        $timestampThumbnail = time() . '.' . $request->thumbnail->getClientOriginalExtension();
+
+        // Move thumbnail image to public folder
+        $request->thumbnail->move("Properties/Thumbnail", $timestampThumbnail);
+
+        // Multiple Images - Create timestamp and store it into public folder
+        $image = array();
+        if ($files = $request->file('images')) {
+            foreach ($files as $file) {
+                $image_name = md5(rand(1000, 10000));
+                $ext = strtolower($file->getClientOriginalExtension());
+                $image_full_name = $image_name . '.' . $ext;
+                $upload_path = 'Properties/Images/';
+                $image_url = $upload_path . $image_full_name;
+                $file->move($upload_path, $image_full_name);
+                $image[] = $image_url;
+            }
+        }
+
+        $isRecordCreated = DB::table('properties')->insert([
+            'property_name' => $request->name,
+            'property_address' => $request->address,
+            'property_type' => $request->property_type,
+            'property_status' => $request->property_status,
+            'monthly_rent' => $request->rent,
+            'property_description' => $request->description,
+            'property_features' => $request->features,
+            'bedrooms' => $request->bedrooms,
+            'bathrooms' => $request->bathrooms,
+            'reception' => $request->receptions,
+            'property_thumbnail' => $timestampThumbnail,
+            'property_images' => implode('|', $image),
+            'user_id' => Auth::user()->id
+        ]);
+
+        if ($isRecordCreated){
+            toastr()->success('Property added successfully');
+            return redirect()->back();
+        } else {
+            toastr()->error('Something went wrong.');
+            return redirect()->back();
+        }
+
+    }
+
     public function manageProperties()
     {
         return view("Landlord.ManageProperties");
