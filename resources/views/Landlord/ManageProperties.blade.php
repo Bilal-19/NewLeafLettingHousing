@@ -37,7 +37,11 @@
                             </td>
                             <td>{{ $record->property_name }}</td>
                             <td>{{ $record->property_address }}</td>
-                            <td>{{ $record->property_status }}</td>
+                            <td class="text-center">
+                                <a href="{{route('Landlord.TogglePropertyStatus', ['id' => $record->id])}}" class="text-dark">
+                                    <i class="{{$record->property_status == 'Rented' ? 'fa-solid' : 'fa-regular'}} fa-star"></i>
+                                </a>
+                            </td>
                             <td class="text-center">
                                 <a href="{{ route('Landlord.ViewProperty', ['id' => $record->id]) }}" class="text-success">
                                     <i class="fa-solid fa-eye"></i></a>

@@ -99,6 +99,27 @@ class LandlordController extends Controller
         return view('Landlord.ViewPropertyDetails', with(compact('findProperty')));
     }
 
+    public function togglePropertyStatus($id)
+    {
+        $findProperty = DB::table('properties')->where('id', '=', $id)->first();
+
+        if ($findProperty->property_status == 'Available') {
+            DB::table('properties')
+                ->where('id', '=', $id)
+                ->update([
+                    'property_status' => 'Rented'
+                ]);
+        } else {
+            DB::table('properties')
+                ->where('id', '=', $id)
+                ->update([
+                    'property_status' => 'Available'
+                ]);
+        }
+
+        toastr()->success('Property status updated');
+        return redirect()->back();
+    }
     public function listTenants()
     {
         return view("Landlord.ViewTenants");
