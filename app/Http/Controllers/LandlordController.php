@@ -120,6 +120,12 @@ class LandlordController extends Controller
         toastr()->success('Property status updated');
         return redirect()->back();
     }
+
+    public function editProperty($id)
+    {
+        $findProperty = DB::table('properties')->find($id);
+        return view('Landlord.EditProperty', with(compact('findProperty')));
+    }
     public function listTenants()
     {
         return view("Landlord.ViewTenants");

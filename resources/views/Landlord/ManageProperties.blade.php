@@ -38,8 +38,10 @@
                             <td>{{ $record->property_name }}</td>
                             <td>{{ $record->property_address }}</td>
                             <td class="text-center">
-                                <a href="{{route('Landlord.TogglePropertyStatus', ['id' => $record->id])}}" class="text-dark">
-                                    <i class="{{$record->property_status == 'Rented' ? 'fa-solid' : 'fa-regular'}} fa-star"></i>
+                                <a href="{{ route('Landlord.TogglePropertyStatus', ['id' => $record->id]) }}"
+                                    class="text-dark">
+                                    <i
+                                        class="{{ $record->property_status == 'Rented' ? 'fa-solid' : 'fa-regular' }} fa-star"></i>
                                 </a>
                             </td>
                             <td class="text-center">
@@ -47,7 +49,8 @@
                                     <i class="fa-solid fa-eye"></i></a>
                             </td>
                             <td class="text-center">
-                                <a href="" class="text-primary"><i class="fa-solid fa-pen-to-square"></i></a>
+                                <a href="{{ route('Landlord.EditProperty', ['id' => $record->id]) }}"
+                                    class="text-primary"><i class="fa-solid fa-pen-to-square"></i></a>
                             </td>
                             <td class="text-center">
                                 <a href="" class="text-danger"><i class="fa-solid fa-trash-can"></i></a>

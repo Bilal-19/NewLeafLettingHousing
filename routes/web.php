@@ -101,6 +101,7 @@ Route::get("/landlord/upload/properties", [LandlordController::class, 'uploadPro
 Route::post("/landlord/create/property", [LandlordController::class, 'createProperties'])->name('Landlord.CreateProperties');
 Route::get("/landlord/view/property/{id}", [LandlordController::class, 'viewDetailProperty'])->name('Landlord.ViewProperty');
 Route::get("/landlord/property/status/{id}", [LandlordController::class, 'togglePropertyStatus'])->name('Landlord.TogglePropertyStatus');
+Route::get("/landlord/edit/property/{id}", [LandlordController::class, 'editProperty'])->name('Landlord.EditProperty');
 
 
 Route::get("/landlord/manage/dashboard", [LandlordController::class, 'manageProperties'])->name('Landlord.ManageProperties');
