@@ -77,7 +77,7 @@ class LandlordController extends Controller
             'user_id' => Auth::user()->id
         ]);
 
-        if ($isRecordCreated){
+        if ($isRecordCreated) {
             toastr()->success('Property added successfully');
             return redirect()->back();
         } else {
@@ -89,7 +89,14 @@ class LandlordController extends Controller
 
     public function manageProperties()
     {
-        return view("Landlord.ManageProperties");
+        $fetchAllProperties = DB::table('properties')->get();
+        return view("Landlord.ManageProperties", with(compact('fetchAllProperties')));
+    }
+
+    public function viewDetailProperty($id)
+    {
+        $findProperty = DB::table('properties')->find($id);
+        return view('Landlord.ViewPropertyDetails', with(compact('findProperty')));
     }
 
     public function listTenants()
