@@ -17,10 +17,10 @@
         </div>
 
         <div class="col-md-6 mx-auto">
-            <form action="" autocomplete="off">
+            <form action="{{ route('Properties') }}" method="get" autocomplete="off">
                 <div class="input-group">
                     <input type="search" name="search" class="form-control"
-                        placeholder="Search properties by location, price range, size, or amenities..">
+                        placeholder="Search properties by location, price range, size, or amenities.." value="{{old('search')}}">
                     <button type="submit" class="btn btn-success">
                         <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>
                         Search
@@ -44,7 +44,7 @@
                         <p class="fw-medium fs-24 fs-sm-18 d-flex justify-content-between">
                             <span>Bedrooms: {{ $record->bedrooms }}</span>
                             <span>Bathrooms: {{ $record->bathrooms }}</span>
-                        <span>Receptions: {{ $record->reception }}</span>
+                            <span>Receptions: {{ $record->reception }}</span>
                         </p>
                     </div>
                 </div>

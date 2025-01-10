@@ -62,9 +62,26 @@ class TenantController extends Controller
             return redirect()->back();
         }
     }
-    public function Properties()
+    public function Properties(Request $request)
     {
-        $fetchAvailableProperties = DB::table('properties')->where('property_status', '=', 'Available')->get();
-        return view('Tenant.Properties', with(compact('fetchAvailableProperties')));
+        $searchVal = $request->search ?? "";
+
+        if ($searchVal != "") {
+            $fetchAvailableProperties = DB::table('properties')
+                ->where('property_status', '=', "Available")
+                ->where('property_name', 'LIKE', "%$searchVal%")
+                ->orWhere('monthly_rent', '>=', $searchVal)
+                ->orWhere('monthly_rent', '>=', $searchVal)
+                ->orWhere('property_features', 'LIKE', "%$searchVal%")
+                ->get();
+            return view('Tenant.Properties', with(compact('fetchAvailableProperties')));
+
+        } else {
+            $fetchAvailableProperties = DB::table('properties')
+                ->where('property_status', '=', 'Available')
+                ->get();
+            return view('Tenant.Properties', with(compact('fetchAvailableProperties')));
+
+        }
     }
 }
