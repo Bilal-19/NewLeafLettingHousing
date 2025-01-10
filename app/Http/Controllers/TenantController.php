@@ -12,27 +12,33 @@ class TenantController extends Controller
         return view('Tenant.LandingPage');
     }
 
-    public function About(){
+    public function About()
+    {
         return view('Tenant.About');
     }
 
-    public function CSR(){
+    public function CSR()
+    {
         return view('Tenant.CSR');
     }
 
-    public function Landlords(){
+    public function Landlords()
+    {
         return view('Tenant.Landlords');
     }
 
-    public function FAQs(){
+    public function FAQs()
+    {
         return view('Tenant.FAQs');
     }
 
-    public function Contact(){
+    public function Contact()
+    {
         return view('Tenant.Contact');
     }
 
-    public function submitInquiry(Request $request){
+    public function submitInquiry(Request $request)
+    {
         // Form Validation
         $request->validate([
             'fullName' => 'required',
@@ -48,7 +54,7 @@ class TenantController extends Controller
             'message' => $request->message
         ]);
 
-        if ($isInquiryCreated){
+        if ($isInquiryCreated) {
             toastr()->success("We've received your information. Our team will contact you soon");
             return redirect()->back();
         } else {
@@ -56,7 +62,9 @@ class TenantController extends Controller
             return redirect()->back();
         }
     }
-    public function Properties(){
-        return view('Tenant.Properties');
+    public function Properties()
+    {
+        $fetchAvailableProperties = DB::table('properties')->where('property_status', '=', 'Available')->get();
+        return view('Tenant.Properties', with(compact('fetchAvailableProperties')));
     }
 }

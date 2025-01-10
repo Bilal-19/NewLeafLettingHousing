@@ -37,7 +37,7 @@ body {
 .text-dark-charcoal {
     color: #333333;
 }
-.text-mid-gray{
+.text-mid-gray {
     color: #888888;
 }
 /* Background Color */
@@ -53,7 +53,7 @@ body {
     background-color: #eeeeee;
 }
 
-.bg-white{
+.bg-white {
     background-color: #ffffff;
 }
 
@@ -96,12 +96,20 @@ body {
     font-size: 24px;
 }
 
+.fs-28 {
+    font-size: 28px;
+}
+
 .fs-32 {
     font-size: 32px;
 }
 
 .fs-34 {
     font-size: 34px;
+}
+
+.fs-40 {
+    font-size: 40px;
 }
 
 .fs-44 {
@@ -296,7 +304,7 @@ body {
     margin-top: 30px;
 }
 
-#landlord-footer-bg{
+#landlord-footer-bg {
     background-image: url("/images/landlordFooterBg.png");
     background-repeat: no-repeat;
     background-size: cover;
@@ -304,12 +312,31 @@ body {
 }
 
 /* Contact Us Page */
-#contact-us-card{
+#contact-us-card {
     width: 556px;
     height: 588px;
     border-radius: 12px;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     padding: 20px 30px;
+}
+
+/* Properties Page */
+.available-property-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border:1px solid black; */
+    border-radius: 12px;
+    background-color: #ffffff;
+    padding: 20px 28px;
+    height: 443px;
+}
+
+.available-property-card img {
+    border-radius: 8px;
+    /* height: 400px;
+    width: 400px;
+    object-fit: cover; */
 }
 /* Media Query */
 @media only screen and (max-width: 768px) {
@@ -399,7 +426,13 @@ body {
         padding: 17px 18px;
     }
 
-    #contact-us-card{
+    #contact-us-card {
         width: 450px;
+    }
+
+    .available-property-card{
+        height: fit-content;
+        width: 96%;
+        margin: auto;
     }
 }
