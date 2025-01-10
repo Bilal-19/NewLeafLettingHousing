@@ -269,18 +269,14 @@
 
                         <ul class="nav flex-column mb-auto mt-2">
                             <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center gap-2 text-dark" href="#">
-                                    <svg class="bi">
-                                        <use xlink:href="#gear-wide-connected" />
-                                    </svg>
-                                    Settings
+                                <a class="nav-link d-flex align-items-center gap-2 text-forest-green" href="#">
+                                    <i class="fa-regular fa-comment-dots"></i>
+                                    Feedback Form
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link d-flex align-items-center gap-2 text-forest-green" href="{{route('Landlord.SingOut')}}">
-                                    <svg class="bi">
-                                        <use xlink:href="#door-closed" />
-                                    </svg>
+                                    <i class="fa-solid fa-right-from-bracket"></i>
                                     Sign out
                                 </a>
                             </li>
