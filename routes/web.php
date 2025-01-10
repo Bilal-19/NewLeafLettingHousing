@@ -41,6 +41,7 @@ Route::get("/faqs", [TenantController::class, 'FAQs'])->name('FAQs');
 Route::get("/contact", [TenantController::class, 'Contact'])->name('Contact');
 Route::get("/available/properties", [TenantController::class, 'Properties'])->name('Properties');
 Route::post("/submit/inquiry", [TenantController::class, 'submitInquiry'])->name('Submit.Inquiry');
+Route::get("/view/detail/property/{id}", [TenantController::class, 'viewDetailProperty'])->name('View.Detail.Property');
 
 
 // Admin

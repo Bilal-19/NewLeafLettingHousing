@@ -84,4 +84,11 @@ class TenantController extends Controller
 
         }
     }
+
+    public function viewDetailProperty($id){
+        $findProperty = DB::table('properties')->find($id);
+        $fetchPropertyImages = explode("|", $findProperty->property_images);
+
+        return view('Tenant.ViewProperty', with(compact('findProperty', 'fetchPropertyImages')));
+    }
 }

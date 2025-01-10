@@ -46,6 +46,7 @@
                             <span>Bathrooms: {{ $record->bathrooms }}</span>
                             <span>Receptions: {{ $record->reception }}</span>
                         </p>
+                        <a href="{{route('View.Detail.Property', ['id' => $record->id])}}" class="btn btn-success">View Property</a>
                     </div>
                 </div>
             @endforeach
