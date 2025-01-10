@@ -126,6 +126,80 @@ class LandlordController extends Controller
         $findProperty = DB::table('properties')->find($id);
         return view('Landlord.EditProperty', with(compact('findProperty')));
     }
+
+    public function updateProperty(Request $request, $id)
+    {
+        $findProperty = DB::table('properties')->find($id);
+
+        // Form Validation
+        $request->validate([
+            'name' => 'required',
+            'address' => 'required',
+            'property_type' => 'required',
+            'property_status' => 'required',
+            'rent' => 'required',
+            'description' => 'required',
+            'features' => 'required',
+            'bedrooms' => 'required',
+            'bathrooms' => 'required',
+            'receptions' => 'required'
+        ]);
+
+        if ($request->file('thumbnail')) {
+            // Create timestamp of thumbnail image
+            $timestampThumbnail = time() . '.' . $request->thumbnail->getClientOriginalExtension();
+
+            // Move thumbnail image to public folder
+            $request->thumbnail->move("Properties/Thumbnail", $timestampThumbnail);
+        } else {
+            $findPropertyThumbnail = DB::table('properties')->select('property_thumbnail')->first();
+            $timestampThumbnail = $findPropertyThumbnail->property_thumbnail;
+        }
+
+
+        // Multiple Images - Create timestamp and store it into public folder
+        $image = array();
+        if ($files = $request->file('images')) {
+            foreach ($files as $file) {
+                $image_name = md5(rand(1000, 10000));
+                $ext = strtolower($file->getClientOriginalExtension());
+                $image_full_name = $image_name . '.' . $ext;
+                $upload_path = 'Properties/Images/';
+                $image_url = $upload_path . $image_full_name;
+                $file->move($upload_path, $image_full_name);
+                $image[] = $image_url;
+            }
+        } else {
+            $image = explode("|", $findProperty->property_images);
+        }
+
+        $isRecordUpdated = DB::table('properties')
+        ->where('id','=',$id)
+        ->update([
+            'property_name' => $request->name,
+            'property_address' => $request->address,
+            'property_type' => $request->property_type,
+            'property_status' => $request->property_status,
+            'monthly_rent' => $request->rent,
+            'property_description' => $request->description,
+            'property_features' => $request->features,
+            'bedrooms' => $request->bedrooms,
+            'bathrooms' => $request->bathrooms,
+            'reception' => $request->receptions,
+            'property_thumbnail' => $timestampThumbnail,
+            'property_images' => implode('|', $image),
+            'user_id' => Auth::user()->id
+        ]);
+
+        if ($isRecordUpdated) {
+            toastr()->success('Property updated successfully');
+            return redirect()->back();
+        } else {
+            toastr()->error('No changes detected.');
+            return redirect()->back();
+        }
+
+    }
     public function listTenants()
     {
         return view("Landlord.ViewTenants");

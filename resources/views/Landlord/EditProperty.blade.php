@@ -14,7 +14,7 @@
         </div>
 
         <div class="row mt-3">
-            <form action="{{ route('Landlord.CreateProperties') }}" method="post" autocomplete="off"
+            <form action="{{ route('Landlord.UpdateProperty',['id' => $findProperty->id]) }}" method="post" autocomplete="off"
                 enctype="multipart/form-data">
                 @csrf
                 <div class="row d-flex justify-content-around">
