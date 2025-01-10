@@ -174,22 +174,22 @@ class LandlordController extends Controller
         }
 
         $isRecordUpdated = DB::table('properties')
-        ->where('id','=',$id)
-        ->update([
-            'property_name' => $request->name,
-            'property_address' => $request->address,
-            'property_type' => $request->property_type,
-            'property_status' => $request->property_status,
-            'monthly_rent' => $request->rent,
-            'property_description' => $request->description,
-            'property_features' => $request->features,
-            'bedrooms' => $request->bedrooms,
-            'bathrooms' => $request->bathrooms,
-            'reception' => $request->receptions,
-            'property_thumbnail' => $timestampThumbnail,
-            'property_images' => implode('|', $image),
-            'user_id' => Auth::user()->id
-        ]);
+            ->where('id', '=', $id)
+            ->update([
+                'property_name' => $request->name,
+                'property_address' => $request->address,
+                'property_type' => $request->property_type,
+                'property_status' => $request->property_status,
+                'monthly_rent' => $request->rent,
+                'property_description' => $request->description,
+                'property_features' => $request->features,
+                'bedrooms' => $request->bedrooms,
+                'bathrooms' => $request->bathrooms,
+                'reception' => $request->receptions,
+                'property_thumbnail' => $timestampThumbnail,
+                'property_images' => implode('|', $image),
+                'user_id' => Auth::user()->id
+            ]);
 
         if ($isRecordUpdated) {
             toastr()->success('Property updated successfully');
@@ -198,7 +198,21 @@ class LandlordController extends Controller
             toastr()->error('No changes detected.');
             return redirect()->back();
         }
+    }
 
+    public function deleteProperty($id)
+    {
+        $isPropertyDeleted = DB::table('properties')
+            ->where('id', '=', $id)
+            ->delete();
+
+        if ($isPropertyDeleted) {
+            toastr()->success('Property deleted successfully!');
+            return redirect()->back();
+        } else {
+            toastr()->success('Something went wrong. Please try again later.');
+            return redirect()->back();
+        }
     }
     public function listTenants()
     {

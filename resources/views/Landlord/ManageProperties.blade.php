@@ -53,7 +53,8 @@
                                     class="text-primary"><i class="fa-solid fa-pen-to-square"></i></a>
                             </td>
                             <td class="text-center">
-                                <a href="" class="text-danger"><i class="fa-solid fa-trash-can"></i></a>
+                                <a href="{{ route('Landlord.DeleteProperty', ['id' => $record->id]) }}" class="text-danger"><i
+                                        class="fa-solid fa-trash-can"></i></a>
                             </td>
                         </tr>
                     @endforeach

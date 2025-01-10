@@ -103,6 +103,7 @@ Route::get("/landlord/view/property/{id}", [LandlordController::class, 'viewDeta
 Route::get("/landlord/property/status/{id}", [LandlordController::class, 'togglePropertyStatus'])->name('Landlord.TogglePropertyStatus');
 Route::get("/landlord/edit/property/{id}", [LandlordController::class, 'editProperty'])->name('Landlord.EditProperty');
 Route::post("/landlord/update/property/{id}", [LandlordController::class, 'updateProperty'])->name('Landlord.UpdateProperty');
+Route::get("/landlord/delete/property/{id}", [LandlordController::class, 'deleteProperty'])->name('Landlord.DeleteProperty');
 
 
 Route::get("/landlord/manage/dashboard", [LandlordController::class, 'manageProperties'])->name('Landlord.ManageProperties');
