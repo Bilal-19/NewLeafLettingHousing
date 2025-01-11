@@ -85,7 +85,8 @@ class TenantController extends Controller
         }
     }
 
-    public function viewDetailProperty($id){
+    public function viewDetailProperty($id)
+    {
         $findProperty = DB::table('properties')->find($id);
         $fetchComments = DB::table('tenant_feedback')->where('property_id', '=', $findProperty->id)->get();
         $fetchPropertyImages = explode("|", $findProperty->property_images);
@@ -93,7 +94,8 @@ class TenantController extends Controller
         return view('Tenant.ViewProperty', with(compact('findProperty', 'fetchPropertyImages', 'fetchComments')));
     }
 
-    public function submitFeedback(Request $request, $id){
+    public function submitFeedback(Request $request, $id)
+    {
         $request->validate([
             'name' => 'required',
             'email' => 'required',
@@ -111,8 +113,60 @@ class TenantController extends Controller
             ]
         );
 
-        if ($isFeedbackSubmitted){
+        if ($isFeedbackSubmitted) {
             toastr()->success('Thankyou for sharing your valuable feedback');
+            return redirect()->back();
+        }
+    }
+
+    public function BookedProperty(Request $request, $id)
+    {
+        // Form Validation
+        $request->validate([
+            'fullName' => 'required',
+            'email' => 'required',
+            'phoneNumber' => 'required',
+            'address' => 'required',
+            'adults' => 'required|min:1|max:8',
+            'childrens' => 'required',
+            'monthsToStay' => 'required',
+            'accountTitle' => 'required',
+            'cardNumber' => 'required',
+            'cvc' => 'required',
+            'expMonth' => 'required',
+            'expYear' => 'required'
+        ]);
+
+        $isPropertyBooked = DB::table('booking')->insert(
+            [
+                'full_name' => $request->fullName,
+                'email' => $request->email,
+                'phone_number' => $request->phoneNumber,
+                'address' => $request->address,
+                'adults' => $request->adults,
+                'childrens' => $request->childrens,
+                'totalMonthsToStay' => $request->monthsToStay,
+                'account_title' => $request->accountTitle,
+                'card_number' => $request->cardNumber,
+                'cvc' => $request->cvc,
+                'expiration_month' => $request->expMonth,
+                'expiration_year' => $request->expYear,
+                'property_id' => $id
+            ]
+        );
+
+        // Update property booking status
+        DB::table('properties')
+            ->where('id', '=', $id)
+            ->update([
+                'property_status' => 'Booked'
+            ]);
+
+        if ($isPropertyBooked) {
+            toastr()->success('Your booking is confirmed.');
+            return redirect()->back();
+        } else {
+            toastr()->success('Something went wrong.');
             return redirect()->back();
         }
     }

@@ -42,7 +42,7 @@
         .property-booking input,
         .property-booking select {
             padding: 22px 28px;
-            margin-bottom: 10px;
+            margin-top: 15px;
         }
 
         input[type=number]::-webkit-inner-spin-button,
@@ -305,71 +305,143 @@
     <div class="row">
         <div class="col-md-6 mx-auto property-booking">
             <h4 class="fw-semibold fs-40 fs-sm-28 text-forest-green">Property Booking</h4>
-            <form action="" autocomplete="off" class="mt-5">
+            <form action="{{ route('Booked.Property', ['id' => $findProperty->id]) }}" autocomplete="off" class="mt-5"
+                method="POST">
+                @csrf
                 <div>
-                    <input type="text" name="fullName" class="form-control" placeholder="Enter your full Name">
+                    <input type="text" name="fullName" class="form-control" placeholder="Enter your full Name"
+                        value="{{ old('fullName') }}">
+                    <small class="text-danger">
+                        @error('fullName')
+                            {{ $message }}
+                        @enderror
+                    </small>
                 </div>
 
                 <div>
-                    <input type="email" name="email" class="form-control" placeholder="Enter your Email">
+                    <input type="email" name="email" class="form-control" placeholder="Enter your Email"
+                        value="{{ old('email') }}">
+                    <small class="text-danger">
+                        @error('email')
+                            {{ $message }}
+                        @enderror
+                    </small>
                 </div>
 
                 <div>
-                    <input type="text" name="phoneNumber" class="form-control" placeholder="Enter your Phone Number">
+                    <input type="text" name="phoneNumber" class="form-control" placeholder="Enter your Phone Number"
+                        value="{{ old('phoneNumber') }}">
+                    <small class="text-danger">
+                        @error('phoneNumber')
+                            {{ $message }}
+                        @enderror
+                    </small>
                 </div>
 
                 <div>
-                    <input type="text" name="address" class="form-control" placeholder="Enter your Address">
+                    <input type="text" name="address" class="form-control" placeholder="Enter your Address"
+                        value="{{ old('address') }}">
+                    <small class="text-danger">
+                        @error('address')
+                            {{ $message }}
+                        @enderror
+                    </small>
                 </div>
 
                 <div>
                     <select name="adults" class="form-select">
                         <option>Select No of Adults</option>
                         @for ($i = 1; $i <= 8; $i++)
-                            <option value={{ $i }}>{{ $i }}</option>
+                            <option value="{{ $i }}" {{ old('adults') == $i ? 'selected' : '' }}>
+                                {{ $i }}
+                            </option>
                         @endfor
                     </select>
+                    <small class="text-danger">
+                        @error('adults')
+                            {{ $message }}
+                        @enderror
+                    </small>
                 </div>
 
                 <div>
                     <select name="childrens" class="form-select">
                         <option>Select No of Childrens</option>
                         @for ($i = 1; $i <= 4; $i++)
-                            <option value={{ $i }}>{{ $i }}</option>
+                        <option value="{{ $i }}" {{ old('childrens') == $i ? 'selected' : '' }}>
+                            {{ $i }}
+                        </option>
                         @endfor
                     </select>
+                    <small class="text-danger">
+                        @error('childrens')
+                            {{ $message }}
+                        @enderror
+                    </small>
                 </div>
 
 
                 <div>
-                    <select name="childrens" class="form-select">
+                    <select name="monthsToStay" class="form-select">
                         <option>Select Total Months to Stay</option>
                         @for ($i = 1; $i <= 4; $i++)
-                            <option value={{ $i }}>{{ $i }}</option>
+                        <option value="{{ $i }}" {{ old('monthsToStay') == $i ? 'selected' : '' }}>
+                            {{ $i }}
+                        </option>
                         @endfor
                     </select>
+                    <small class="text-danger">
+                        @error('monthsToStay')
+                            {{ $message }}
+                        @enderror
+                    </small>
                 </div>
 
                 <div>
                     <input type="text" name="accountTitle" class="form-control"
-                        placeholder="Enter your Account Title">
+                        placeholder="Enter your Account Title" value="{{old('accountTitle')}}">
+                    <small class="text-danger">
+                        @error('accountTitle')
+                            {{ $message }}
+                        @enderror
+                    </small>
                 </div>
 
                 <div>
-                    <input type="number" name="cardNumber" class="form-control" placeholder="Enter your Card Number">
+                    <input type="number" name="cardNumber" class="form-control" placeholder="Enter your Card Number" value="{{old('cardNumber')}}">
+                    <small class="text-danger">
+                        @error('cardNumber')
+                            {{ $message }}
+                        @enderror
+                    </small>
                 </div>
 
                 <div class="d-flex justify-content-between">
                     <div>
-                        <input type="number" name="cvc" class="form-control" placeholder="Ex. 123">
+                        <input type="number" name="cvc" class="form-control" placeholder="Ex. 123" value="{{old('cvc')}}">
+                        <small class="text-danger">
+                            @error('cvc')
+                                {{ 'Enter card verificatio code' }}
+                            @enderror
+                        </small>
                     </div>
 
                     <div>
-                        <input type="number" name="cvc" class="form-control" placeholder="Exp Month">
+                        <input type="number" name="expMonth" class="form-control" placeholder="Exp Month" value="{{old('expMonth')}}">
+                        <small class="text-danger">
+                            @error('expMonth')
+                                {{ 'Enter expiration month' }}
+                            @enderror
+                        </small>
                     </div>
 
                     <div>
-                        <input type="number" name="cvc" class="form-control" placeholder="Exp Year">
+                        <input type="number" name="expYear" class="form-control" placeholder="Exp Year" value="{{old('expYear')}}">
+                        <small class="text-danger">
+                            @error('expYear')
+                                {{ 'Enter expiration year' }}
+                            @enderror
+                        </small>
                     </div>
                 </div>
 

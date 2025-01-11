@@ -43,6 +43,7 @@ Route::get("/available/properties", [TenantController::class, 'Properties'])->na
 Route::post("/submit/inquiry", [TenantController::class, 'submitInquiry'])->name('Submit.Inquiry');
 Route::get("/view/detail/property/{id}", [TenantController::class, 'viewDetailProperty'])->name('View.Detail.Property');
 Route::post("/submit/feedback/{id}", [TenantController::class, 'submitFeedback'])->name('Submit.Feedback');
+Route::post("/book/property/{id}", [TenantController::class, 'BookedProperty'])->name('Booked.Property');
 
 
 // Admin
