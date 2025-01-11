@@ -74,6 +74,11 @@
             .property-booking {
                 width: 90%;
             }
+
+            .property-booking input,
+            .property-booking select {
+                padding: 11px 14px;
+            }
         }
     </style>
 @endpush
@@ -179,17 +184,12 @@
     </div>
 
     <div class="row">
-        <div class="col-11 col-md-11 bg-white rounded mx-auto mt-5 mb-5 p-5">
-            <h4 class="fw-semibold fs-40 text-forest-green fs-sm-28">Comments</h4>
-            <p>Would you like to share your valuable feedback? If so, please click
+        <div class="col-11 col-md-11 rounded mx-auto mt-5 p-5">
+            <h4 class="fw-semibold fs-40 text-forest-green fs-sm-28 text-center">Testimonials</h4>
+            <p class="text-center">Would you like to share your valuable feedback? If so, please click
                 <a href="" class="text-forest-green text-decoration-none" data-bs-toggle="modal"
                     data-bs-target="#exampleModal">here.</a>
             </p>
-
-            @foreach ($fetchComments as $comment)
-                <p>{{ $comment->tenant_message }} ~ {{ $comment->tenant_name }}, {{ $comment->tenant_country }}</p>
-            @endforeach
-
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -235,11 +235,11 @@
                                 <div class="mt-3">
                                     <textarea name="message" rows="5" class="form-control" placeholder="Write your message here"
                                         style="resize:none;"></textarea>
-                                        <small class="text-danger">
-                                            @error('message')
-                                                {{$message}}
-                                            @enderror
-                                        </small>
+                                    <small class="text-danger">
+                                        @error('message')
+                                            {{ $message }}
+                                        @enderror
+                                    </small>
                                 </div>
 
                                 <div class="mt-3">
@@ -252,6 +252,55 @@
             </div>
         </div>
     </div>
+    @if (count($fetchComments) >= 3)
+        <div class="row d-flex justify-content-center align-items-center mb-5">
+            <div class="col-md-11 d-flex align-items-center">
+                <a onclick="swiper.slidePrev()" class="pagination-arrow">
+                    <img src="{{ asset('images/leftArrow.png') }}" alt="">
+                </a>
+                <div class="swiper">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+
+                        @foreach ($fetchComments as $comment)
+                            {{-- <p>{{ $comment->tenant_message }} ~ {{ $comment->tenant_name }}, {{ $comment->tenant_country }}</p> --}}
+                            <div class="swiper-slide p-5">
+                                <img src="{{ asset('images/startComma.png') }}" alt="">
+                                <p class="text-center">
+                                    {{ $comment->tenant_message }}
+                                </p>
+                                <p class="user-profile">
+                                    {{-- <img src="{{ asset('images/male.png') }}" alt=""> --}}
+                                    <span class="fs-20 fs-sm-18"><span
+                                            class="fw-semibold">{{ $comment->tenant_name }}</span>,
+                                        {{ $comment->tenant_country }}</span>
+                                </p>
+                            </div>
+                        @endforeach
+
+                    </div>
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination"></div>
+
+                    <!-- If we need navigation buttons -->
+                    {{-- <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div> --}}
+
+                    <!-- If we need scrollbar -->
+                    {{-- <div class="swiper-scrollbar"></div> --}}
+
+                </div>
+                <a onclick="swiper.slideNext()" class="pagination-arrow">
+                    <img src="{{ asset('images/rightArrow.png') }}" alt="">
+                </a>
+            </div>
+        </div>
+    @else
+        <p class="text-center">No feedback has been provided yet.</p>
+    @endif
+
+
 
     <div class="row">
         <div class="col-md-6 mx-auto property-booking">
