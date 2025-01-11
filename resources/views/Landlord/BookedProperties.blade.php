@@ -1,4 +1,8 @@
 @extends('LandlordLayout.LandlordDashboard')
+@php
+    use Carbon\Carbon;
+
+@endphp
 @section('main-section')
     <div class="container-fluid">
         <div class="row mt-3">
@@ -16,13 +20,13 @@
                         <th>Booking Time</th>
                     </tr>
                     @foreach ($fetchAllBookedProperties as $record)
-                    <tr>
-                        <td>{{$record->property_name}}</td>
-                        <td>{{$record->property_address}}</td>
-                        <td>{{$record->full_name}}</td>
-                        <td>{{date('d M Y', strtotime($record->created_at))}}</td>
-                        <td>{{date('h:i:sa', strtotime($record->created_at))}}</td>
-                    </tr>
+                        <tr>
+                            <td>{{ $record->property_name }}</td>
+                            <td>{{ $record->prop_address }}</td>
+                            <td>{{ $record->full_name }}</td>
+                            <td>{{ Carbon::parse($record->booking_created_at)->format('d M Y') }}</td>
+                            <td>{{ Carbon::parse($record->booking_created_at)->format('h:i A') }}</td>
+                        </tr>
                     @endforeach
                 </table>
             </div>

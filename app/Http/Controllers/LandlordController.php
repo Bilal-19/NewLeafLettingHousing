@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class LandlordController extends Controller
 {
@@ -76,7 +77,8 @@ class LandlordController extends Controller
             'square_feet_area' => $request->sqFeetArea,
             'property_thumbnail' => $timestampThumbnail,
             'property_images' => implode('|', $image),
-            'user_id' => Auth::user()->id
+            'user_id' => Auth::user()->id,
+            'created_at' => Carbon::now()
         ]);
 
         if ($isRecordCreated) {
@@ -110,13 +112,14 @@ class LandlordController extends Controller
             DB::table('properties')
                 ->where('id', '=', $id)
                 ->update([
-                    'property_status' => 'Rented'
+                    'updated_at' => Carbon::now()
                 ]);
         } else {
             DB::table('properties')
                 ->where('id', '=', $id)
                 ->update([
-                    'property_status' => 'Available'
+                    'property_status' => 'Available',
+                    'updated_at' => Carbon::now()
                 ]);
         }
 
@@ -190,7 +193,8 @@ class LandlordController extends Controller
                 'reception' => $request->receptions,
                 'property_thumbnail' => $timestampThumbnail,
                 'property_images' => implode('|', $image),
-                'user_id' => Auth::user()->id
+                'user_id' => Auth::user()->id,
+                'updated_at' => Carbon::now()
             ]);
 
         if ($isRecordUpdated) {
@@ -228,7 +232,16 @@ class LandlordController extends Controller
             ->join('properties', 'booking.property_id', '=', 'properties.id')
             ->join('users', 'properties.user_id', '=', 'users.id')
             ->where('users.id', $userID)
-            ->select('booking.*', 'properties.*', 'users.*','properties.property_address')
+            ->select(
+                'booking.full_name',
+                'booking.created_at as booking_created_at', // Alias for booking's created_at
+                'properties.created_at as property_created_at', // Alias for properties' created_at
+                'users.created_at as user_created_at', // Alias for users' created_at
+                'properties.property_address as prop_address',
+                'booking.*',
+                'properties.*',
+                'users.*'
+            )
             ->get();
         return view("Landlord.BookedProperties", with(compact('fetchAllBookedProperties')));
     }

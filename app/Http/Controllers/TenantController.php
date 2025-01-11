@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
+use Carbon\Carbon;
 class TenantController extends Controller
 {
     public function index()
@@ -51,7 +51,8 @@ class TenantController extends Controller
             'full_name' => $request->fullName,
             'email' => $request->email,
             'phone_number' => $request->phoneNumber,
-            'message' => $request->message
+            'message' => $request->message,
+            'created_at' => Carbon::now()
         ]);
 
         if ($isInquiryCreated) {
@@ -109,7 +110,8 @@ class TenantController extends Controller
                 'tenant_email' => $request->email,
                 'tenant_country' => $request->country,
                 'tenant_message' => $request->message,
-                'property_id' => $id
+                'property_id' => $id,
+                'created_at' => Carbon::now()
             ]
         );
 
@@ -151,7 +153,8 @@ class TenantController extends Controller
                 'cvc' => $request->cvc,
                 'expiration_month' => $request->expMonth,
                 'expiration_year' => $request->expYear,
-                'property_id' => $id
+                'property_id' => $id,
+                'created_at' => Carbon::now()
             ]
         );
 
