@@ -154,8 +154,7 @@ class LandlordController extends Controller
             // Move thumbnail image to public folder
             $request->thumbnail->move("Properties/Thumbnail", $timestampThumbnail);
         } else {
-            $findPropertyThumbnail = DB::table('properties')->select('property_thumbnail')->first();
-            $timestampThumbnail = $findPropertyThumbnail->property_thumbnail;
+            $timestampThumbnail = $findProperty->property_thumbnail;
         }
 
 
