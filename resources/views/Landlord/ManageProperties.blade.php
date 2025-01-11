@@ -19,7 +19,7 @@
             <div class="col-md-12">
                 <table class="table table-striped table-bordered table-hover">
                     <tr>
-                        <th>ID</th>
+                        {{-- <th>ID</th> --}}
                         <th>Thumbnail</th>
                         <th>Property Name</th>
                         <th>Address</th>
@@ -30,7 +30,7 @@
                     </tr>
                     @foreach ($fetchAllProperties as $record)
                         <tr>
-                            <td>{{ $record->id }}</td>
+                            {{-- <td>{{ $record->id }}</td> --}}
                             <td>
                                 <img src="{{ asset('Properties/Thumbnail/' . $record->property_thumbnail) }}" alt=""
                                     class="img-fluid thumbnail-img">

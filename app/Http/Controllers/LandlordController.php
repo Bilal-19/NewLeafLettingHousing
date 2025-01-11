@@ -91,7 +91,8 @@ class LandlordController extends Controller
 
     public function manageProperties()
     {
-        $fetchAllProperties = DB::table('properties')->get();
+        $userID = Auth::user()->id;
+        $fetchAllProperties = DB::table('properties')->where('user_id', '=', $userID)->get();
         return view("Landlord.ManageProperties", with(compact('fetchAllProperties')));
     }
 
@@ -222,7 +223,14 @@ class LandlordController extends Controller
 
     public function bookedProperties()
     {
-        return view("Landlord.BookedProperties");
+        $userID = Auth::user()->id;
+        $fetchAllBookedProperties = DB::table('booking')
+            ->join('properties', 'booking.property_id', '=', 'properties.id')
+            ->join('users', 'properties.user_id', '=', 'users.id')
+            ->where('users.id', $userID)
+            ->select('booking.*', 'properties.*', 'users.*','properties.property_address')
+            ->get();
+        return view("Landlord.BookedProperties", with(compact('fetchAllBookedProperties')));
     }
 
     public function myProfile()
