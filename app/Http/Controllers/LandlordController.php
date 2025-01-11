@@ -37,6 +37,7 @@ class LandlordController extends Controller
             'bedrooms' => 'required',
             'bathrooms' => 'required',
             'receptions' => 'required',
+            'sqFeetArea' => 'required',
             'thumbnail' => 'required|file|image',
             'images.*' => 'required|file'
         ]);
@@ -72,6 +73,7 @@ class LandlordController extends Controller
             'bedrooms' => $request->bedrooms,
             'bathrooms' => $request->bathrooms,
             'reception' => $request->receptions,
+            'square_feet_area' => $request->sqFeetArea,
             'property_thumbnail' => $timestampThumbnail,
             'property_images' => implode('|', $image),
             'user_id' => Auth::user()->id

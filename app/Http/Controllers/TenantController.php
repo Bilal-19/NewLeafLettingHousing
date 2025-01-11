@@ -87,8 +87,33 @@ class TenantController extends Controller
 
     public function viewDetailProperty($id){
         $findProperty = DB::table('properties')->find($id);
+        $fetchComments = DB::table('tenant_feedback')->where('property_id', '=', $findProperty->id)->get();
         $fetchPropertyImages = explode("|", $findProperty->property_images);
 
-        return view('Tenant.ViewProperty', with(compact('findProperty', 'fetchPropertyImages')));
+        return view('Tenant.ViewProperty', with(compact('findProperty', 'fetchPropertyImages', 'fetchComments')));
+    }
+
+    public function submitFeedback(Request $request, $id){
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'country' => 'required',
+            'message' => 'required'
+        ]);
+
+        $isFeedbackSubmitted = DB::table('tenant_feedback')->insert(
+            [
+                'tenant_name' => $request->name,
+                'tenant_email' => $request->email,
+                'tenant_country' => $request->country,
+                'tenant_message' => $request->message,
+                'property_id' => $id
+            ]
+        );
+
+        if ($isFeedbackSubmitted){
+            toastr()->success('Thankyou for sharing your valuable feedback');
+            return redirect()->back();
+        }
     }
 }

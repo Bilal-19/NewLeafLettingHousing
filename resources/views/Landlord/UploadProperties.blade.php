@@ -19,7 +19,8 @@
                 @csrf
                 <div class="row d-flex justify-content-around">
                     <div class="col-md-5">
-                        <input type="text" name="name" class="form-control" placeholder="Property Name" value="{{old("name")}}">
+                        <input type="text" name="name" class="form-control" placeholder="Property Name"
+                            value="{{ old('name') }}">
                         <small class="text-danger">
                             @error('name')
                                 {{ 'Please enter property name' }}
@@ -28,7 +29,8 @@
                     </div>
 
                     <div class="col-md-5">
-                        <input type="text" name="address" class="form-control" placeholder="Address" value="{{old("address")}}">
+                        <input type="text" name="address" class="form-control" placeholder="Address"
+                            value="{{ old('address') }}">
                         <small class="text-danger">
                             @error('name')
                                 {{ 'Please enter property address' }}
@@ -41,9 +43,10 @@
                     <div class="col-md-11 mx-auto">
                         <select name="property_type" class="form-select">
                             <option>Select Property Type</option>
-                            <option value="Apartment" {{old("property_type") == 'Apartment' ? 'selected' : ''}}>Apartment</option>
-                            <option value="House" {{old("property_type") == 'House' ? 'selected' : ''}}>House</option>
-                            <option value="Studio" {{old("property_type") == 'Studio' ? 'selected' : ''}}>Studio</option>
+                            <option value="Apartment" {{ old('property_type') == 'Apartment' ? 'selected' : '' }}>Apartment
+                            </option>
+                            <option value="House" {{ old('property_type') == 'House' ? 'selected' : '' }}>House</option>
+                            <option value="Studio" {{ old('property_type') == 'Studio' ? 'selected' : '' }}>Studio</option>
                         </select>
                         <small class="text-danger">
                             @error('property_type')
@@ -57,8 +60,10 @@
                     <div class="col-md-11 mx-auto">
                         <select name="property_status" class="form-select">
                             <option>Select Property Status</option>
-                            <option value="Available" {{old("property_status") == 'Available' ? 'selected' : ''}}>Available</option>
-                            <option value="Rented" {{old("property_status") == 'Rented' ? 'selected' : ''}}>Rented</option>
+                            <option value="Available" {{ old('property_status') == 'Available' ? 'selected' : '' }}>
+                                Available</option>
+                            <option value="Rented" {{ old('property_status') == 'Rented' ? 'selected' : '' }}>Rented
+                            </option>
                         </select>
                         <small class="text-danger">
                             @error('property_status')
@@ -68,12 +73,23 @@
                     </div>
                 </div>
 
-                <div class="row mt-3">
-                    <div class="col-md-11 mx-auto">
-                        <input type="text" name="rent" class="form-control" placeholder="Monthly Rent" value="{{old("rent")}}">
+                <div class="row mt-3 d-flex justify-content-around">
+                    <div class="col-md-5">
+                        <input type="text" name="rent" class="form-control" placeholder="Monthly Rent"
+                            value="{{ old('rent') }}">
                         <small class="text-danger">
                             @error('rent')
                                 {{ 'Please enter monthly rent' }}
+                            @enderror
+                        </small>
+                    </div>
+
+                    <div class="col-md-5">
+                        <input type="text" name="sqFeetArea" class="form-control" placeholder="Square Feet Area"
+                            value="{{ old('sqFeetArea') }}">
+                        <small class="text-danger">
+                            @error('sqFeetArea')
+                                {{ 'Please enter Square Feet Area' }}
                             @enderror
                         </small>
                     </div>
@@ -82,7 +98,7 @@
                 <div class="row mt-3">
                     <div class="col-md-11 mx-auto">
                         <textarea type="text" name="description" class="form-control" placeholder="Description" rows="5"
-                            style="resize:none;">{{old("description")}}</textarea>
+                            style="resize:none;">{{ old('description') }}</textarea>
                         <small class="text-danger">
                             @error('description')
                                 {{ 'Please enter property description' }}
@@ -94,7 +110,7 @@
                 <div class="row mt-3">
                     <div class="col-md-11 mx-auto">
                         <textarea type="text" name="features" class="form-control" placeholder="Write House Features (Comma Separated)"
-                            rows="3" style="resize:none;">{{old("features")}}</textarea>
+                            rows="3" style="resize:none;">{{ old('features') }}</textarea>
                         <small class="text-danger">
                             @error('features')
                                 {{ 'Please enter comma separated property features' }}
@@ -108,7 +124,8 @@
                         <select name="bedrooms" class="form-select">
                             <option value="">Select No of Bedrooms</option>
                             @for ($i = 1; $i <= 6; $i++)
-                                <option value="{{ $i }}" {{old("bedrooms") == $i ? 'selected' : ''}}>{{ $i }}</option>
+                                <option value="{{ $i }}" {{ old('bedrooms') == $i ? 'selected' : '' }}>
+                                    {{ $i }}</option>
                             @endfor
                         </select>
                         <small class="text-danger">
@@ -122,7 +139,8 @@
                         <select name="bathrooms" class="form-select">
                             <option value="">Select No of Bathrooms</option>
                             @for ($i = 1; $i <= 6; $i++)
-                                <option value="{{ $i }}" {{old("bathrooms") == $i ? 'selected' : ''}}>{{ $i }}</option>
+                                <option value="{{ $i }}" {{ old('bathrooms') == $i ? 'selected' : '' }}>
+                                    {{ $i }}</option>
                             @endfor
                         </select>
                         <small class="text-danger">
@@ -136,7 +154,8 @@
                         <select name="receptions" class="form-select">
                             <option value="">Select No of Receptions</option>
                             @for ($i = 1; $i <= 6; $i++)
-                                <option value="{{ $i }}" {{old("receptions") == $i ? 'selected' : ''}}>{{ $i }}</option>
+                                <option value="{{ $i }}" {{ old('receptions') == $i ? 'selected' : '' }}>
+                                    {{ $i }}</option>
                             @endfor
                         </select>
                         <small class="text-danger">
@@ -145,6 +164,8 @@
                             @enderror
                         </small>
                     </div>
+
+
                 </div>
 
                 <div class="row mt-3 d-flex justify-content-around">

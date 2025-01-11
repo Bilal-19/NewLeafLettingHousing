@@ -186,6 +186,10 @@
                     data-bs-target="#exampleModal">here.</a>
             </p>
 
+            @foreach ($fetchComments as $comment)
+                <p>{{$comment->tenant_message}} ~ {{$comment->tenant_name}}, {{$comment->tenant_country}}</p>
+            @endforeach
+
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -195,7 +199,9 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <form action="" autocomplete="off">
+                            <form action="{{ route('Submit.Feedback', ['id' => $findProperty->id]) }}" method="post"
+                                autocomplete="off">
+                                @csrf
                                 <div class="mt-3">
                                     <input type="text" name="name" class="form-control"
                                         placeholder="Enter your Full Name">
@@ -212,7 +218,8 @@
                                 </div>
 
                                 <div class="mt-3">
-                                    <textarea name="message" rows="5" class="form-control" placeholder="Write your message here" style="resize:none;"></textarea>
+                                    <textarea name="message" rows="5" class="form-control" placeholder="Write your message here"
+                                        style="resize:none;"></textarea>
                                 </div>
 
                                 <div class="mt-3">
