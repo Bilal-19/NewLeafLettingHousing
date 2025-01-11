@@ -187,7 +187,7 @@
             </p>
 
             @foreach ($fetchComments as $comment)
-                <p>{{$comment->tenant_message}} ~ {{$comment->tenant_name}}, {{$comment->tenant_country}}</p>
+                <p>{{ $comment->tenant_message }} ~ {{ $comment->tenant_name }}, {{ $comment->tenant_country }}</p>
             @endforeach
 
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -205,21 +205,41 @@
                                 <div class="mt-3">
                                     <input type="text" name="name" class="form-control"
                                         placeholder="Enter your Full Name">
+                                    <small class="text-danger">
+                                        @error('name')
+                                            {{ $message }}
+                                        @enderror
+                                    </small>
                                 </div>
 
                                 <div class="mt-3">
                                     <input type="email" name="email" class="form-control"
                                         placeholder="Enter your Email">
+                                    <small class="text-danger">
+                                        @error('email')
+                                            {{ $message }}
+                                        @enderror
+                                    </small>
                                 </div>
 
                                 <div class="mt-3">
                                     <input type="text" name="country" class="form-control"
                                         placeholder="Enter your Country Name">
+                                    <small class="text-danger">
+                                        @error('country')
+                                            {{ $message }}
+                                        @enderror
+                                    </small>
                                 </div>
 
                                 <div class="mt-3">
                                     <textarea name="message" rows="5" class="form-control" placeholder="Write your message here"
                                         style="resize:none;"></textarea>
+                                        <small class="text-danger">
+                                            @error('message')
+                                                {{$message}}
+                                            @enderror
+                                        </small>
                                 </div>
 
                                 <div class="mt-3">
