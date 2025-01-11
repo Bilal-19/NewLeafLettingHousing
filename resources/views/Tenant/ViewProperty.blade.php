@@ -21,7 +21,36 @@
             padding: 26px 24px;
             margin-top: 20px;
             margin-bottom: 20px;
-            margin-right: 20px;
+            margin-left: 30px;
+        }
+
+        .property-features-card {
+            border-radius: 24px;
+            background-color: #F0F0F0;
+            padding: 26px 24px;
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        .property-booking {
+            border-radius: 5px;
+            background-color: #EDEDED;
+            padding: 32px 35px;
+            margin-top: 40px;
+        }
+
+        .property-booking input,
+        .property-booking select {
+            padding: 22px 28px;
+            margin-bottom: 10px;
+        }
+
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            margin: 0;
         }
 
         @media only screen and (max-width: 768px) {
@@ -30,9 +59,29 @@
                 margin-right: 10px;
                 width: 300px;
             }
+
+            .carousel-img {
+                height: 300px;
+                width: 300px;
+                margin: auto;
+                display: block;
+            }
+
+            .property-features-card {
+                width: 300px;
+            }
+
+            .property-booking {
+                width: 90%;
+            }
         }
     </style>
 @endpush
+
+@php
+    $propertyFeatures = $findProperty->property_features;
+    $featuredArray = explode(',', $propertyFeatures);
+@endphp
 
 @section('main-section')
     <div class="row d-flex justify-content-center align-items-center mb-5">
@@ -86,31 +135,172 @@
 
     <div class="row">
         <div class="col-11 col-md-11 bg-white mx-auto">
-            <div class="row mt-5 mx-3">
+            <div class="row mt-5">
                 <div class="col-md-4 property-detail-card">
                     <h6 class="fs-24 fw-medium fs-sm-18">Address:</h6>
                     <p class="fs-24 fs-sm-18 fw-regular">{{ $findProperty->property_address }}</p>
                 </div>
 
-                <div class="col-md-4 property-detail-card mx-2">
+                <div class="col-md-4 property-detail-card">
                     <h6 class="fs-24 fw-medium fs-sm-18">Price:</h6>
                     <p class="fs-24 fs-sm-18 fw-regular">{{ $findProperty->monthly_rent }}$</p>
                 </div>
             </div>
 
-            <div class="row mx-3">
+            <div class="row">
                 <div class="col-md-4 property-detail-card">
                     <h6 class="fs-24 fw-medium fs-sm-18">Property Type:</h6>
-                    <p class="fs-24 fs-sm-18 fw-regular">{{ $findProperty->property_address }}</p>
+                    <p class="fs-24 fs-sm-18 fw-regular">{{ $findProperty->property_type }}</p>
                 </div>
 
-                <div class="col-md-4 property-detail-card mx-2">
+                <div class="col-md-4 property-detail-card">
                     <h6 class="fs-24 fw-medium fs-sm-18">Status:</h6>
-                    <p class="fs-24 fs-sm-18 fw-regular">{{ $findProperty->property_status }}</p>
+                    <p class="fs-24 fs-sm-18 fw-regular">
+                        @if ($findProperty->property_status == 'Available')
+                            Available for Rent
+                        @else
+                            Booked
+                        @endif
+                    </p>
                 </div>
             </div>
 
+            <div class="row">
+                <div class="col-md-6 property-features-card">
+                    <h6 class="fs-24 fw-medium fs-sm-18">Features:</h6>
+                    <ul class="fs-24 fs-sm-18 fw-regular">
+                        @foreach ($featuredArray as $el)
+                            <li>{{ $el }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <div class="row">
+        <div class="col-11 col-md-11 bg-white rounded mx-auto mt-5 mb-5 p-5">
+            <h4 class="fw-semibold fs-40 text-forest-green fs-sm-28">Comments</h4>
+            <p>Would you like to share your valuable feedback? If so, please click
+                <a href="" class="text-forest-green text-decoration-none" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">here.</a>
+            </p>
+
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">{{ $findProperty->property_name }} - Feedback
+                                Form</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="" autocomplete="off">
+                                <div class="mt-3">
+                                    <input type="text" name="name" class="form-control"
+                                        placeholder="Enter your Full Name">
+                                </div>
+
+                                <div class="mt-3">
+                                    <input type="email" name="email" class="form-control"
+                                        placeholder="Enter your Email">
+                                </div>
+
+                                <div class="mt-3">
+                                    <input type="text" name="country" class="form-control"
+                                        placeholder="Enter your Country Name">
+                                </div>
+
+                                <div class="mt-3">
+                                    <textarea name="message" rows="5" class="form-control" placeholder="Write your message here" style="resize:none;"></textarea>
+                                </div>
+
+                                <div class="mt-3">
+                                    <button class="btn btn-success w-100">Submit Feedback</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 mx-auto property-booking">
+            <h4 class="fw-semibold fs-40 fs-sm-28 text-forest-green">Property Booking</h4>
+            <form action="" autocomplete="off" class="mt-5">
+                <div>
+                    <input type="text" name="fullName" class="form-control" placeholder="Enter your full Name">
+                </div>
+
+                <div>
+                    <input type="email" name="email" class="form-control" placeholder="Enter your Email">
+                </div>
+
+                <div>
+                    <input type="text" name="phoneNumber" class="form-control" placeholder="Enter your Phone Number">
+                </div>
+
+                <div>
+                    <input type="text" name="address" class="form-control" placeholder="Enter your Address">
+                </div>
+
+                <div>
+                    <select name="adults" class="form-select">
+                        <option>Select No of Adults</option>
+                        @for ($i = 1; $i <= 8; $i++)
+                            <option value={{ $i }}>{{ $i }}</option>
+                        @endfor
+                    </select>
+                </div>
+
+                <div>
+                    <select name="childrens" class="form-select">
+                        <option>Select No of Childrens</option>
+                        @for ($i = 1; $i <= 4; $i++)
+                            <option value={{ $i }}>{{ $i }}</option>
+                        @endfor
+                    </select>
+                </div>
+
+
+                <div>
+                    <select name="childrens" class="form-select">
+                        <option>Select Total Months to Stay</option>
+                        @for ($i = 1; $i <= 4; $i++)
+                            <option value={{ $i }}>{{ $i }}</option>
+                        @endfor
+                    </select>
+                </div>
+
+                <div>
+                    <input type="text" name="accountTitle" class="form-control"
+                        placeholder="Enter your Account Title">
+                </div>
+
+                <div>
+                    <input type="number" name="cardNumber" class="form-control" placeholder="Enter your Card Number">
+                </div>
+
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <input type="number" name="cvc" class="form-control" placeholder="Ex. 123">
+                    </div>
+
+                    <div>
+                        <input type="number" name="cvc" class="form-control" placeholder="Exp Month">
+                    </div>
+
+                    <div>
+                        <input type="number" name="cvc" class="form-control" placeholder="Exp Year">
+                    </div>
+                </div>
+
+                <div>
+                    <button class="btn btn-success w-100">Confirm Booking</button>
+                </div>
+            </form>
         </div>
     </div>
 @endsection
