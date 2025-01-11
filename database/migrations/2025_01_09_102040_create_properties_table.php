@@ -22,6 +22,7 @@ return new class extends Migration {
             $table->string('bedrooms');
             $table->string('bathrooms');
             $table->string('reception');
+            $table->string('square_feet_area');
             $table->string('property_thumbnail');
             $table->text('property_images');
 
