@@ -106,6 +106,7 @@ class AdminController extends Controller
         $fetchBookingRecords = DB::table('properties')
         ->join('booking','properties.id','=','booking.property_id')
         ->join('users','properties.user_id','=','users.id')
+        ->select("booking.*","users.name")
         ->get();
         return view('Admin.Tenants', with(compact('fetchBookingRecords')));
     }

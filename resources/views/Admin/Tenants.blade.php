@@ -9,21 +9,23 @@
             <div class="col-md-12">
                 <table class="table table-bordered table-striped">
                     <tr>
-                        <th>Tenant Name</th>
-                        <th>Property Name</th>
+                        <th>Name</th>
+                        <th>Contact Number</th>
+                        <th>Adults</th>
+                        <th>Childrens</th>
+                        <th>Stay Duration</th>
+                        <th>Booking Date</th>
                         <th>Property Owner</th>
-                        <th>Property Rent</th>
-                        <th>Lease Start Date</th>
-                        <th>Status</th>
                     </tr>
                     @foreach ($fetchBookingRecords as $record)
                         <tr>
                             <td>{{ $record->full_name }}</td>
-                            <td>{{ $record->property_name }}</td>
-                            <td>{{ $record->name }}</td>
-                            <td>${{ $record->monthly_rent }}</td>
+                            <td>{{ $record->phone_number }}</td>
+                            <td>{{ $record->adults }}</td>
+                            <td>{{ $record->childrens }}</td>
+                            <td>{{ $record->totalMonthsToStay }} Months</td>
                             <td>{{ $record->booking_date }}</td>
-                            <td>{{ $record->property_status }}</td>
+                            <td>{{ $record->name }}</td>
                         </tr>
                     @endforeach
                 </table>
