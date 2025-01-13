@@ -104,16 +104,33 @@ class AdminController extends Controller
     public function Tenants()
     {
         $fetchBookingRecords = DB::table('properties')
-        ->join('booking','properties.id','=','booking.property_id')
-        ->join('users','properties.user_id','=','users.id')
-        ->select("booking.*","users.name")
-        ->get();
+            ->join('booking', 'properties.id', '=', 'booking.property_id')
+            ->join('users', 'properties.user_id', '=', 'users.id')
+            ->select("booking.*", "users.name")
+            ->get();
         return view('Admin.Tenants', with(compact('fetchBookingRecords')));
     }
 
     public function Landlords()
     {
-        return view('Admin.Landlords');
+        // Join Users and Properties table
+        // Fetch owner name, email and contact from 'users' table
+        // Fetch total properties, total available properties, total rented properties
+
+        $fetchPropertyRecord = DB::table('users')
+            ->join('properties', 'users.id', '=', 'properties.user_id')
+            ->select(
+                'users.name as property_owner_name',
+                'users.email as property_owner_email',
+                'users.phone_number as property_owner_phone',
+                DB::raw('COUNT(properties.id) as total_properties'),
+                DB::raw('SUM(CASE WHEN properties.property_status = "available" THEN 1 ELSE 0 END) as total_available_properties'),
+                DB::raw('SUM(CASE WHEN properties.property_status = "rented" THEN 1 ELSE 0 END) as total_rented_properties')
+            )
+            ->groupBy('users.id', 'users.name', 'users.email', 'users.phone_number')
+            ->get();
+
+        return view('Admin.Landlords', with(compact('fetchPropertyRecord')));
     }
 
     public function Stories()
