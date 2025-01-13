@@ -236,26 +236,26 @@ class LandlordController extends Controller
         return view("Landlord.ViewTenants", with(compact('fetchMyTenants')));
     }
 
-    public function bookedProperties()
-    {
-        $userID = Auth::user()->id;
-        $fetchAllBookedProperties = DB::table('booking')
-            ->join('properties', 'booking.property_id', '=', 'properties.id')
-            ->join('users', 'properties.user_id', '=', 'users.id')
-            ->where('users.id', $userID)
-            ->select(
-                'booking.full_name',
-                'booking.created_at as booking_created_at', // Alias for booking's created_at
-                'properties.created_at as property_created_at', // Alias for properties' created_at
-                'users.created_at as user_created_at', // Alias for users' created_at
-                'properties.property_address as prop_address',
-                'booking.*',
-                'properties.*',
-                'users.*'
-            )
-            ->get();
-        return view("Landlord.BookedProperties", with(compact('fetchAllBookedProperties')));
-    }
+    // public function bookedProperties()
+    // {
+    //     $userID = Auth::user()->id;
+    //     $fetchAllBookedProperties = DB::table('booking')
+    //         ->join('properties', 'booking.property_id', '=', 'properties.id')
+    //         ->join('users', 'properties.user_id', '=', 'users.id')
+    //         ->where('users.id', $userID)
+    //         ->select(
+    //             'booking.full_name',
+    //             'booking.created_at as booking_created_at', // Alias for booking's created_at
+    //             'properties.created_at as property_created_at', // Alias for properties' created_at
+    //             'users.created_at as user_created_at', // Alias for users' created_at
+    //             'properties.property_address as prop_address',
+    //             'booking.*',
+    //             'properties.*',
+    //             'users.*'
+    //         )
+    //         ->get();
+    //     return view("Landlord.BookedProperties", with(compact('fetchAllBookedProperties')));
+    // }
 
     public function myProfile()
     {

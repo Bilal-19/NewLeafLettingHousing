@@ -237,45 +237,30 @@
                                 </a>
                             </li>
 
-                            <li class="nav-item mb-4">
+                            {{-- <li class="nav-item mb-4">
                                 <a class="nav-link d-flex align-items-center gap-3 {{ request()->routeIs('Landlord.BookedProperties') ? 'active-link' : '' }}" aria-current="page"
                                     href="{{route('Landlord.BookedProperties')}}">
                                     <i class="fa-solid fa-handshake-simple"></i>
                                     Booked Properties
                                 </a>
-                            </li>
-                        </ul>
+                            </li> --}}
 
-                        <h6
-                            class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 text-dark text-uppercase">
-                            <span>Others</span>
-                            <a class="link-dark" href="#" aria-label="Add a new report">
-                                <svg class="bi">
-                                    <use xlink:href="#plus-circle" />
-                                </svg>
-                            </a>
-                        </h6>
-                        <ul class="nav flex-column mb-auto">
-                            <li class="nav-item mb-1">
-                                <a class="nav-link d-flex align-items-center gap-2 {{ request()->routeIs('Landlord.Profile') ? 'active-link' : '' }}" href="{{route('Landlord.Profile')}}">
+                            <li class="nav-item mb-4">
+                                <a class="nav-link d-flex align-items-center gap-3 {{ request()->routeIs('Landlord.Profile') ? 'active-link' : '' }}" href="{{route('Landlord.Profile')}}">
                                     <i class="fa-solid fa-user"></i>
                                     My Profile
                                 </a>
                             </li>
 
-                        </ul>
-
-                        <hr class="my-3 text-dark">
-
-                        <ul class="nav flex-column mb-auto mt-2">
-                            <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center gap-2 text-forest-green" href="#">
+                            <li class="nav-item mb-4">
+                                <a class="nav-link d-flex align-items-center gap-3 text-forest-green" href="#">
                                     <i class="fa-regular fa-comment-dots"></i>
                                     Feedback Form
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center gap-2 text-forest-green" href="{{route('Landlord.SingOut')}}">
+
+                            <li class="nav-item mb-4">
+                                <a class="nav-link d-flex align-items-center gap-3 text-forest-green" href="{{route('Landlord.SingOut')}}">
                                     <i class="fa-solid fa-right-from-bracket"></i>
                                     Sign out
                                 </a>
