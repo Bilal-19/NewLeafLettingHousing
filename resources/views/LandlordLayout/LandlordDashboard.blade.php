@@ -253,7 +253,7 @@
                             </li>
 
                             <li class="nav-item mb-4">
-                                <a class="nav-link d-flex align-items-center gap-3 text-forest-green" href="#">
+                                <a class="nav-link d-flex align-items-center gap-3 text-forest-green  {{ request()->routeIs('Landlord.FeedbackForm') ? 'active-link' : '' }}" href="{{route('Landlord.FeedbackForm')}}">
                                     <i class="fa-regular fa-comment-dots"></i>
                                     Feedback Form
                                 </a>

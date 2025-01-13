@@ -224,15 +224,15 @@ class LandlordController extends Controller
     public function listTenants()
     {
         $fetchMyTenants = DB::table('booking')
-        ->join('properties', 'booking.property_id', '=', 'properties.id')
-        ->join('users', 'properties.user_id', '=', 'users.id')
-        ->where('users.id', Auth::user()->id)
-        ->select(
-            'booking.*',
-            'properties.*',
-            'users.*'
-        )
-        ->get();
+            ->join('properties', 'booking.property_id', '=', 'properties.id')
+            ->join('users', 'properties.user_id', '=', 'users.id')
+            ->where('users.id', Auth::user()->id)
+            ->select(
+                'booking.*',
+                'properties.*',
+                'users.*'
+            )
+            ->get();
         return view("Landlord.ViewTenants", with(compact('fetchMyTenants')));
     }
 
@@ -288,6 +288,34 @@ class LandlordController extends Controller
         if (Auth::check()) {
             Auth::logout();
             return redirect()->route('Landlords');
+        }
+    }
+
+    public function feedbackForm()
+    {
+        return view("Landlord.Feedback");
+    }
+
+    public function submitFeeback(Request $request)
+    {
+        // Form Validation
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'message' => 'required'
+        ]);
+        $isFeedbackSubmit = DB::table('landlord_feedback')->insert(
+            [
+                'name' => $request->name,
+                'email' => $request->email,
+                'message' => $request->message,
+                'created_at' => Carbon::now()
+            ]
+        );
+
+        if ($isFeedbackSubmit) {
+            toastr()->success('Thankyou for sharing feedback/complaint. Our team will contact you soon');
+            return redirect()->back();
         }
     }
 }

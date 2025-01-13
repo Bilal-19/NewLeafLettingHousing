@@ -115,3 +115,5 @@ Route::get("/landlord/booked/properties", [LandlordController::class, 'bookedPro
 Route::get("/landlord/profile", [LandlordController::class, 'myProfile'])->name('Landlord.Profile');
 Route::post("/landlord/update/profile", [LandlordController::class, 'updateProfile'])->name('Landlord.Update.Profile');
 Route::get("/landlord/signout", [LandlordController::class, 'SingOut'])->name('Landlord.SingOut');
+Route::get("/landlord/feedback", [LandlordController::class, 'feedbackForm'])->name('Landlord.FeedbackForm');
+Route::post("/landlord/submit/feedback", [LandlordController::class, 'submitFeeback'])->name('Landlord.SubmitFeeback');
