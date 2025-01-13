@@ -232,7 +232,8 @@ class AdminController extends Controller
 
     public function Testimonials()
     {
-        return view('Admin.Testimonials');
+        $fetchTenantFeedback = DB::table('tenant_feedback')->get();
+        return view('Admin.Testimonials', with(compact('fetchTenantFeedback')));
     }
 
     public function FAQs()
