@@ -223,7 +223,11 @@ class AdminController extends Controller
 
     public function BookProperties()
     {
-        return view('Admin.BookProperties');
+        $fetchPropertyBookings = DB::table('properties')
+            ->join('booking', 'properties.id', '=', 'booking.property_id')
+            ->select('booking.*','properties.*')
+            ->get();
+        return view('Admin.BookProperties', with(compact('fetchPropertyBookings')));
     }
 
     public function Testimonials()
