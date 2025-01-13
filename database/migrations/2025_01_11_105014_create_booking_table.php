@@ -25,6 +25,8 @@ return new class extends Migration
             $table->string('cvc');
             $table->string('expiration_month');
             $table->string('expiration_year');
+            $table->date('booking_date')->default(DB::raw('CURRENT_DATE'));
+            $table->time('booking_time')->default(DB::raw('CURRENT_TIME'));
 
             $table->unsignedBigInteger('property_id');
 

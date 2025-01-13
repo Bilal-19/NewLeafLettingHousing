@@ -24,8 +24,8 @@
                             <td>{{ $record->property_name }}</td>
                             <td>{{ $record->prop_address }}</td>
                             <td>{{ $record->full_name }}</td>
-                            <td>{{ Carbon::parse($record->booking_created_at)->format('d M Y') }}</td>
-                            <td>{{ Carbon::parse($record->booking_created_at)->format('h:i A') }}</td>
+                            <td>{{ date('d M Y', strtotime($record->booking_date)) }}</td>
+                            <td>{{ date('h:i:sa', strtotime($record->booking_time)) }}</td>
                         </tr>
                     @endforeach
                 </table>

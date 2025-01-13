@@ -222,7 +222,17 @@ class LandlordController extends Controller
     }
     public function listTenants()
     {
-        return view("Landlord.ViewTenants");
+        $fetchMyTenants = DB::table('booking')
+        ->join('properties', 'booking.property_id', '=', 'properties.id')
+        ->join('users', 'properties.user_id', '=', 'users.id')
+        ->where('users.id', Auth::user()->id)
+        ->select(
+            'booking.*',
+            'properties.*',
+            'users.*'
+        )
+        ->get();
+        return view("Landlord.ViewTenants", with(compact('fetchMyTenants')));
     }
 
     public function bookedProperties()
