@@ -41,7 +41,7 @@
                                 <a href="{{ route('Landlord.TogglePropertyStatus', ['id' => $record->id]) }}"
                                     class="text-dark">
                                     <i
-                                        class="{{ $record->property_status == 'Booked' ? 'fa-solid' : 'fa-regular' }} fa-star"></i>
+                                        class="{{ $record->property_status == 'Rented' ? 'fa-solid' : 'fa-regular' }} fa-star"></i>
                                 </a>
                             </td>
                             <td class="text-center">

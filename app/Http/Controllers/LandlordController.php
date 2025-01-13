@@ -112,6 +112,7 @@ class LandlordController extends Controller
             DB::table('properties')
                 ->where('id', '=', $id)
                 ->update([
+                    'property_status' => 'Rented',
                     'updated_at' => Carbon::now()
                 ]);
         } else {
