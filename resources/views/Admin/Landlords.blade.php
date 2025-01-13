@@ -5,7 +5,7 @@
             <h3 class="fw-bold text-center"><span class="text-forest-green">Landlords</span> List</h3>
         </div>
 
-        <div class="row">
+        <div class="row mt-3">
             <div class="col-md-12">
                 <table class="table table-striped table-bordered">
                     <tr>

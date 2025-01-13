@@ -8,11 +8,11 @@
 
     <div class="row">
         <div class="col-md-3">
-            <a href="{{ route('Add.Story') }}" class="btn btn-dark">Add New Story</a>
+            <a href="{{ route('Add.Story') }}" class="btn btn-dark">Publish Story</a>
         </div>
     </div>
 
-    <div class="row mt-5">
+    <div class="row mt-3">
         <div class="col-md-12">
             <table class="table table-bordered table-striped">
                 <tr>

@@ -2,10 +2,10 @@
 @section('main-section')
     <div class="container-fluid">
         <div class="row mt-3">
-            <h3 class="fw-bold text-center">Tenants List</h3>
+            <h3 class="fw-bold text-center"><span class="text-forest-green">Tenants</span> List</h3>
         </div>
 
-        <div class="row">
+        <div class="row mt-3">
             <div class="col-md-12">
                 <table class="table table-bordered table-striped">
                     <tr>

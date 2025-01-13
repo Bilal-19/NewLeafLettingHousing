@@ -5,7 +5,7 @@
             <h3 class="fw-bold text-center text-forest-green">Testimonial</h3>
         </div>
 
-        <div class="row">
+        <div class="row mt-3">
             <div class="col-md-12">
                 <table class="table table-bordered table-striped">
                     <tr>
