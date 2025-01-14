@@ -11,7 +11,7 @@ class AdminController extends Controller
 {
     public function Dashboard()
     {
-        if (Auth::user()) {
+        if (Auth::check() && Auth::user()->role === 'Admin') {
             $totalProperties = DB::table('properties')->count();
             $totalBookings = DB::table('booking')->count();
             $totalPartners = DB::table('partnership_organizations')->count();

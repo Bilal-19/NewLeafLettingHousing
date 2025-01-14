@@ -208,7 +208,7 @@
                         <ul class="nav flex-column">
                             <li class="nav-item mb-4">
                                 <a class="nav-link d-flex align-items-center gap-3 {{ request()->routeIs('Landlord.Dashboard') ? 'active-link' : '' }}" aria-current="page"
-                                    href="{{ route('Landlord.Dashboard') }}">
+                                    href="{{ route('Landlord.Dashboard',['id'=>Auth::user()->id]) }}">
                                     <i class="fa-solid fa-gauge"></i> Dashboard
                                 </a>
                             </li>
