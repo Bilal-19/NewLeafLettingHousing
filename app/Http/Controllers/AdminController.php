@@ -150,7 +150,7 @@ class AdminController extends Controller
                 'users.phone_number as property_owner_phone',
                 DB::raw('COUNT(properties.id) as total_properties'),
                 DB::raw('SUM(CASE WHEN properties.property_status = "available" THEN 1 ELSE 0 END) as total_available_properties'),
-                DB::raw('SUM(CASE WHEN properties.property_status = "rented" THEN 1 ELSE 0 END) as total_rented_properties')
+                DB::raw('SUM(CASE WHEN properties.property_status = "booked" THEN 1 ELSE 0 END) as total_rented_properties')
             )
             ->groupBy('users.id', 'users.name', 'users.email', 'users.phone_number')
             ->get();
