@@ -10,8 +10,7 @@
             </p>
             <a href="" class="text-dark fs-20 fs-sm-18 text-decoration-none">
                 Learn More About US
-                <img src="{{ asset('images/downArrow.png') }}"
-                    alt="">
+                <img src="{{ asset('images/downArrow.png') }}" alt="">
             </a>
         </div>
     </div>
@@ -99,64 +98,25 @@
     </div>
 
     <div class="row d-flex justify-content-around align-items-center">
-        <div class="col-md-3 team-member-card shadow">
-            <img src="{{ asset('images/CEO.png') }}" alt="" class="d-block mx-auto">
-            <h5 class="fw-semibold fs-32 fs-sm-25 text-dark-charcoal mt-3 mb-0">John Smith</h5>
-            <p class="fs-20 fs-sm-18 text-forest-green mt-0">Founder & CEO</p>
-            <p class="fs-20 fs-sm-18 text-dark-gray mx-auto">Leading Green Key Housing with vision and purpose to make
-                housing impactful.</p>
-            <div class="d-flex justify-content-center align-items-center">
-                <a href="">
-                    <img src="{{ asset('images/linkedin.png') }}" alt="">
-                </a>
-                <a href="">
-                    <img src="{{ asset('images/facebook.png') }}" alt="">
-                </a>
-                <a href="">
-                    <img src="{{ asset('images/instagram.png') }}" alt="">
-                </a>
+        @foreach ($fetchTeamMembersRec as $record)
+            <div class="col-md-3 team-member-card shadow">
+                <img src="{{ asset('Team/' . $record->profile_picture) }}" alt="" class="d-block mx-auto">
+                <h5 class="fw-semibold fs-32 fs-sm-25 text-dark-charcoal mt-3 mb-0">{{ $record->name }}</h5>
+                <p class="fs-20 fs-sm-18 text-forest-green mt-0">{{ $record->position }}</p>
+                <p class="fs-20 fs-sm-18 text-dark-gray mx-auto">{{ $record->description }}</p>
+                <div class="d-flex justify-content-center align-items-center">
+                    <a href="{{$record->linkedin_profile}}">
+                        <img src="{{ asset('images/linkedin.png') }}" alt="">
+                    </a>
+                    <a href="{{$record->facebook_profile}}">
+                        <img src="{{ asset('images/facebook.png') }}" alt="">
+                    </a>
+                    <a href="{{$record->instagram_profile}}">
+                        <img src="{{ asset('images/instagram.png') }}" alt="">
+                    </a>
+                </div>
             </div>
-        </div>
-
-        <div class="col-md-3 team-member-card shadow">
-            <img src="{{ asset('images/HeadOfOperation.png') }}" alt="" class="d-block mx-auto">
-            <h5 class="fw-semibold fs-32 fs-sm-25 text-dark-charcoal mt-3 mb-0">Emily Davis</h5>
-            <p class="fs-20 fs-sm-18 text-forest-green mt-0">Head of Operations</p>
-            <p class="fs-20 fs-sm-18 text-dark-gray mx-auto">
-                Ensuring every process runs smoothly and every home stays cared for.
-            </p>
-            <div class="d-flex justify-content-center align-items-center">
-                <a href="">
-                    <img src="{{ asset('images/linkedin.png') }}" alt="">
-                </a>
-                <a href="">
-                    <img src="{{ asset('images/facebook.png') }}" alt="">
-                </a>
-                <a href="">
-                    <img src="{{ asset('images/instagram.png') }}" alt="">
-                </a>
-            </div>
-        </div>
-
-        <div class="col-md-3 team-member-card shadow">
-            <img src="{{ asset('images/Michael.png') }}" alt="" class="d-block mx-auto">
-            <h5 class="fw-semibold fs-32 fs-sm-25 text-dark-charcoal mt-3 mb-0">Michael Thompson</h5>
-            <p class="fs-20 fs-sm-18 text-forest-green mt-0">Property Specialist</p>
-            <p class="fs-20 fs-sm-18 text-dark-gray mx-auto">
-                Bringing landlords peace of mind through dedicated management.
-            </p>
-            <div class="d-flex justify-content-center align-items-center">
-                <a href="">
-                    <img src="{{ asset('images/linkedin.png') }}" alt="">
-                </a>
-                <a href="">
-                    <img src="{{ asset('images/facebook.png') }}" alt="">
-                </a>
-                <a href="">
-                    <img src="{{ asset('images/instagram.png') }}" alt="">
-                </a>
-            </div>
-        </div>
+        @endforeach
     </div>
 
     <div class="row text-center mb-5 mt-3">

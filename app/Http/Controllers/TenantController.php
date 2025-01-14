@@ -17,7 +17,8 @@ class TenantController extends Controller
 
     public function About()
     {
-        return view('Tenant.About');
+        $fetchTeamMembersRec = DB::table('team_member')->limit(3)->get();
+        return view('Tenant.About', with(compact('fetchTeamMembersRec')));
     }
 
     public function CSR()
