@@ -29,6 +29,16 @@
                 </div>
 
                 <div class="col-md-5 mx-auto mt-3">
+                    <label class="form-label mb-0">Country: </label>
+                    <input type="text" name="country" class="form-control">
+                    <small class="text-danger">
+                        @error('country')
+                            {{$message}}
+                        @enderror
+                    </small>
+                </div>
+
+                <div class="col-md-5 mx-auto mt-3">
                     <label class="form-label mb-0">Message: </label>
                     <textarea name="message" cols="30" rows="6" class="form-control" style="resize:none;"></textarea>
                     <small class="text-danger">

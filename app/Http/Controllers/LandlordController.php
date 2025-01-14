@@ -302,13 +302,15 @@ class LandlordController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required|email',
-            'message' => 'required'
+            'message' => 'required',
+            'country' => 'required'
         ]);
         $isFeedbackSubmit = DB::table('landlord_feedback')->insert(
             [
                 'name' => $request->name,
                 'email' => $request->email,
                 'message' => $request->message,
+                'country' => $request->country,
                 'created_at' => Carbon::now()
             ]
         );
