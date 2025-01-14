@@ -10,7 +10,11 @@ class AdminController extends Controller
 {
     public function Dashboard()
     {
-        return view('Admin.Dashboard');
+        if (Auth::check() && Auth::user()->role == "Admin") {
+            return view('Admin.Dashboard');
+        } else {
+            return redirect()->route('login');
+        }
     }
 
     public function Services()
@@ -500,13 +504,15 @@ class AdminController extends Controller
         return view('Admin.CustomerQueries', with(compact('fetchQueries')));
     }
 
-    public function LandlordQueries(){
+    public function LandlordQueries()
+    {
         $fetchLandlordQueries = DB::table('landlord_feedback')->get();
         return view("Admin.LandlordInquiries", with(compact('fetchLandlordQueries')));
     }
 
-    public function signOut(){
-        if (Auth::check()){
+    public function signOut()
+    {
+        if (Auth::check()) {
             Auth::logout();
             return redirect()->route('Home');
         } else {

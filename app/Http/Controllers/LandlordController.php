@@ -11,7 +11,7 @@ class LandlordController extends Controller
 {
     public function index()
     {
-        if (Auth::check()) {
+        if (Auth::check() && Auth::user()->role == 'Landlord') {
             return view("Landlord.Dashboard");
         } else {
             return view('auth.login');
