@@ -10,6 +10,9 @@
             text-align: center;
             margin: 10px;
             border-top: 3px solid #118d51;
+            border-bottom: 1px solid #888888;
+            border-left: 1px solid #888888;
+            border-right: 1px solid #888888;
         }
     </style>
 @endpush
