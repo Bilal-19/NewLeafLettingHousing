@@ -23,7 +23,9 @@
                             <td>{{$record->tenant_country}}</td>
                             <td>{{$record->tenant_message}}</td>
                             <td class="text-center">
-                                <i class="fa {{$record->visibile == 'Yes' ? 'fa-eye' : 'fa-eye-slash'}}"></i>
+                                <a href="{{route("Admin.ToggleTestimonials", ['id' => $record->id])}}" class="text-dark">
+                                    <i class="fa {{$record->visibile == 'Yes' ? 'fa-eye' : 'fa-eye-slash'}}"></i>
+                                </a>
                             </td>
                         </tr>
                     @endforeach

@@ -225,7 +225,7 @@ class AdminController extends Controller
     {
         $fetchPropertyBookings = DB::table('properties')
             ->join('booking', 'properties.id', '=', 'booking.property_id')
-            ->select('booking.*','properties.*')
+            ->select('booking.*', 'properties.*')
             ->get();
         return view('Admin.BookProperties', with(compact('fetchPropertyBookings')));
     }
@@ -234,6 +234,25 @@ class AdminController extends Controller
     {
         $fetchTenantFeedback = DB::table('tenant_feedback')->get();
         return view('Admin.Testimonials', with(compact('fetchTenantFeedback')));
+    }
+
+    public function toggleTestimonialVisibility($id)
+    {
+        $findFeedbackRecord = DB::table('tenant_feedback')->where('id', '=', $id)->first();
+
+        if ($findFeedbackRecord->visibile == 'Yes') {
+            DB::table('tenant_feedback')->where('id', '=', $id)->update([
+                'visibile' => 'No'
+            ]);
+            toastr()->success('Updated feedback visibility');
+            return redirect()->back();
+        } else {
+            DB::table('tenant_feedback')->where('id', '=', $id)->update([
+                'visibile' => 'Yes'
+            ]);
+            toastr()->success('Updated feedback visibility');
+            return redirect()->back();
+        }
     }
 
     public function FAQs()

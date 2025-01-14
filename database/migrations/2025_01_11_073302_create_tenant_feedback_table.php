@@ -16,7 +16,7 @@ return new class extends Migration {
             $table->string('tenant_email');
             $table->string('tenant_country');
             $table->text('tenant_message');
-            $table->string('visibile')->default('Yes');
+            $table->string('visible')->default('Yes');
 
             $table->unsignedBigInteger('property_id');
 
