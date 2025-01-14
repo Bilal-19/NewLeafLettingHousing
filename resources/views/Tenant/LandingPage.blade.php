@@ -80,78 +80,17 @@
                     <!-- Additional required wrapper -->
                     <div class="swiper-wrapper">
                         <!-- Slides -->
-                        <div class="swiper-slide p-5">
-                            <img src="{{ asset('images/startComma.png') }}" alt="">
-                            <p class="text-center">Green Key has been a game-changer. I get guaranteed rent, and they handle
-                                everything. Plus, it
-                                feels great knowing I'm helping families</p>
-                            <p class="user-profile">
-                                <img src="{{ asset('images/male.png') }}" alt="">
-                                <span class="fs-20 fs-sm-18"><span class="fw-semibold">John</span>, Birmingham</span>
-                            </p>
-                        </div>
-
-                        <div class="swiper-slide p-5">
-                            <img src="{{ asset('images/startComma.png') }}" alt="">
-                            <p class="text-center">
-                                I used to struggle with property management, but Green Key took that burden away. It's
-                                amazing to have guaranteed income without the hassle.
-                            </p>
-                            <p class="user-profile">
-                                <img src="{{ asset('images/male.png') }}" alt="">
-                                <span class="fs-20 fs-sm-18"><span class="fw-semibold">Jennifer</span>, Lopez</span>
-                            </p>
-                        </div>
-
-                        <div class="swiper-slide p-5">
-                            <img src="{{ asset('images/startComma.png') }}" alt="">
-                            <p class="text-center">
-                                HomeCare Solutions has transformed the way I manage my properties. Their service is
-                                efficient, and I feel secure knowing my tenants are well.
-                            </p>
-                            <p class="user-profile">
-                                <img src="{{ asset('images/male.png') }}" alt="">
-                                <span class="fs-20 fs-sm-18"><span class="fw-semibold">Alex</span>, London</span>
-                            </p>
-                        </div>
-
-                        <div class="swiper-slide p-5">
-                            <img src="{{ asset('images/startComma.png') }}" alt="">
-                            <p class="text-center">
-                                I used to struggle with property management, but Green Key took that burden away. It's
-                                amazing to have guaranteed income without the hassle.
-                            </p>
-                            <p class="user-profile">
-                                <img src="{{ asset('images/male.png') }}" alt="">
-                                <span class="fs-20 fs-sm-18"><span class="fw-semibold">Jennifer</span>, Lopez</span>
-                            </p>
-                        </div>
-
-                        <div class="swiper-slide p-5">
-                            <img src="{{ asset('images/startComma.png') }}" alt="">
-                            <p class="text-center">Green Key has been a game-changer. I get guaranteed rent, and they
-                                handle
-                                everything. Plus, it
-                                feels great knowing I'm helping families</p>
-                            <p class="user-profile">
-                                <img src="{{ asset('images/male.png') }}" alt="">
-                                <span class="fs-20 fs-sm-18"><span class="fw-semibold">John</span>, Birmingham</span>
-                            </p>
-                        </div>
-
-                        <div class="swiper-slide p-5">
-                            <img src="{{ asset('images/startComma.png') }}" alt="">
-                            <p class="text-center">
-                                I used to struggle with property management, but Green Key took that burden away. It's
-                                amazing to have guaranteed income without the hassle.
-                            </p>
-                            <p class="user-profile">
-                                <img src="{{ asset('images/male.png') }}" alt="">
-                                <span class="fs-20 fs-sm-18"><span class="fw-semibold">Jennifer</span>, Lopez</span>
-                            </p>
-                        </div>
-
-
+                        @foreach ($fetchLandlordFeedback as $record)
+                            <div class="swiper-slide p-5">
+                                <img src="{{ asset('images/startComma.png') }}" alt="">
+                                <p class="text-center">{{ $record->message }}</p>
+                                <p class="user-profile">
+                                    <img src="{{ asset('images/male.png') }}" alt="">
+                                    <span class="fs-20 fs-sm-18"><span class="fw-semibold">{{ $record->name }}</span>,
+                                        {{ $record->country }}</span>
+                                </p>
+                            </div>
+                        @endforeach
                     </div>
                     <!-- If we need pagination -->
                     <div class="swiper-pagination"></div>
@@ -182,50 +121,26 @@
     </div>
 
     <div class="row d-flex justify-content-around align-items-center mb-5">
-        <div class="col-md-5 service-card shadow">
-            <img src="{{ asset('images/service_money_icon.png') }}" alt="" class="ms-auto d-block">
-            <h2 class="fs-32 fw-semibold fs-sm-25">Guaranteed Rent</h2>
-            <p class="fs-24 mb-5 fs-sm-18">
-                No void periods, no uncertainty - just reliable monthly income.
-            </p>
-            <a href="" class="fs-20 text-dark text-decoration-none">
-                Learn More
-                <img src="{{asset('images/up_arrow.png')}}" alt="">
-            </a>
-        </div>
-
-        <div class="col-md-5 service-card shadow">
-            <img src="{{ asset('images/service_property_management.png') }}" alt="" class="ms-auto d-block">
-            <h2 class="fs-32 fw-semibold fs-sm-25">
-                Comprehensive Property Management
-            </h2>
-            <p class="fs-24 mb-5 fs-sm-18">
-                We take care of everything, from tenants to maintenance.
-            </p>
-            <a href="" class="fs-20 text-dark text-decoration-none">
-                Learn More
-                <img src="{{asset('images/up_arrow.png')}}" alt="">
-            </a>
-        </div>
-
-        <div class="col-md-5 service-card shadow mt-5">
-            <img src="{{ asset('images/service_support.png') }}" alt="" class="ms-auto d-block">
-            <h2 class="fs-32 fw-semibold fs-sm-25">Tenant Support</h2>
-            <p class="fs-24 mb-5 fs-sm-18">
-                Our team ensures tenants are well-supported, so your property stays in great shape
-            </p>
-            <a href="" class="fs-20 text-dark text-decoration-none">
-                Learn More
-                <img src="{{asset('images/up_arrow.png')}}" alt="">
-            </a>
-        </div>
+        @foreach ($fetchServices as $record)
+            <div class="col-md-5 service-card shadow">
+                <img src="{{ asset('Services/' . $record->icon) }}" alt="" class="ms-auto d-block">
+                <h2 class="fs-32 fw-semibold fs-sm-25">{{ $record->service_name }}</h2>
+                <p class="fs-24 mb-5 fs-sm-18">
+                    {{ $record->service_description }}
+                </p>
+                <a href="" class="fs-20 text-dark text-decoration-none">
+                    Learn More
+                    <img src="{{ asset('images/up_arrow.png') }}" alt="">
+                </a>
+            </div>
+        @endforeach
     </div>
 
     <div class="row">
         <div class="col-md-4 d-flex justify-content-center align-items-center mx-auto">
             <p>Explore our full range of services</p>
             <a>
-                <img src="{{asset("images/up_right_arrow_green.png")}}" alt="">
+                <img src="{{ asset('images/up_right_arrow_green.png') }}" alt="">
             </a>
         </div>
     </div>

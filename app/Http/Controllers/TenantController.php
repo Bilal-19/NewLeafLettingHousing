@@ -9,7 +9,10 @@ class TenantController extends Controller
 {
     public function index()
     {
-        return view('Tenant.LandingPage');
+        //Fetch Landlord feedback
+        $fetchLandlordFeedback = DB::table('landlord_feedback')->where('visible', '=', 'Yes')->get();
+        $fetchServices = DB::table('services')->get();
+        return view('Tenant.LandingPage', with(compact('fetchLandlordFeedback','fetchServices')));
     }
 
     public function About()
