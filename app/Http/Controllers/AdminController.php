@@ -500,6 +500,7 @@ class AdminController extends Controller
     }
 
     public function LandlordQueries(){
-        return view("Admin.LandlordInquiries");
+        $fetchLandlordQueries = DB::table('landlord_feedback')->get();
+        return view("Admin.LandlordInquiries", with(compact('fetchLandlordQueries')));
     }
 }
