@@ -1,6 +1,9 @@
 @extends('LandlordLayout.LandlordDashboard')
 @push('style')
     <style>
+        body{
+            background-color: #f5f5f5;
+        }
         .count-card {
             background-color: #f5f5f5;
             color: #118d51;
@@ -10,6 +13,9 @@
             text-align: center;
             margin: 10px;
             border-top: 3px solid #118d51;
+            border-bottom: 1px solid #888888;
+            border-left: 1px solid #888888;
+            border-right: 1px solid #888888;
         }
     </style>
 @endpush
@@ -26,22 +32,22 @@
         <div class="row">
             <div class="col-md-2 count-card">
                 <i class="fa-solid fa-lg fa-building"></i>
-                <p>10 Properties</p>
+                <p>{{$totalProperties}} Properties</p>
             </div>
 
             <div class="col-md-2 count-card">
                 <i class="fa-solid fa-lg fa-calendar-check"></i>
-                <p>2 Available Properties</p>
+                <p>{{$totalAvailableProperties}} Available</p>
             </div>
 
             <div class="col-md-2 count-card">
                 <i class="fa-solid fa-lg fa-handshake"></i>
-                <p>8 Rented Properties</p>
+                <p>{{$totalRentedProperties}} Rented</p>
             </div>
 
             <div class="col-md-2 count-card">
                 <i class="fa-solid fa-lg fa-dollar"></i>
-                <p>50000</p>
+                <p>${{$totalRevenue}}</p>
             </div>
         </div>
     </div>

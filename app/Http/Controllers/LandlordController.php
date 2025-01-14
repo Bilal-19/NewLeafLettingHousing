@@ -12,7 +12,25 @@ class LandlordController extends Controller
     public function index()
     {
         if (Auth::check() && Auth::user()->role === 'Landlord') {
-            return view("Landlord.Dashboard");
+            $analyticsRec = DB::table('users')
+                ->join('properties', 'users.id', '=', 'properties.user_id')
+                ->where('users.id', '=', Auth::user()->id)
+                ->select('properties.*', 'users.*')
+                ->get();
+            $totalProperties = $analyticsRec->count();
+            $totalAvailableProperties = $analyticsRec->where('property_status', '=', 'Available')->count();
+            $totalRentedProperties = $analyticsRec->where('property_status', '=', 'Booked')->count();
+            $totalRevenue = DB::table('properties')->
+            join('booking','properties.id','=','booking.property_id')->sum('properties.monthly_rent');
+            return view(
+                "Landlord.Dashboard",
+                with(compact(
+                    'totalProperties',
+                    'totalAvailableProperties',
+                    'totalRentedProperties',
+                    'totalRevenue'
+                ))
+            );
         } else {
             return view('auth.login');
         }
