@@ -1,5 +1,37 @@
 @extends('TenantLayout.main')
 
+@push('style')
+    <style>
+        body {
+            background-color: #F5F5F5;
+        }
+
+        .accordion-item {
+            background-color: #FFFFFF;
+        }
+
+        /* Remove the default background and text color on click */
+        .accordion-button:not(.collapsed) {
+            background-color: inherit !important;
+            color: inherit !important;
+            box-shadow: none !important;
+        }
+
+        /* Customize the accordion button background and text color */
+        .accordion-button:not(.collapsed):hover {
+            background-color: #f8f9fa !important;
+            /* Light background color */
+            color: #212529 !important;
+            /* Dark text color */
+        }
+
+        /* Optional: Customize the border color when active */
+        .accordion-button {
+            border-color: #ddd !important;
+        }
+    </style>
+@endpush
+
 @section('main-section')
     <div class="row" id="landlord-bg-image">
         <div class="col-md-8 p-5">
@@ -23,6 +55,31 @@
         </h4>
     </div>
 
+    <div class="row">
+        <div class="col-md-10 mx-auto">
+            <div class="accordion" id="accordionExample">
+                @foreach ($fetchFAQs as $record)
+                    <div class="accordion-item mt-3">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse{{ $record->id }}" aria-expanded="false"
+                                aria-controls="collapse{{ $record->id }}">
+                                {{ $record->question }}
+                            </button>
+                        </h2>
+                        <div id="collapse{{ $record->id }}" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <p>
+                                    {!! $record->answer !!}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </div>
     {{-- Fetch FAQs from Database --}}
 
 

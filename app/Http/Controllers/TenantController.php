@@ -38,7 +38,8 @@ class TenantController extends Controller
 
     public function FAQs()
     {
-        return view('Tenant.FAQs');
+        $fetchFAQs = DB::table('faq')->get();
+        return view('Tenant.FAQs', with(compact('fetchFAQs')));
     }
 
     public function Contact()
