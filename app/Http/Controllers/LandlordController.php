@@ -271,7 +271,8 @@ class LandlordController extends Controller
                 'email' => $request->email,
                 'phone_number' => $request->phone_number,
                 'property_address' => $request->property_address,
-                'property_type' => $request->property_type
+                'property_type' => $request->property_type,
+                'updated_at' => Carbon::now()
             ]);
 
         if ($isProfileUpdated) {

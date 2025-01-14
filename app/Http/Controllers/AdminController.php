@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 
 class AdminController extends Controller
 {
@@ -43,7 +44,8 @@ class AdminController extends Controller
         $isCreated = DB::table('services')->insert([
             'icon' => $timeStampImg,
             'service_name' => $request->serviceName,
-            'service_description' => $request->serviceDescription
+            'service_description' => $request->serviceDescription,
+            'created_at' => Carbon::now()
         ]);
 
         // Store Image to Public folder
@@ -84,7 +86,8 @@ class AdminController extends Controller
             ->update([
                 'icon' => $timeStampImg,
                 'service_name' => $request->serviceName,
-                'service_description' => $request->serviceDescription
+                'service_description' => $request->serviceDescription,
+                'updated_at' => Carbon::now()
             ]);
 
         if ($isUpdated) {
@@ -167,7 +170,8 @@ class AdminController extends Controller
         $isStoryCreated = DB::table('stories')->insert([
             'thumbnail_image' => $timeThumbnailImg,
             'headline' => $request->headline,
-            'content' => $request->content
+            'content' => $request->content,
+            'created_at' => Carbon::now()
         ]);
 
         if ($isStoryCreated) {
@@ -201,7 +205,8 @@ class AdminController extends Controller
             ->update([
                 'thumbnail_image' => $timeStampImg,
                 'headline' => $request->headline,
-                'content' => $request->content
+                'content' => $request->content,
+                'updated_at' => Carbon::now()
             ]);
 
         if ($isUpdated) {
@@ -282,7 +287,8 @@ class AdminController extends Controller
         // Add new record
         $isFAQcreated = DB::table('faq')->insert([
             'question' => $request->question,
-            'answer' => $request->answer
+            'answer' => $request->answer,
+            'created_at' => Carbon::now()
         ]);
 
         if ($isFAQcreated) {
@@ -312,7 +318,8 @@ class AdminController extends Controller
             ->where('id', '=', $id)
             ->update([
                 'question' => $request->question,
-                'answer' => $request->answer
+                'answer' => $request->answer,
+                'updated_at' => Carbon::now()
             ]);
 
         if ($isRecordUpdated) {
@@ -365,7 +372,8 @@ class AdminController extends Controller
             'description' => $request->description,
             'linkedin_profile' => $request->linkedinLink,
             'facebook_profile' => $request->fbLink,
-            'instagram_profile' => $request->instagramLink
+            'instagram_profile' => $request->instagramLink,
+            'created_at' => Carbon::now()
         ]);
 
         if ($isRecordCreated) {
@@ -402,7 +410,8 @@ class AdminController extends Controller
             'description' => $request->description,
             'linkedin_profile' => $request->linkedinLink,
             'facebook_profile' => $request->fbLink,
-            'instagram_profile' => $request->instagramLink
+            'instagram_profile' => $request->instagramLink,
+            'updated_at' => Carbon::now()
         ]);
 
         if ($isUpdated) {
@@ -449,7 +458,8 @@ class AdminController extends Controller
 
         $isRecordAdded = DB::table('partnership_organizations')->insert([
             'organization_name' => $request->organization_name,
-            'organization_description' => $request->organization_description
+            'organization_description' => $request->organization_description,
+            'created_at' => Carbon::now()
         ]);
 
         if ($isRecordAdded) {
@@ -472,7 +482,8 @@ class AdminController extends Controller
         $isRecordUpdated = DB::table("partnership_organizations")->where('id', '=', $id)->update(
             [
                 'organization_name' => $request->organization_name,
-                'organization_description' => $request->organization_description
+                'organization_description' => $request->organization_description,
+                'updated_at' => Carbon::now()
             ]
         );
 

@@ -12,7 +12,7 @@ class TenantController extends Controller
         //Fetch Landlord feedback
         $fetchLandlordFeedback = DB::table('landlord_feedback')->where('visible', '=', 'Yes')->get();
         $fetchServices = DB::table('services')->get();
-        return view('Tenant.LandingPage', with(compact('fetchLandlordFeedback','fetchServices')));
+        return view('Tenant.LandingPage', with(compact('fetchLandlordFeedback', 'fetchServices')));
     }
 
     public function About()
@@ -26,9 +26,14 @@ class TenantController extends Controller
         $fetchPartnerCompanies = DB::table('partnership_organizations')->get();
         $fetchImpactStories = DB::table('stories')->limit(2)->get();
         $fetchLandlordFeedback = DB::table('landlord_feedback')->where('visible', '=', 'Yes')->get();
-        return view('Tenant.CSR',
-    with(compact('fetchPartnerCompanies','fetchImpactStories','fetchLandlordFeedback'))
-    );
+        return view(
+            'Tenant.CSR',
+            with(compact(
+                'fetchPartnerCompanies',
+                'fetchImpactStories',
+                'fetchLandlordFeedback'
+            ))
+        );
     }
 
     public function Landlords()
