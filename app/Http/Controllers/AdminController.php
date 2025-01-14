@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
@@ -502,5 +503,15 @@ class AdminController extends Controller
     public function LandlordQueries(){
         $fetchLandlordQueries = DB::table('landlord_feedback')->get();
         return view("Admin.LandlordInquiries", with(compact('fetchLandlordQueries')));
+    }
+
+    public function signOut(){
+        if (Auth::check()){
+            Auth::logout();
+            return redirect()->route('Home');
+        } else {
+            toastr()->info('Something went wrong');
+            return redirect()->back();
+        }
     }
 }

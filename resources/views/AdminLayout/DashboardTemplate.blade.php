@@ -298,7 +298,7 @@
 
                             <li class="nav-item mb-1">
                                 <a class="nav-link d-flex align-items-center gap-3"
-                                    href="#">
+                                    href="{{route('Admin.signOut')}}">
                                     <i class="fas fa-sign-out-alt"></i>Sign Out
                                 </a>
                             </li>
