@@ -11,8 +11,25 @@ class AdminController extends Controller
 {
     public function Dashboard()
     {
-        if (Auth::check()) {
-            return view('Admin.Dashboard');
+        if (Auth::user()) {
+            $totalProperties = DB::table('properties')->count();
+            $totalBookings = DB::table('booking')->count();
+            $totalPartners = DB::table('partnership_organizations')->count();
+            $totalServices = DB::table('services')->count();
+            $totalMembers = DB::table('team_member')->count();
+            $totalRentedProperties = DB::table('properties')->where('property_status','=','Booked')->count();
+            $totalAvailableProperties = DB::table('properties')->where('property_status','=','Available')->count();
+            return view('Admin.Dashboard',with(
+                compact(
+                    'totalProperties',
+                    'totalBookings',
+                    'totalPartners',
+                    'totalServices',
+                    'totalMembers',
+                    'totalRentedProperties',
+                    'totalAvailableProperties'
+                    )
+            ));
         } else {
             return redirect()->route('login');
         }
