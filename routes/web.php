@@ -59,6 +59,7 @@ Route::get("/admin/delete/service/{id}", [AdminController::class, 'deleteService
 
 Route::get("/admin/tenants", [AdminController::class, 'Tenants'])->name('Admin.Tenants');
 Route::get("/admin/landlords", [AdminController::class, 'Landlords'])->name('Admin.Landlords');
+Route::get("/admin/landlords/inquiries", [AdminController::class, 'LandlordQueries'])->name('Admin.Landlord.Queries');
 
 Route::get("/admin/stories", [AdminController::class, 'Stories'])->name('Admin.Stories');
 Route::get("/admin/add/story", [AdminController::class, 'AddStory'])->name('Add.Story');

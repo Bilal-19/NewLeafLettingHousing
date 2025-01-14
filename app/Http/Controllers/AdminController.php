@@ -498,4 +498,8 @@ class AdminController extends Controller
         $fetchQueries = DB::table('inquiry')->get();
         return view('Admin.CustomerQueries', with(compact('fetchQueries')));
     }
+
+    public function LandlordQueries(){
+        return view("Admin.LandlordInquiries");
+    }
 }

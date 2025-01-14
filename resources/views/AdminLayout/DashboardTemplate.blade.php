@@ -206,121 +206,100 @@
                     <div class="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto">
                         <ul class="nav flex-column">
                             <li class="nav-item mb-1">
-                                <a class="nav-link d-flex align-items-center gap-3 {{ request()->routeIs('Admin.Dashboard') ? 'active-link' : '' }}" aria-current="page"
-                                    href="{{ route('Admin.Dashboard') }}">
+                                <a class="nav-link d-flex align-items-center gap-3 {{ request()->routeIs('Admin.Dashboard') ? 'active-link' : '' }}"
+                                    aria-current="page" href="{{ route('Admin.Dashboard') }}">
                                     <i class="fa-solid fa-gauge"></i> Dashboard
                                 </a>
                             </li>
 
                             <li class="nav-item mb-1">
-                                <a class="nav-link d-flex align-items-center gap-3 {{ request()->routeIs('Admin.Services') ? 'active-link' : '' }}" aria-current="page"
-                                    href="{{route('Admin.Services')}}">
+                                <a class="nav-link d-flex align-items-center gap-3 {{ request()->routeIs('Admin.Services') ? 'active-link' : '' }}"
+                                    aria-current="page" href="{{ route('Admin.Services') }}">
                                     <i class="fa-solid fa-building-user"></i>
                                     Services
                                 </a>
                             </li>
 
                             <li class="nav-item mb-1">
-                                <a class="nav-link d-flex align-items-center gap-3 {{ request()->routeIs('Admin.Tenants') ? 'active-link' : '' }}" aria-current="page"
-                                    href="{{route('Admin.Tenants')}}">
+                                <a class="nav-link d-flex align-items-center gap-3 {{ request()->routeIs('Admin.Tenants') ? 'active-link' : '' }}"
+                                    aria-current="page" href="{{ route('Admin.Tenants') }}">
                                     <i class="fa-solid fa-people-roof"></i>
                                     Tenants
                                 </a>
                             </li>
 
                             <li class="nav-item mb-1">
-                                <a class="nav-link d-flex align-items-center gap-3 {{ request()->routeIs('Admin.Landlords') ? 'active-link' : '' }}" aria-current="page"
-                                    href="{{route('Admin.Landlords')}}">
+                                <a class="nav-link d-flex align-items-center gap-3 {{ request()->routeIs('Admin.Landlords') ? 'active-link' : '' }}"
+                                    aria-current="page" href="{{ route('Admin.Landlords') }}">
                                     <i class="fa-solid fa-handshake-simple"></i>
                                     Landlords
                                 </a>
                             </li>
 
                             <li class="nav-item mb-1">
-                                <a class="nav-link d-flex align-items-center gap-3 {{ request()->routeIs('Admin.Stories') ? 'active-link' : '' }}" href="{{route('Admin.Stories')}}">
+                                <a class="nav-link d-flex align-items-center gap-3 {{ request()->routeIs('Admin.Stories') ? 'active-link' : '' }}"
+                                    href="{{ route('Admin.Stories') }}">
                                     <i class="fa-solid fa-newspaper"></i> Stories
                                 </a>
                             </li>
 
                             <li class="nav-item mb-1">
-                                <a class="nav-link d-flex align-items-center gap-3 {{ request()->routeIs('Admin.BookProperties') ? 'active-link' : '' }}" href="{{route('Admin.BookProperties')}}">
+                                <a class="nav-link d-flex align-items-center gap-3 {{ request()->routeIs('Admin.BookProperties') ? 'active-link' : '' }}"
+                                    href="{{ route('Admin.BookProperties') }}">
                                     <i class="fa-solid fa-city"></i>
                                     Booked Properties
                                 </a>
                             </li>
 
                             <li class="nav-item mb-1">
-                                <a class="nav-link d-flex align-items-center gap-3 {{ request()->routeIs('Admin.Testimonials') ? 'active-link' : '' }}" href="{{route('Admin.Testimonials')}}">
-                                    <i class="fa-regular fa-comment"></i>Testimonials
+                                <a class="nav-link d-flex align-items-center gap-3 {{ request()->routeIs('Admin.Testimonials') ? 'active-link' : '' }}"
+                                    href="{{ route('Admin.Testimonials') }}">
+                                    <i class="fa-regular fa-comment"></i>Tenant Testimonials
                                 </a>
                             </li>
 
 
                             <li class="nav-item mb-1">
-                                <a class="nav-link d-flex align-items-center gap-3 {{ request()->routeIs('Admin.FAQs') ? 'active-link' : '' }}" href="{{route('Admin.FAQs')}}">
+                                <a class="nav-link d-flex align-items-center gap-3 {{ request()->routeIs('Admin.FAQs') ? 'active-link' : '' }}"
+                                    href="{{ route('Admin.FAQs') }}">
                                     <i class="fa-regular fa-circle-question"></i>FAQs
                                 </a>
                             </li>
 
                             <li class="nav-item mb-1">
-                                <a class="nav-link d-flex align-items-center gap-3 {{ request()->routeIs('Admin.TeamMembers') ? 'active-link' : '' }}" href="{{route('Admin.TeamMembers')}}">
+                                <a class="nav-link d-flex align-items-center gap-3 {{ request()->routeIs('Admin.TeamMembers') ? 'active-link' : '' }}"
+                                    href="{{ route('Admin.TeamMembers') }}">
                                     <i class="fa-solid fa-users"></i>Team Members
                                 </a>
                             </li>
 
                             <li class="nav-item mb-1">
-                                <a class="nav-link d-flex align-items-center gap-3 {{ request()->routeIs('Admin.PartnerCompanies') ? 'active-link' : '' }}" href="{{route('Admin.PartnerCompanies')}}">
+                                <a class="nav-link d-flex align-items-center gap-3 {{ request()->routeIs('Admin.PartnerCompanies') ? 'active-link' : '' }}"
+                                    href="{{ route('Admin.PartnerCompanies') }}">
                                     <i class="fa-solid fa-handshake"></i>Partnerships
                                 </a>
                             </li>
 
                             <li class="nav-item mb-1">
-                                <a class="nav-link d-flex align-items-center gap-3 {{ request()->routeIs('Admin.CustomerQueries') ? 'active-link' : '' }}" href="{{route('Admin.CustomerQueries')}}">
+                                <a class="nav-link d-flex align-items-center gap-3 {{ request()->routeIs('Admin.CustomerQueries') ? 'active-link' : '' }}"
+                                    href="{{ route('Admin.CustomerQueries') }}">
                                     <i class="fa-regular fa-comment-dots"></i>Customer Inquiries
 
                                 </a>
                             </li>
 
-
-
-                        </ul>
-
-                        <h6
-                            class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 text-dark text-uppercase">
-                            <span>Trash</span>
-                            <a class="link-dark" href="#" aria-label="Add a new report">
-                                <svg class="bi">
-                                    <use xlink:href="#plus-circle" />
-                                </svg>
-                            </a>
-                        </h6>
-                        <ul class="nav flex-column mb-auto">
                             <li class="nav-item mb-1">
-                                <a class="nav-link d-flex align-items-center gap-2 text-dark" href="#">
-                                    <i class="fa-solid fa-trash"></i>
-                                    View Trash
+                                <a class="nav-link d-flex align-items-center gap-3 {{ request()->routeIs('Admin.Landlord.Queries') ? 'active-link' : '' }}"
+                                    href="{{ route('Admin.Landlord.Queries') }}">
+                                    <i class="fa-regular fa-comment-dots"></i>Landlord Inquiries
+
                                 </a>
                             </li>
 
-                        </ul>
-
-                        <hr class="my-3 text-dark">
-
-                        <ul class="nav flex-column mb-auto mt-2">
-                            <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center gap-2 text-dark" href="#">
-                                    <svg class="bi">
-                                        <use xlink:href="#gear-wide-connected" />
-                                    </svg>
-                                    Settings
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center gap-2 text-dark" href="#">
-                                    <svg class="bi">
-                                        <use xlink:href="#door-closed" />
-                                    </svg>
-                                    Sign out
+                            <li class="nav-item mb-1">
+                                <a class="nav-link d-flex align-items-center gap-3"
+                                    href="#">
+                                    <i class="fas fa-sign-out-alt"></i>Sign Out
                                 </a>
                             </li>
                         </ul>
