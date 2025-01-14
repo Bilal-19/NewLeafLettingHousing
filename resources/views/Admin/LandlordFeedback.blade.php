@@ -2,16 +2,16 @@
 @section('main-section')
     <div class="container-fluid">
         <div class="row mt-3">
-            <h3 class="fw-bold text-center">Landlord <span class="text-forest-green">Queries</span></h3>
+            <h3 class="fw-bold text-center">Landlord <span class="text-forest-green">Feedback</span></h3>
         </div>
 
         <div class="row">
             <div class="col-md-12">
                 <table class="table table-striped table-bordered">
                     <tr>
-                        <th>Landlord Name</th>
-                        <th>Landlord Email</th>
-                        <th>Landlord Message</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Message</th>
                         <th>Date & Time</th>
                     </tr>
 

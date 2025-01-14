@@ -535,7 +535,7 @@ class AdminController extends Controller
     public function LandlordQueries()
     {
         $fetchLandlordQueries = DB::table('landlord_feedback')->get();
-        return view("Admin.LandlordInquiries", with(compact('fetchLandlordQueries')));
+        return view("Admin.LandlordFeedback", with(compact('fetchLandlordQueries')));
     }
 
     public function signOut()

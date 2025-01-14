@@ -292,7 +292,7 @@
                             <li class="nav-item mb-1">
                                 <a class="nav-link d-flex align-items-center gap-3 {{ request()->routeIs('Admin.Landlord.Queries') ? 'active-link' : '' }}"
                                     href="{{ route('Admin.Landlord.Queries') }}">
-                                    <i class="fa-regular fa-comment-dots"></i>Landlord Inquiries
+                                    <i class="fas fa-comments"></i>Landlord Feedback
 
                                 </a>
                             </li>
