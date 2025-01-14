@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email');
+            $table->string('country');
+            $table->string('visible')->default('Yes');
             $table->text('message');
             $table->timestamps();
         });
