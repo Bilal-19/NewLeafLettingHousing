@@ -23,7 +23,12 @@ class TenantController extends Controller
 
     public function CSR()
     {
-        return view('Tenant.CSR');
+        $fetchPartnerCompanies = DB::table('partnership_organizations')->get();
+        $fetchImpactStories = DB::table('stories')->limit(2)->get();
+        $fetchLandlordFeedback = DB::table('landlord_feedback')->where('visible', '=', 'Yes')->get();
+        return view('Tenant.CSR',
+    with(compact('fetchPartnerCompanies','fetchImpactStories','fetchLandlordFeedback'))
+    );
     }
 
     public function Landlords()

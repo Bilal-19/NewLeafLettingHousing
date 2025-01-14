@@ -17,8 +17,7 @@
                 stronger communities and creating opportunities for those in need
             </p>
             <a href="" class="text-dark fs-20 fs-sm-18 text-decoration-none">
-                Learn More <img src="{{ asset('images/downArrow.png') }}"
-                alt="">
+                Learn More <img src="{{ asset('images/downArrow.png') }}" alt="">
             </a>
         </div>
     </div>
@@ -79,47 +78,12 @@
     </div>
 
     <div class="row mt-5 d-flex justify-content-around">
-        <div class="col-md-3 partnership-card">
-            <h4 class="fw-semibold fs-32 fs-sm-25">Homes for Change</h4>
-            <p class="fs-24 fs-sm-18">
-                Together, we provide pathways to secure housing for those in need.
-            </p>
-        </div>
-
-        <div class="col-md-3 partnership-card">
-            <h4 class="fw-semibold fs-32 fs-sm-25">Change Ahead</h4>
-            <p class="fs-24 fs-sm-18">
-                Our collaboration enables us to leverage resources and expertise for greater impact.
-            </p>
-        </div>
-
-        <div class="col-md-3 partnership-card">
-            <h4 class="fw-semibold fs-32 fs-sm-25">Includability</h4>
-            <p class="fs-24 fs-sm-18">
-                We work closely to ensure inclusivity and accessibility in all aspects of our work.
-            </p>
-        </div>
-
-        <div class="col-md-3 partnership-card">
-            <h4 class="fw-semibold fs-32 fs-sm-25">BVSC</h4>
-            <p class="fs-24 fs-sm-18">
-                Partnering with the Birmingham Voluntary Service Council, we align our mission with local community needs
-            </p>
-        </div>
-
-        <div class="col-md-3 partnership-card">
-            <h4 class="fw-semibold fs-32 fs-sm-25">SEA Forum</h4>
-            <p class="fs-24 fs-sm-18">
-                Engaging with social enterprise leaders to drive innovative housing solutions.
-            </p>
-        </div>
-
-        <div class="col-md-3 partnership-card">
-            <h4 class="fw-semibold fs-32 fs-sm-25">Energy Partner</h4>
-            <p class="fs-24 fs-sm-18">
-                Partnering with a sustainable energy provider to enhance energy efficiency and reduce environmental impact
-            </p>
-        </div>
+        @foreach ($fetchPartnerCompanies as $record)
+            <div class="col-md-3 partnership-card">
+                <h4 class="fw-semibold fs-32 fs-sm-25">{{ $record->organization_name }}</h4>
+                <p class="fs-24 fs-sm-18">{{ $record->organization_description }}</p>
+            </div>
+        @endforeach
     </div>
 
     <div class="row mt-5">
@@ -127,26 +91,13 @@
     </div>
 
     <div class="row mt-5 d-flex justify-content-around">
-        <div class="col-md-4 story-card">
-            <img src="{{ asset('images/bright_future.png') }}" alt="" class="img-fluid">
-            <h4 class="fw-semibold fs-34 fs-sm-25 text-dark-charcoal mt-4 mb-2">A Brighter Future for the Johnson Family</h4>
-            <p class="fs-24 fs-sm-18 text-dark-gray">Facing housing instability, the Johnson family found security and peace
-                of mind through Green Key's Guaranteed
-                Rent program. With stable housing, their children could thrive in school, and they could focus on building a
-                better future</p>
-        </div>
-
-        <div class="col-md-4 story-card">
-            <img src="{{ asset('images/thompson_family.png') }}" alt="" class="img-fluid">
-            <h4 class="fw-semibold fs-34 fs-sm-25 text-dark-charcoal mt-4 mb-2">
-                A Fresh Start for the Thompson Family
-            </h4>
-            <p class="fs-24 fs-sm-18 text-dark-gray">
-                Struggling with housing uncertainty, the Thompson family gained stability and relief through Green Key’s
-                Guaranteed Rent program. With a secure home, their children excelled in school, and they could finally focus
-                on creating a brighter, more promising future.
-            </p>
-        </div>
+        @foreach ($fetchImpactStories as $record)
+            <div class="col-md-4 story-card">
+                <img src="{{ asset('Story/' . $record->thumbnail_image) }}" alt="" class="img-fluid">
+                <h4 class="fw-semibold fs-34 fs-sm-25 text-dark-charcoal mt-4 mb-2">{{ $record->headline }}</h4>
+                <p class="fs-24 fs-sm-18 text-dark-gray">{{ Str::limit($record->content, 100) }}</p>
+            </div>
+        @endforeach
     </div>
 
 
@@ -164,78 +115,16 @@
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper">
                     <!-- Slides -->
-                    <div class="swiper-slide p-5">
-                        <img src="{{ asset('images/startComma.png') }}" alt="">
-                        <p class="text-center">Green Key has been a game-changer. I get guaranteed rent, and they handle
-                            everything. Plus, it
-                            feels great knowing I'm helping families</p>
-                        <p class="user-profile">
-                            <img src="{{ asset('images/male.png') }}" alt="">
-                            <span class="fs-20 fs-sm-18"><span class="fw-semibold">John</span>, Birmingham</span>
-                        </p>
-                    </div>
-
-                    <div class="swiper-slide p-5">
-                        <img src="{{ asset('images/startComma.png') }}" alt="">
-                        <p class="text-center">
-                            I used to struggle with property management, but Green Key took that burden away. It's
-                            amazing to have guaranteed income without the hassle.
-                        </p>
-                        <p class="user-profile">
-                            <img src="{{ asset('images/male.png') }}" alt="">
-                            <span class="fs-20 fs-sm-18"><span class="fw-semibold">Jennifer</span>, Lopez</span>
-                        </p>
-                    </div>
-
-                    <div class="swiper-slide p-5">
-                        <img src="{{ asset('images/startComma.png') }}" alt="">
-                        <p class="text-center">
-                            HomeCare Solutions has transformed the way I manage my properties. Their service is
-                            efficient, and I feel secure knowing my tenants are well.
-                        </p>
-                        <p class="user-profile">
-                            <img src="{{ asset('images/male.png') }}" alt="">
-                            <span class="fs-20 fs-sm-18"><span class="fw-semibold">Alex</span>, London</span>
-                        </p>
-                    </div>
-
-                    <div class="swiper-slide p-5">
-                        <img src="{{ asset('images/startComma.png') }}" alt="">
-                        <p class="text-center">
-                            I used to struggle with property management, but Green Key took that burden away. It's
-                            amazing to have guaranteed income without the hassle.
-                        </p>
-                        <p class="user-profile">
-                            <img src="{{ asset('images/male.png') }}" alt="">
-                            <span class="fs-20 fs-sm-18"><span class="fw-semibold">Jennifer</span>, Lopez</span>
-                        </p>
-                    </div>
-
-                    <div class="swiper-slide p-5">
-                        <img src="{{ asset('images/startComma.png') }}" alt="">
-                        <p class="text-center">Green Key has been a game-changer. I get guaranteed rent, and they
-                            handle
-                            everything. Plus, it
-                            feels great knowing I'm helping families</p>
-                        <p class="user-profile">
-                            <img src="{{ asset('images/male.png') }}" alt="">
-                            <span class="fs-20 fs-sm-18"><span class="fw-semibold">John</span>, Birmingham</span>
-                        </p>
-                    </div>
-
-                    <div class="swiper-slide p-5">
-                        <img src="{{ asset('images/startComma.png') }}" alt="">
-                        <p class="text-center">
-                            I used to struggle with property management, but Green Key took that burden away. It's
-                            amazing to have guaranteed income without the hassle.
-                        </p>
-                        <p class="user-profile">
-                            <img src="{{ asset('images/male.png') }}" alt="">
-                            <span class="fs-20 fs-sm-18"><span class="fw-semibold">Jennifer</span>, Lopez</span>
-                        </p>
-                    </div>
-
-
+                    @foreach ($fetchLandlordFeedback as $record)
+                        <div class="swiper-slide p-5">
+                            <img src="{{ asset('images/startComma.png') }}" alt="">
+                            <p class="text-center">{{$record->message}}</p>
+                            <p class="user-profile">
+                                <img src="{{ asset('images/male.png') }}" alt="">
+                                <span class="fs-20 fs-sm-18"><span class="fw-semibold">{{$record->name}}</span>, {{$record->country}}</span>
+                            </p>
+                        </div>
+                    @endforeach
                 </div>
                 <!-- If we need pagination -->
                 <div class="swiper-pagination"></div>
