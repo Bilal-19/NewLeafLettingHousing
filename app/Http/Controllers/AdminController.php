@@ -10,7 +10,7 @@ class AdminController extends Controller
 {
     public function Dashboard()
     {
-        if (Auth::check() && Auth::user()->role == "Admin") {
+        if (Auth::check()) {
             return view('Admin.Dashboard');
         } else {
             return redirect()->route('login');
