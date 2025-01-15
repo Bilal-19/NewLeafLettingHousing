@@ -9,11 +9,11 @@
                 </div>
                 <div class="col-md-3">
                     <p class="fs-20 fw-semibold fs-sm-18">Quick Links</p>
-                    <a href="" class="d-block text-light text-decoration-none fs-18 fs-sm-16">
+                    <a href="{{route('Contact')}}" class="d-block text-light text-decoration-none fs-18 fs-sm-16">
                         Book a Free Consultation
                         <img src="{{ asset('images/rightArrowSm.png') }}" alt="small right arrow">
                     </a>
-                    <a href="" class="text-light text-decoration-none fs-18 fs-sm-16">
+                    <a href="{{route('About')}}" class="text-light text-decoration-none fs-18 fs-sm-16">
                         Learn More About Us
                         <img src="{{ asset('images/rightArrowSm.png') }}" alt="small right arrow">
                     </a>
