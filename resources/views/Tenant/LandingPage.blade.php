@@ -85,7 +85,7 @@
                                 <img src="{{ asset('images/startComma.png') }}" alt="">
                                 <p class="text-center">{{ $record->message }}</p>
                                 <p class="user-profile">
-                                    <img src="{{ asset('images/male.png') }}" alt="">
+                                    <img src="{{ asset('images/user.png') }}" alt="" class="mx-2">
                                     <span class="fs-20 fs-sm-18"><span class="fw-semibold">{{ $record->name }}</span>,
                                         {{ $record->country }}</span>
                                 </p>

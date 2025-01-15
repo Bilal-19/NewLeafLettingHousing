@@ -89,7 +89,7 @@
 @endphp
 
 @section('main-section')
-    <div class="row d-flex justify-content-center align-items-center mb-5">
+    <div class="row d-flex justify-content-center align-items-center mb-5 pt-5">
         <div class="col-md-9 mx-auto">
             <!-- Carousel -->
             <div id="propertyCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -446,7 +446,7 @@
                 </div>
 
                 <div>
-                    <button class="btn btn-success w-100">Confirm Booking</button>
+                    <button class="btn btn-success w-100 mt-3">Confirm Booking</button>
                 </div>
             </form>
         </div>

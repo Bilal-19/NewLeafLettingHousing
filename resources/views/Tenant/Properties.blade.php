@@ -5,6 +5,12 @@
         body {
             background-color: #f5f5f5
         }
+
+        .property-thumbnail{
+            height: 400px;
+            width: 400px;
+            object-fit: cover;
+        }
     </style>
 @endpush
 
@@ -34,9 +40,9 @@
         <div class="col-md-11 mx-auto">
             @foreach ($fetchAvailableProperties as $record)
                 <div class="row mb-5 available-property-card shadow">
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <img src="{{ asset('Properties/Thumbnail/' . $record->property_thumbnail) }}" alt=""
-                            class="img-fluid">
+                            class="img-fluid property-thumbnail">
                     </div>
                     <div class="col-md-6">
                         <h4 class="fs-40 text-forest-green fw-semibold fs-sm-28">{{ $record->property_name }}</h4>

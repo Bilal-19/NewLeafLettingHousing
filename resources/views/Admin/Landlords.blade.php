@@ -12,9 +12,9 @@
                         <th>Name</th>
                         <th>Email</th>
                         <th>Phone Number</th>
-                        <th>Total Listed Property</th>
-                        <th>Total Available Property</th>
-                        <th>Total Rented Property</th>
+                        <th>Listed Properties</th>
+                        <th>Available Properties</th>
+                        <th>Rented Properties</th>
                     </tr>
 
                     @foreach ($fetchPropertyRecord as $record)
@@ -22,9 +22,9 @@
                             <td>{{ $record->property_owner_name }}</td>
                             <td>{{ $record->property_owner_email }}</td>
                             <td>{{ $record->property_owner_phone ?? 'Not Provide' }}</td>
-                            <td>{{ $record->total_properties }}</td>
-                            <td>{{ $record->total_available_properties }}</td>
-                            <td>{{ $record->total_rented_properties }}</td>
+                            <td class="text-center">{{ $record->total_properties }}</td>
+                            <td class="text-center">{{ $record->total_available_properties }}</td>
+                            <td class="text-center">{{ $record->total_rented_properties }}</td>
                         </tr>
                     @endforeach
                 </table>

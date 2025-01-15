@@ -20,8 +20,11 @@ class LandlordController extends Controller
             $totalProperties = $analyticsRec->count();
             $totalAvailableProperties = $analyticsRec->where('property_status', '=', 'Available')->count();
             $totalRentedProperties = $analyticsRec->where('property_status', '=', 'Booked')->count();
-            $totalRevenue = DB::table('properties')->
-            join('booking','properties.id','=','booking.property_id')->sum('properties.monthly_rent');
+            $totalRevenue = DB::table('properties')
+            ->join('booking', 'properties.id', '=', 'booking.property_id')
+            ->where('properties.user_id', Auth::user()->id) // Filter by the current landlord
+            ->sum('properties.monthly_rent');
+
             return view(
                 "Landlord.Dashboard",
                 with(compact(

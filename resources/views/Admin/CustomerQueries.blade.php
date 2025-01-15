@@ -9,15 +9,15 @@
             <div class="col-md-12">
                 <table class="table table-bordered table-striped">
                     <tr>
-                        <th>ID</th>
-                        <th>Customer Name</th>
+                        {{-- <th>ID</th> --}}
+                        <th>Name</th>
                         <th>Email</th>
-                        <th>Phone Number</th>
+                        <th>Contact No</th>
                         <th>Message</th>
                     </tr>
                     @foreach ($fetchQueries as $record)
                         <tr>
-                            <td>{{ $record->id }}</td>
+                            {{-- <td>{{ $record->id }}</td> --}}
                             <td>{{ $record->full_name }}</td>
                             <td>{{ $record->email }}</td>
                             <td>{{ $record->phone_number }}</td>

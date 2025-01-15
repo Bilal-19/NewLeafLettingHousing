@@ -83,11 +83,25 @@
                 }]
             },
             options: {
-                title: {
-                    display: true,
-                    text: "Available Vs Rented Properties"
+                plugins: {
+                    legend: {
+                        labels: {
+                            font: {
+                                family: "Montserrat, sans-serif" // Change font family for legend labels
+                            }
+                        }
+                    },
+                    title: {
+                        display: true,
+                        text: "Available Vs Rented Properties",
+                        font: {
+                            family: "Montserrat, sans-serif", // Change font family for title
+                            size: 20 // Optional: Adjust font size
+                        }
+                    }
                 }
             }
         });
     </script>
+
 @endpush
