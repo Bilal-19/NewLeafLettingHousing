@@ -101,7 +101,7 @@
                     <!-- Loop through your images -->
                     @foreach ($fetchPropertyImages as $index => $value)
                         <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
-                            <img src="{{ asset($value) }}" alt="" class="img-fluid carousel-img">
+                            <img src="{{ asset($value) }}" alt="property images" class="img-fluid carousel-img">
                         </div>
                     @endforeach
                 </div>
@@ -118,11 +118,11 @@
 
             <!-- Left Arrow -->
             <button class="carousel-control-prev" type="button" data-bs-target="#propertyCarousel" data-bs-slide="prev">
-                <img src="{{ asset('images/leftArrow.png') }}" alt="">
+                <img src="{{ asset('images/leftArrow.png') }}" alt="left arrow">
             </button>
             <!-- Right Arrow -->
             <button class="carousel-control-next" type="button" data-bs-target="#propertyCarousel" data-bs-slide="next">
-                <img src="{{ asset('images/rightArrow.png') }}" alt="">
+                <img src="{{ asset('images/rightArrow.png') }}" alt="right arrow">
             </button>
         </div>
     </div>
@@ -259,7 +259,7 @@
         <div class="row d-flex justify-content-center align-items-center mb-5">
             <div class="col-md-11 d-flex align-items-center">
                 <a onclick="swiper.slidePrev()" class="pagination-arrow">
-                    <img src="{{ asset('images/leftArrow.png') }}" alt="">
+                    <img src="{{ asset('images/leftArrow.png') }}" alt="left arrow">
                 </a>
                 <div class="swiper">
                     <!-- Additional required wrapper -->
@@ -269,12 +269,12 @@
                         @foreach ($fetchComments as $comment)
                             {{-- <p>{{ $comment->tenant_message }} ~ {{ $comment->tenant_name }}, {{ $comment->tenant_country }}</p> --}}
                             <div class="swiper-slide p-5">
-                                <img src="{{ asset('images/startComma.png') }}" alt="">
+                                <img src="{{ asset('images/startComma.png') }}" alt="start comma">
                                 <p class="text-center">
                                     {{ $comment->tenant_message }}
                                 </p>
                                 <p class="user-profile">
-                                    {{-- <img src="{{ asset('images/male.png') }}" alt=""> --}}
+                                    <img src="{{ asset('images/user.png') }}" alt="user">
                                     <span class="fs-20 fs-sm-18"><span
                                             class="fw-semibold">{{ $comment->tenant_name }}</span>,
                                         {{ $comment->tenant_country }}</span>
@@ -295,7 +295,7 @@
 
                 </div>
                 <a onclick="swiper.slideNext()" class="pagination-arrow">
-                    <img src="{{ asset('images/rightArrow.png') }}" alt="">
+                    <img src="{{ asset('images/rightArrow.png') }}" alt="right arrow">
                 </a>
             </div>
         </div>

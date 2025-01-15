@@ -72,7 +72,7 @@
 
             <div class="d-flex">
                 <div>
-                    <img src="{{ asset('images/phone_sm.png') }}" alt="" class="img-fluid">
+                    <img src="{{ asset('images/phone_sm.png') }}" alt="phone" class="img-fluid">
                 </div>
                 <div class="mx-2">
                     <h6 class="mb-0 fs-20 fs-sm-18 fw-semibold text-dark-charcoal">Phone</h6>
@@ -82,7 +82,7 @@
 
             <div class="d-flex">
                 <div>
-                    <img src="{{ asset('images/email_sm.png') }}" alt="">
+                    <img src="{{ asset('images/email_sm.png') }}" alt="email">
                 </div>
                 <div class="mx-2">
                     <h6 class="mb-0 fs-20 fs-sm-18 fw-semibold text-dark-charcoal">Email</h6>
@@ -92,7 +92,7 @@
 
             <div class="d-flex">
                 <div>
-                    <img src="{{ asset('images/location_sm.png') }}" alt="">
+                    <img src="{{ asset('images/location_sm.png') }}" alt="location">
                 </div>
                 <div class="mx-2">
                     <h6 class="mb-0 fs-20 fs-sm-18 fw-semibold text-dark-charcoal">Location</h6>

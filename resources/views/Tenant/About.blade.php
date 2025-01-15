@@ -10,7 +10,7 @@
             </p>
             <a href="" class="text-dark fs-20 fs-sm-18 text-decoration-none">
                 Learn More About US
-                <img src="{{ asset('images/downArrow.png') }}" alt="">
+                <img src="{{ asset('images/downArrow.png') }}" alt="down arrow icon">
             </a>
         </div>
     </div>
@@ -100,19 +100,19 @@
     <div class="row d-flex justify-content-around align-items-center">
         @foreach ($fetchTeamMembersRec as $record)
             <div class="col-md-3 team-member-card shadow">
-                <img src="{{ asset('Team/' . $record->profile_picture) }}" alt="" class="d-block mx-auto">
+                <img src="{{ asset('Team/' . $record->profile_picture) }}" alt="{{ $record->name }}" class="d-block mx-auto">
                 <h5 class="fw-semibold fs-32 fs-sm-25 text-dark-charcoal mt-3 mb-0">{{ $record->name }}</h5>
                 <p class="fs-20 fs-sm-18 text-forest-green mt-0">{{ $record->position }}</p>
                 <p class="fs-20 fs-sm-18 text-dark-gray mx-auto">{{ $record->description }}</p>
                 <div class="d-flex justify-content-center align-items-center">
                     <a href="{{$record->linkedin_profile}}">
-                        <img src="{{ asset('images/linkedin.png') }}" alt="">
+                        <img src="{{ asset('images/linkedin.png') }}" alt="linkedin icon">
                     </a>
                     <a href="{{$record->facebook_profile}}">
-                        <img src="{{ asset('images/facebook.png') }}" alt="">
+                        <img src="{{ asset('images/facebook.png') }}" alt="facebook icon">
                     </a>
                     <a href="{{$record->instagram_profile}}">
-                        <img src="{{ asset('images/instagram.png') }}" alt="">
+                        <img src="{{ asset('images/instagram.png') }}" alt="instagram icon">
                     </a>
                 </div>
             </div>

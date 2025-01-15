@@ -41,7 +41,7 @@
             @foreach ($fetchAvailableProperties as $record)
                 <div class="row mb-5 available-property-card shadow">
                     <div class="col-md-4">
-                        <img src="{{ asset('Properties/Thumbnail/' . $record->property_thumbnail) }}" alt=""
+                        <img src="{{ asset('Properties/Thumbnail/' . $record->property_thumbnail) }}" alt="{{ $record->property_name }}"
                             class="img-fluid property-thumbnail">
                     </div>
                     <div class="col-md-6">

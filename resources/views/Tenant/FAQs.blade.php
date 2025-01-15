@@ -44,7 +44,7 @@
             </p>
             <p class="text-dark fs-20 fs-sm-18">
                 Frequently Asked Questions
-                <img src="{{ asset('images/downArrow.png') }}" alt="">
+                <img src="{{ asset('images/downArrow.png') }}" alt="down arrow">
             </p>
         </div>
     </div>

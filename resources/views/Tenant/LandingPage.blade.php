@@ -14,10 +14,10 @@
             </p>
             <button class="btn-style">Get Started Today</button>
             <a href="" class="mx-2 text-decoration-none fw-regular text-dark">Learn More About Us <img
-                    src="{{ asset('images/up_arrow.png') }}" alt=""></a>
+                    src="{{ asset('images/up_arrow.png') }}" alt="up arrow icon"></a>
         </div>
         <div class="col-md-4">
-            <img src="{{ asset('images/Home.png') }}" alt="" class="img-fluid cta-img">
+            <img src="{{ asset('images/Home.png') }}" alt="House" class="img-fluid cta-img">
         </div>
     </div>
 
@@ -29,7 +29,7 @@
 
     <div class="row cta-partner-cards mt-5">
         <div class="col-md-3 cta-card shadow">
-            <img src="{{ asset('images/money.png') }}" alt="" class="img-fluid">
+            <img src="{{ asset('images/money.png') }}" alt="Guaranteed Rent" class="img-fluid">
             <p class="mt-5 fs-14 ff-source-code-pro">01.</p>
             <h5 class="text-forest-green fw-semibold fs-24 fs-sm-18">Guaranteed Rent</h5>
             <hr class="border border-secondary w-75">
@@ -37,7 +37,7 @@
         </div>
 
         <div class="col-md-3 cta-card shadow">
-            <img src="{{ asset('images/calendar.png') }}" alt="" class="img-fluid">
+            <img src="{{ asset('images/calendar.png') }}" alt="Stress-Free Management" class="img-fluid">
             <p class="mt-5 fs-14 ff-source-code-pro">02.</p>
             <h5 class="text-forest-green fw-semibold fs-24 fs-sm-18">Stress-Free Management</h5>
             <hr class="border border-secondary w-75">
@@ -47,7 +47,7 @@
         </div>
 
         <div class="col-md-3 cta-card shadow">
-            <img src="{{ asset('images/support.png') }}" alt="" class="img-fluid">
+            <img src="{{ asset('images/support.png') }}" alt="Social Impact" class="img-fluid">
             <p class="mt-5 fs-14 ff-source-code-pro">03.</p>
             <h5 class="text-forest-green fw-semibold fs-24 fs-sm-18">Social Impact</h5>
             <hr class="border border-secondary w-75">
@@ -74,7 +74,7 @@
         <div class="row d-flex justify-content-center align-items-center mb-5">
             <div class="col-md-11 d-flex align-items-center">
                 <a onclick="swiper.slidePrev()" class="pagination-arrow">
-                    <img src="{{ asset('images/leftArrow.png') }}" alt="">
+                    <img src="{{ asset('images/leftArrow.png') }}" alt="left arrow icon">
                 </a>
                 <div class="swiper">
                     <!-- Additional required wrapper -->
@@ -82,10 +82,10 @@
                         <!-- Slides -->
                         @foreach ($fetchLandlordFeedback as $record)
                             <div class="swiper-slide p-5">
-                                <img src="{{ asset('images/startComma.png') }}" alt="">
+                                <img src="{{ asset('images/startComma.png') }}" alt="Inverted comma start icon">
                                 <p class="text-center">{{ $record->message }}</p>
                                 <p class="user-profile">
-                                    <img src="{{ asset('images/user.png') }}" alt="" class="mx-2">
+                                    <img src="{{ asset('images/user.png') }}" alt="user icon" class="mx-2">
                                     <span class="fs-20 fs-sm-18"><span class="fw-semibold">{{ $record->name }}</span>,
                                         {{ $record->country }}</span>
                                 </p>
@@ -104,7 +104,7 @@
 
                 </div>
                 <a onclick="swiper.slideNext()" class="pagination-arrow">
-                    <img src="{{ asset('images/rightArrow.png') }}" alt="">
+                    <img src="{{ asset('images/rightArrow.png') }}" alt="right arrow icon">
                 </a>
             </div>
         </div>
@@ -123,14 +123,14 @@
     <div class="row d-flex justify-content-around align-items-center mb-5">
         @foreach ($fetchServices as $record)
             <div class="col-md-5 service-card shadow">
-                <img src="{{ asset('Services/' . $record->icon) }}" alt="" class="ms-auto d-block">
+                <img src="{{ asset('Services/' . $record->icon) }}" alt="{{$record->service_name}}" class="ms-auto d-block">
                 <h2 class="fs-32 fw-semibold fs-sm-25">{{ $record->service_name }}</h2>
                 <p class="fs-24 mb-5 fs-sm-18">
                     {{ $record->service_description }}
                 </p>
                 <a href="" class="fs-20 text-dark text-decoration-none">
                     Learn More
-                    <img src="{{ asset('images/up_arrow.png') }}" alt="">
+                    <img src="{{ asset('images/up_arrow.png') }}" alt="up arrow icon">
                 </a>
             </div>
         @endforeach
@@ -140,7 +140,7 @@
         <div class="col-md-4 d-flex justify-content-center align-items-center mx-auto">
             <p>Explore our full range of services</p>
             <a>
-                <img src="{{ asset('images/up_right_arrow_green.png') }}" alt="">
+                <img src="{{ asset('images/up_right_arrow_green.png') }}" alt="right arrow icon">
             </a>
         </div>
     </div>

@@ -18,7 +18,7 @@
                 Guaranteed Rent. Expert Management. Real Impact.
             </p>
             <a class="text-dark fs-20 fs-sm-18 text-decoration-none" href="{{route("Landlord.Dashboard")}}">
-                Partner with Us Today <img src="{{ asset('images/downArrow.png') }}" alt="">
+                Partner with Us Today <img src="{{ asset('images/downArrow.png') }}" alt="down arrow">
             </a>
         </div>
     </div>
@@ -35,7 +35,7 @@
                 here to provide tailored solutions that work for you
             </p>
             <p class="fs-20 fs-sm-18 text-dark">See How It Works <img src="{{ asset('images/downArrow.png') }}"
-                    alt=""></p>
+                    alt="down arrow"></p>
         </div>
     </div>
 
@@ -50,7 +50,7 @@
 
     <div class="row d-flex justify-content-around mb-5">
         <div class="col-md-3 landlord-card">
-            <img src="{{ asset('images/contact.png') }}" alt="">
+            <img src="{{ asset('images/contact.png') }}" alt="contact icon">
             <h4 class="fs-32 fs-sm-25 fw-semibold">Contact Us</h4>
             <p class="text-dark-gray fs-24 fs-sm-18">
                 Tell us about your property and your goals
@@ -58,7 +58,7 @@
         </div>
 
         <div class="col-md-3 landlord-card">
-            <img src="{{ asset('images/consultation.png') }}" alt="">
+            <img src="{{ asset('images/consultation.png') }}" alt="Free Consultation">
             <h4 class="fs-32 fs-sm-25 fw-semibold">Free Consultation</h4>
             <p class="text-dark-gray fs-24 fs-sm-18">
                 We assess your property and provide a tailored plan
@@ -66,7 +66,7 @@
         </div>
 
         <div class="col-md-3 landlord-card">
-            <img src="{{ asset('images/leaseAgreement.png') }}" alt="">
+            <img src="{{ asset('images/leaseAgreement.png') }}" alt="Lease Agreement">
             <h4 class="fs-32 fs-sm-25 fw-semibold">Agreement</h4>
             <p class="text-dark-gray fs-24 fs-sm-18">
                 Sign a lease agreement with guaranteed rent terms
@@ -74,7 +74,7 @@
         </div>
 
         <div class="col-md-3 landlord-card">
-            <img src="{{ asset('images/stressFree.png') }}" alt="">
+            <img src="{{ asset('images/stressFree.png') }}" alt="Stress-Free Letting">
             <h4 class="fs-32 fs-sm-25 fw-semibold">Stress-Free Letting</h4>
             <p class="text-dark-gray fs-24 fs-sm-18">
                 We handle tenant placement, management, and compliance
@@ -87,7 +87,7 @@
 
         <div class="row cta-partner-cards mt-5">
             <div class="col-md-3 cta-card shadow">
-                <img src="{{ asset('images/money.png') }}" alt="" class="img-fluid">
+                <img src="{{ asset('images/money.png') }}" alt="Guaranteed Rent" class="img-fluid">
                 <p class="mt-5 fs-14 ff-source-code-pro">01.</p>
                 <h5 class="text-forest-green fw-semibold fs-24 fs-sm-18">Guaranteed Rent</h5>
                 <hr class="border border-secondary w-75">
@@ -97,7 +97,7 @@
             </div>
 
             <div class="col-md-3 cta-card shadow">
-                <img src="{{ asset('images/professionalManagement.png') }}" alt="" class="img-fluid">
+                <img src="{{ asset('images/professionalManagement.png') }}" alt="Professional Management" class="img-fluid">
                 <p class="mt-5 fs-14 ff-source-code-pro">02.</p>
                 <h5 class="text-forest-green fw-semibold fs-24 fs-sm-18">Professional Management</h5>
                 <hr class="border border-secondary w-75">
@@ -107,7 +107,7 @@
             </div>
 
             <div class="col-md-3 cta-card shadow">
-                <img src="{{ asset('images/support.png') }}" alt="" class="img-fluid">
+                <img src="{{ asset('images/support.png') }}" alt="Social Impact" class="img-fluid">
                 <p class="mt-5 fs-14 ff-source-code-pro">03.</p>
                 <h5 class="text-forest-green fw-semibold fs-24 fs-sm-18">Social Impact</h5>
                 <hr class="border border-secondary w-75">
@@ -117,7 +117,7 @@
             </div>
 
             <div class="col-md-3 cta-card shadow">
-                <img src="{{ asset('images/flexibility.png') }}" alt="" class="img-fluid">
+                <img src="{{ asset('images/flexibility.png') }}" alt="Flexibility" class="img-fluid">
                 <p class="mt-5 fs-14 ff-source-code-pro">04.</p>
                 <h5 class="text-forest-green fw-semibold fs-24 fs-sm-18">Flexibility</h5>
                 <hr class="border border-secondary w-75">

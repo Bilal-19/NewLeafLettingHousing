@@ -17,7 +17,7 @@
                 stronger communities and creating opportunities for those in need
             </p>
             <a href="" class="text-dark fs-20 fs-sm-18 text-decoration-none">
-                Learn More <img src="{{ asset('images/downArrow.png') }}" alt="">
+                Learn More <img src="{{ asset('images/downArrow.png') }}" alt="down arrow">
             </a>
         </div>
     </div>
@@ -30,7 +30,7 @@
         <div class="col-md-11 mx-auto">
             <div class="row initiative-card">
                 <div class="col-md-6">
-                    <img src="{{ asset('images/family.png') }}" alt="" class="img-fluid">
+                    <img src="{{ asset('images/family.png') }}" alt="supporting family" class="img-fluid">
                 </div>
                 <div class="col-md-6">
                     <h4 class="fs-32 fs-sm-25 fw-semibold text-dark">Supporting Families</h4>
@@ -52,7 +52,7 @@
                     </p>
                 </div>
                 <div class="col-md-6">
-                    <img src="{{ asset('images/community.png') }}" alt="" class="img-fluid">
+                    <img src="{{ asset('images/community.png') }}" alt="community engagement" class="img-fluid">
                 </div>
             </div>
         </div>
@@ -61,7 +61,7 @@
         <div class="col-md-11 mx-auto">
             <div class="row initiative-card">
                 <div class="col-md-6">
-                    <img src="{{ asset('images/sustainable_practices.png') }}" alt="" class="img-fluid">
+                    <img src="{{ asset('images/sustainable_practices.png') }}" alt="sustainable practices" class="img-fluid">
                 </div>
                 <div class="col-md-6">
                     <h4 class="fs-32 fs-sm-25 fw-semibold text-dark">Sustainability Practices</h4>
@@ -93,7 +93,7 @@
     <div class="row mt-5 d-flex justify-content-around">
         @foreach ($fetchImpactStories as $record)
             <div class="col-md-4 story-card">
-                <img src="{{ asset('Story/' . $record->thumbnail_image) }}" alt="" class="img-fluid">
+                <img src="{{ asset('Story/' . $record->thumbnail_image) }}" alt="{{ $record->headline }}" class="img-fluid">
                 <h4 class="fw-semibold fs-34 fs-sm-25 text-dark-charcoal mt-4 mb-2">{{ $record->headline }}</h4>
                 <p class="fs-24 fs-sm-18 text-dark-gray">{{ Str::limit($record->content, 100) }}</p>
             </div>
@@ -109,7 +109,7 @@
     <div class="row mt-5 d-flex justify-content-center align-items-center mb-5">
         <div class="col-md-11 d-flex align-items-center">
             <a onclick="swiper.slidePrev()" class="pagination-arrow">
-                <img src="{{ asset('images/leftArrow.png') }}" alt="">
+                <img src="{{ asset('images/leftArrow.png') }}" alt="left arrow">
             </a>
             <div class="swiper">
                 <!-- Additional required wrapper -->
@@ -117,10 +117,10 @@
                     <!-- Slides -->
                     @foreach ($fetchLandlordFeedback as $record)
                         <div class="swiper-slide p-5">
-                            <img src="{{ asset('images/startComma.png') }}" alt="">
+                            <img src="{{ asset('images/startComma.png') }}" alt="Inverted start comma">
                             <p class="text-center">{{$record->message}}</p>
                             <p class="user-profile">
-                                <img src="{{ asset('images/male.png') }}" alt="">
+                                <img src="{{ asset('images/user.png') }}" alt="user icon">
                                 <span class="fs-20 fs-sm-18"><span class="fw-semibold">{{$record->name}}</span>, {{$record->country}}</span>
                             </p>
                         </div>
@@ -138,7 +138,7 @@
 
             </div>
             <a onclick="swiper.slideNext()" class="pagination-arrow">
-                <img src="{{ asset('images/rightArrow.png') }}" alt="">
+                <img src="{{ asset('images/rightArrow.png') }}" alt="right arrow">
             </a>
         </div>
     </div>
