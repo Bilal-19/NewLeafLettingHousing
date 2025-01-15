@@ -2,11 +2,11 @@
 @section('main-section')
     <div class="container-fluid">
         <div class="row mt-3">
-            <h3 class="fw-bold text-center text-forest-green">Testimonial</h3>
+            <h3 class="fw-bold text-center">Tanent <span class="text-forest-green">Testimonials</span></h3>
         </div>
 
         <div class="row mt-3">
-            <div class="col-md-12">
+            <div class="col-md-12" style="overflow-x:auto;">
                 <table class="table table-bordered table-striped">
                     <tr>
                         <th>Name</th>
