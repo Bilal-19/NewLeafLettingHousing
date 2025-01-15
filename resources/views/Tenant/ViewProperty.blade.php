@@ -53,6 +53,10 @@
             margin: 0;
         }
 
+        .border-radius-12{
+            border-radius: 12px;
+        }
+
         @media only screen and (max-width: 768px) {
             .property-detail-card {
                 /* padding: 20px 12px; */
@@ -139,8 +143,11 @@
     </div>
 
     <div class="row">
-        <div class="col-11 col-md-11 bg-white mx-auto">
+        <div class="col-11 col-md-11 bg-white mx-auto border-radius-12">
             <div class="row mt-5">
+                <div class="col-md-4"><p class="fs-24 fw-medium text-forest-green mx-3">Details</p></div>
+            </div>
+            <div class="row">
                 <div class="col-md-4 property-detail-card">
                     <h6 class="fs-24 fw-medium fs-sm-18">Address:</h6>
                     <p class="fs-24 fs-sm-18 fw-regular">{{ $findProperty->property_address }}</p>
@@ -148,7 +155,7 @@
 
                 <div class="col-md-4 property-detail-card">
                     <h6 class="fs-24 fw-medium fs-sm-18">Price:</h6>
-                    <p class="fs-24 fs-sm-18 fw-regular">{{ $findProperty->monthly_rent }}$</p>
+                    <p class="fs-24 fs-sm-18 fw-regular">${{ $findProperty->monthly_rent }}</p>
                 </div>
             </div>
 
@@ -159,13 +166,9 @@
                 </div>
 
                 <div class="col-md-4 property-detail-card">
-                    <h6 class="fs-24 fw-medium fs-sm-18">Status:</h6>
+                    <h6 class="fs-24 fw-medium fs-sm-18">Area:</h6>
                     <p class="fs-24 fs-sm-18 fw-regular">
-                        @if ($findProperty->property_status == 'Available')
-                            Available for Rent
-                        @else
-                            Booked
-                        @endif
+                       {{$findProperty->square_feet_area}} Sq.ft
                     </p>
                 </div>
             </div>

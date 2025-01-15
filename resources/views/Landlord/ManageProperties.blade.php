@@ -2,8 +2,8 @@
 @push('style')
     <style>
         .thumbnail-img {
-            height: 200px;
-            width: 200px;
+            height: 100px;
+            width: 100px;
             object-fit: cover;
             border-radius: 6px;
         }
