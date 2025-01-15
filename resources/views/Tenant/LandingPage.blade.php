@@ -13,7 +13,7 @@
                 Empowering landlords with secure income while supporting families in need.
             </p>
             <button class="btn-style">Get Started Today</button>
-            <a href="" class="mx-2 text-decoration-none fw-regular text-dark">Learn More About Us <img
+            <a href="{{route("About")}}" class="mx-2 text-decoration-none fw-regular text-dark">Learn More About Us <img
                     src="{{ asset('images/up_arrow.png') }}" alt="up arrow icon"></a>
         </div>
         <div class="col-md-4">
@@ -59,7 +59,7 @@
 
     <div class="row mt-4 mb-5">
         <p class="fs-21 text-center">Ready to make a difference with your property?</p>
-        <button class="btn-style mx-auto">Contact Us Today</button>
+        <a class="btn-style mx-auto text-decoration-none" href="{{route('Contact')}}">Contact Us Today</a>
     </div>
 
     <div class="row mt-5 bg-offwhite mb-5">
@@ -111,7 +111,7 @@
 
         <div class="col-md-12 mb-5">
             <p class="text-center fs-18 text-dark fw-medium">Want to see how we can help you?</p>
-            <button class="btn-style d-block mx-auto">Get in Touch</button>
+            <a class="btn-style d-block mx-auto text-decoration-none" href="{{route("Contact")}}">Get in Touch</a>
         </div>
     </div>
 

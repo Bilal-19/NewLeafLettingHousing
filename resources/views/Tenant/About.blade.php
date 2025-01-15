@@ -8,14 +8,14 @@
                 Green Key Housing bridges the gap between landlords seeking secure income and families in need of stable,
                 supportive homes.
             </p>
-            <a href="" class="text-dark fs-20 fs-sm-18 text-decoration-none">
+            <a href="#mission-and-story" class="text-dark fs-20 fs-sm-18 text-decoration-none">
                 Learn More About US
                 <img src="{{ asset('images/downArrow.png') }}" alt="down arrow icon">
             </a>
         </div>
     </div>
 
-    <div class="row bg-offwhite d-flex justify-content-around align-items-center pt-5">
+    <div class="row bg-offwhite d-flex justify-content-around align-items-center pt-5" id="mission-and-story">
         <div class="col-md-4">
             <img src="{{ asset('images/mission.png') }}" alt="Mission & Story" class="img-fluid">
         </div>
@@ -100,18 +100,19 @@
     <div class="row d-flex justify-content-around align-items-center">
         @foreach ($fetchTeamMembersRec as $record)
             <div class="col-md-3 team-member-card shadow">
-                <img src="{{ asset('Team/' . $record->profile_picture) }}" alt="{{ $record->name }}" class="d-block mx-auto">
+                <img src="{{ asset('Team/' . $record->profile_picture) }}" alt="{{ $record->name }}"
+                    class="d-block mx-auto">
                 <h5 class="fw-semibold fs-32 fs-sm-25 text-dark-charcoal mt-3 mb-0">{{ $record->name }}</h5>
                 <p class="fs-20 fs-sm-18 text-forest-green mt-0">{{ $record->position }}</p>
                 <p class="fs-20 fs-sm-18 text-dark-gray mx-auto">{{ $record->description }}</p>
                 <div class="d-flex justify-content-center align-items-center">
-                    <a href="{{$record->linkedin_profile}}">
+                    <a href="{{ $record->linkedin_profile }}">
                         <img src="{{ asset('images/linkedin.png') }}" alt="linkedin icon">
                     </a>
-                    <a href="{{$record->facebook_profile}}">
+                    <a href="{{ $record->facebook_profile }}">
                         <img src="{{ asset('images/facebook.png') }}" alt="facebook icon">
                     </a>
-                    <a href="{{$record->instagram_profile}}">
+                    <a href="{{ $record->instagram_profile }}">
                         <img src="{{ asset('images/instagram.png') }}" alt="instagram icon">
                     </a>
                 </div>
@@ -123,6 +124,7 @@
         <p class="text-dark">
             Learn more about our services or get in touch to start making an impact with your property today
         </p>
-        <a href="" class="btn-style text-decoration-none d-block mx-auto">Contact Us</a>
+        <a href="{{route('Contact')}}" class="btn-style text-decoration-none d-block mx-auto">Contact Us</a>
     </div>
 @endsection
+

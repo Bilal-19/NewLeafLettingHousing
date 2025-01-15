@@ -4,6 +4,7 @@ body {
     padding: 0;
     /* box-sizing: border-box; */
     font-family: "Montserrat", serif;
+    scroll-behavior: smooth;
 }
 
 /* Text Color */
@@ -339,6 +340,7 @@ body {
     width: 400px;
     object-fit: cover; */
 }
+
 /* Media Query */
 @media only screen and (max-width: 768px) {
     .cta {

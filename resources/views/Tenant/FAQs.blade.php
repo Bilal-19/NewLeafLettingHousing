@@ -42,14 +42,14 @@
                 Have questions? We've got answers! Here are some of the most commonly asked questions to help you understand
                 how we work and what we offer. If you still have queries, don’t hesitate to contact us!
             </p>
-            <p class="text-dark fs-20 fs-sm-18">
+            <a class="text-dark fs-20 fs-sm-18 text-decoration-none" href="#faq">
                 Frequently Asked Questions
                 <img src="{{ asset('images/downArrow.png') }}" alt="down arrow">
-            </p>
+            </a>
         </div>
     </div>
 
-    <div class="row text-center mt-5">
+    <div class="row text-center mt-5" id="faq">
         <h4 class="fs-44 fs-sm-28 fw-semibold">
             Questions and Answers
         </h4>

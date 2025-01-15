@@ -16,13 +16,13 @@
                 At Green Key Housing, our commitment goes beyond providing housing. We actively contribute to building
                 stronger communities and creating opportunities for those in need
             </p>
-            <a href="" class="text-dark fs-20 fs-sm-18 text-decoration-none">
+            <a href="#initiatives" class="text-dark fs-20 fs-sm-18 text-decoration-none">
                 Learn More <img src="{{ asset('images/downArrow.png') }}" alt="down arrow">
             </a>
         </div>
     </div>
 
-    <div class="row text-center">
+    <div class="row text-center" id="initiatives">
         <h3 class="fw-semibold fs-44 fs-sm-28">Our Initiatives</h3>
     </div>
 
@@ -146,7 +146,7 @@
     <div class="row mb-5">
         <div class="col-md-6 mx-auto text-center">
             <p class="fw-medium fs-18 fs-sm-16">Discover how your property can make a difference.</p>
-            <button class="btn-style">Join Us Today</button>
+            <a class="btn-style text-decoration-none" href="{{route('register')}}">Join Us Today</a>
         </div>
     </div>
 @endsection

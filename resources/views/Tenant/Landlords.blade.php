@@ -130,7 +130,7 @@
         <div class="row mt-5 mb-5">
             <div class="col-md-6 mx-auto text-center">
                 <p>Ready to make a difference with your property?</p>
-                <a href="" class="btn-style text-decoration-none">Contact Us Today</a>
+                <a href="{{route("register")}}" class="btn-style text-decoration-none">Contact Us Today</a>
             </div>
         </div>
     </div>
