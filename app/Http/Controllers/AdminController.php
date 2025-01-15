@@ -282,6 +282,25 @@ class AdminController extends Controller
         }
     }
 
+    public function toggleLandlordFeedback($id)
+    {
+        $findFeedbackRecord = DB::table('landlord_feedback')->where('id', '=', $id)->first();
+
+        if ($findFeedbackRecord->visible == 'Yes') {
+            DB::table('landlord_feedback')->where('id', '=', $id)->update([
+                'visible' => 'No'
+            ]);
+            toastr()->success('Updated feedback visibility');
+            return redirect()->back();
+        } else {
+            DB::table('landlord_feedback')->where('id', '=', $id)->update([
+                'visible' => 'Yes'
+            ]);
+            toastr()->success('Updated feedback visibility');
+            return redirect()->back();
+        }
+    }
+
     public function FAQs()
     {
         $fetchAllFAQs = DB::table('faq')->get();

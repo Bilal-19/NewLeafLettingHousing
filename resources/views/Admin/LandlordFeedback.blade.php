@@ -12,7 +12,7 @@
                         <th>Name</th>
                         <th>Email</th>
                         <th>Message</th>
-                        <th>Date & Time</th>
+                        <th>Visible</th>
                     </tr>
 
                     @foreach ($fetchLandlordQueries as $record)
@@ -20,9 +20,10 @@
                             <td>{{$record->name}}</td>
                             <td>{{$record->email}}</td>
                             <td>{{$record->message}}</td>
-                            <td>
-                                {{date('d M Y', strtotime($record->created_at))}}
-                                {{date('h:i a', strtotime($record->created_at))}}
+                            <td class="text-center">
+                                <a href="{{route("Admin.ToggleLandlordTestimonials", ['id' => $record->id])}}" class="text-dark">
+                                    <i class="fa {{$record->visible == 'Yes' ? 'fa-eye' : 'fa-eye-slash'}}"></i>
+                                </a>
                             </td>
                         </tr>
                     @endforeach

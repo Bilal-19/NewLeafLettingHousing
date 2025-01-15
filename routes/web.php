@@ -73,6 +73,7 @@ Route::get("/admin/delete/story/{id}", [AdminController::class, 'deleteStory'])-
 Route::get("/admin/booked/properties", [AdminController::class, 'BookProperties'])->name('Admin.BookProperties');
 Route::get("/admin/testimonials", [AdminController::class, 'Testimonials'])->name('Admin.Testimonials');
 Route::get("/admin/testimonials/{id}", [AdminController::class, 'toggleTestimonialVisibility'])->name('Admin.ToggleTestimonials');
+Route::get("/admin/testimonials/landlord/{id}", [AdminController::class, 'toggleLandlordFeedback'])->name('Admin.ToggleLandlordTestimonials');
 
 Route::get("/admin/faqs", [AdminController::class, 'FAQs'])->name('Admin.FAQs');
 Route::get("/admin/add/faqs", [AdminController::class, 'AddFAQ'])->name('Add.FAQ');
