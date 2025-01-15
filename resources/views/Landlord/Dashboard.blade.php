@@ -47,7 +47,7 @@
 
             <div class="col-md-2 count-card">
                 <i class="fa-solid fa-lg fa-dollar"></i>
-                <p>${{$totalRevenue}}</p>
+                <p>Revenue ${{$totalRevenue}}</p>
             </div>
         </div>
     </div>
