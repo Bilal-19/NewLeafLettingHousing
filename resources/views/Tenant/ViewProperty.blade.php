@@ -93,7 +93,7 @@
 @endphp
 
 @section('main-section')
-    <div class="row d-flex justify-content-center align-items-center mb-5 pt-5">
+    <div class="row d-flex justify-content-center align-items-center mt-5 mb-5">
         <div class="col-md-9 mx-auto">
             <!-- Carousel -->
             <div id="propertyCarousel" class="carousel slide" data-bs-ride="carousel">

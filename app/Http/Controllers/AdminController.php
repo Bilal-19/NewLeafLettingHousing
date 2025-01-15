@@ -267,15 +267,15 @@ class AdminController extends Controller
     {
         $findFeedbackRecord = DB::table('tenant_feedback')->where('id', '=', $id)->first();
 
-        if ($findFeedbackRecord->visibile == 'Yes') {
+        if ($findFeedbackRecord->visible == 'Yes') {
             DB::table('tenant_feedback')->where('id', '=', $id)->update([
-                'visibile' => 'No'
+                'visible' => 'No'
             ]);
             toastr()->success('Updated feedback visibility');
             return redirect()->back();
         } else {
             DB::table('tenant_feedback')->where('id', '=', $id)->update([
-                'visibile' => 'Yes'
+                'visible' => 'Yes'
             ]);
             toastr()->success('Updated feedback visibility');
             return redirect()->back();

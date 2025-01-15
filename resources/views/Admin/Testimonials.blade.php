@@ -24,7 +24,7 @@
                             <td>{{$record->tenant_message}}</td>
                             <td class="text-center">
                                 <a href="{{route("Admin.ToggleTestimonials", ['id' => $record->id])}}" class="text-dark">
-                                    <i class="fa {{$record->visibile == 'Yes' ? 'fa-eye' : 'fa-eye-slash'}}"></i>
+                                    <i class="fa {{$record->visible == 'Yes' ? 'fa-eye' : 'fa-eye-slash'}}"></i>
                                 </a>
                             </td>
                         </tr>

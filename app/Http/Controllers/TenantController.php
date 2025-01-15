@@ -182,10 +182,10 @@ class TenantController extends Controller
 
         if ($isPropertyBooked) {
             toastr()->success('Your booking is confirmed.');
-            return redirect()->back();
+            return redirect()->route("Properties");
         } else {
             toastr()->success('Something went wrong.');
-            return redirect()->back();
+            return redirect()->route("Properties");
         }
     }
 }
