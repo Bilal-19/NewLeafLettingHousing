@@ -9,7 +9,6 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/dashboard/">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
     <link rel="stylesheet" href="{{ asset('css/LandlordStyle.css') }}">
-    @stack('style')
     <link href="{{ asset('/css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
@@ -25,6 +24,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+
+        @stack('style')
 </head>
 
 <body>
@@ -178,12 +179,10 @@
                 </button>
             </li>
             <li class="nav-item text-nowrap">
-                <button class="nav-link px-3 text-white bg-white" type="button" data-bs-toggle="offcanvas"
+                <button class="nav-link px-3 toggle-button type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false"
                     aria-label="Toggle navigation">
-                    <svg class="bi">
-                        <use xlink:href="#list" />
-                    </svg>
+                    <i class="fa-solid fa-bars fas-xl"></i>
                 </button>
             </li>
         </ul>
@@ -200,38 +199,39 @@
                 <div class="offcanvas-md offcanvas-end" tabindex="-1" id="sidebarMenu"
                     aria-labelledby="sidebarMenuLabel">
                     <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="sidebarMenuLabel">Admin Dashboard</h5>
+                        <h5 class="offcanvas-title" id="sidebarMenuLabel">Landlord Dashboard</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
                             data-bs-target="#sidebarMenu" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto">
                         <ul class="nav flex-column">
                             <li class="nav-item mb-4">
-                                <a class="nav-link d-flex align-items-center gap-3 {{ request()->routeIs('Landlord.Dashboard') ? 'active-link' : '' }}" aria-current="page"
-                                    href="{{ route('Landlord.Dashboard',['id'=>Auth::user()->id]) }}">
+                                <a class="nav-link d-flex align-items-center gap-3 {{ request()->routeIs('Landlord.Dashboard') ? 'active-link' : '' }}"
+                                    aria-current="page"
+                                    href="{{ route('Landlord.Dashboard', ['id' => Auth::user()->id]) }}">
                                     <i class="fa-solid fa-gauge"></i> Dashboard
                                 </a>
                             </li>
 
                             <li class="nav-item mb-4">
-                                <a class="nav-link d-flex align-items-center gap-3 {{ request()->routeIs('Landlord.UploadProperties') ? 'active-link' : '' }}" aria-current="page"
-                                    href="{{route('Landlord.UploadProperties')}}">
+                                <a class="nav-link d-flex align-items-center gap-3 {{ request()->routeIs('Landlord.UploadProperties') ? 'active-link' : '' }}"
+                                    aria-current="page" href="{{ route('Landlord.UploadProperties') }}">
                                     <i class="fa-solid fa-building-user"></i>
                                     Upload Properties
                                 </a>
                             </li>
 
                             <li class="nav-item mb-4">
-                                <a class="nav-link d-flex align-items-center gap-3 {{ request()->routeIs('Landlord.ManageProperties') ? 'active-link' : '' }}" aria-current="page"
-                                    href="{{route('Landlord.ManageProperties')}}">
+                                <a class="nav-link d-flex align-items-center gap-3 {{ request()->routeIs('Landlord.ManageProperties') ? 'active-link' : '' }}"
+                                    aria-current="page" href="{{ route('Landlord.ManageProperties') }}">
                                     <i class="fa-solid fa-people-roof"></i>
                                     Manage Properties
                                 </a>
                             </li>
 
                             <li class="nav-item mb-4">
-                                <a class="nav-link d-flex align-items-center gap-3 {{ request()->routeIs('Landlord.ListTenants') ? 'active-link' : '' }}" aria-current="page"
-                                    href="{{route('Landlord.ListTenants')}}">
+                                <a class="nav-link d-flex align-items-center gap-3 {{ request()->routeIs('Landlord.ListTenants') ? 'active-link' : '' }}"
+                                    aria-current="page" href="{{ route('Landlord.ListTenants') }}">
                                     <i class="fa-solid fa-handshake-simple"></i>
                                     Tenants List
                                 </a>
@@ -246,21 +246,24 @@
                             </li> --}}
 
                             <li class="nav-item mb-4">
-                                <a class="nav-link d-flex align-items-center gap-3 {{ request()->routeIs('Landlord.Profile') ? 'active-link' : '' }}" href="{{route('Landlord.Profile')}}">
+                                <a class="nav-link d-flex align-items-center gap-3 {{ request()->routeIs('Landlord.Profile') ? 'active-link' : '' }}"
+                                    href="{{ route('Landlord.Profile') }}">
                                     <i class="fa-solid fa-user"></i>
                                     My Profile
                                 </a>
                             </li>
 
                             <li class="nav-item mb-4">
-                                <a class="nav-link d-flex align-items-center gap-3 text-forest-green  {{ request()->routeIs('Landlord.FeedbackForm') ? 'active-link' : '' }}" href="{{route('Landlord.FeedbackForm')}}">
+                                <a class="nav-link d-flex align-items-center gap-3 text-forest-green  {{ request()->routeIs('Landlord.FeedbackForm') ? 'active-link' : '' }}"
+                                    href="{{ route('Landlord.FeedbackForm') }}">
                                     <i class="fa-regular fa-comment-dots"></i>
                                     Feedback Form
                                 </a>
                             </li>
 
                             <li class="nav-item mb-4">
-                                <a class="nav-link d-flex align-items-center gap-3 text-forest-green" href="{{route('Landlord.SingOut')}}">
+                                <a class="nav-link d-flex align-items-center gap-3 text-forest-green"
+                                    href="{{ route('Landlord.SingOut') }}">
                                     <i class="fa-solid fa-right-from-bracket"></i>
                                     Sign out
                                 </a>

@@ -5,6 +5,12 @@
         textarea {
             background-color: #f5f5f5;
         }
+
+        @media only screen and (max-width: 768px) {
+           .mb-sm-10{
+            margin-bottom: 10px;
+           }
+        }
     </style>
 @endpush
 @section('main-section')
@@ -18,7 +24,7 @@
                 enctype="multipart/form-data">
                 @csrf
                 <div class="row d-flex justify-content-around">
-                    <div class="col-md-5">
+                    <div class="col-md-5 mb-sm-10">
                         <input type="text" name="name" class="form-control" placeholder="Property Name"
                             value="{{ old('name') }}">
                         <small class="text-danger">
@@ -74,7 +80,7 @@
                 </div>
 
                 <div class="row mt-3 d-flex justify-content-around">
-                    <div class="col-md-5">
+                    <div class="col-md-5 mb-sm-10">
                         <input type="text" name="rent" class="form-control" placeholder="Monthly Rent"
                             value="{{ old('rent') }}">
                         <small class="text-danger">
@@ -120,7 +126,7 @@
                 </div>
 
                 <div class="row d-flex justify-content-around mt-3">
-                    <div class="col-md-3">
+                    <div class="col-md-3 mb-sm-10">
                         <select name="bedrooms" class="form-select">
                             <option value="">Select No of Bedrooms</option>
                             @for ($i = 1; $i <= 6; $i++)
@@ -135,7 +141,7 @@
                         </small>
                     </div>
 
-                    <div class="col-md-3">
+                    <div class="col-md-3 mb-sm-10">
                         <select name="bathrooms" class="form-select">
                             <option value="">Select No of Bathrooms</option>
                             @for ($i = 1; $i <= 6; $i++)
@@ -150,7 +156,7 @@
                         </small>
                     </div>
 
-                    <div class="col-md-3">
+                    <div class="col-md-3 mb-sm-10">
                         <select name="receptions" class="form-select">
                             <option value="">Select No of Receptions</option>
                             @for ($i = 1; $i <= 6; $i++)
@@ -169,7 +175,7 @@
                 </div>
 
                 <div class="row mt-3 d-flex justify-content-around">
-                    <div class="col-md-5">
+                    <div class="col-md-5 mb-sm-10">
                         <label class="form-label mb-0">Upload Thumbnail Image:</label>
                         <input type="file" name="thumbnail" class="form-control">
                         <small class="text-danger">
