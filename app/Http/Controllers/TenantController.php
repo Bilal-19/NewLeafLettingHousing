@@ -89,6 +89,7 @@ class TenantController extends Controller
                 ->orWhere('monthly_rent', '>=', $searchVal)
                 ->orWhere('monthly_rent', '>=', $searchVal)
                 ->orWhere('property_features', 'LIKE', "%$searchVal%")
+                ->orWhere('square_feet_area', 'LIKE', "%$searchVal%")
                 ->get();
             return view('Tenant.Properties', with(compact('fetchAvailableProperties')));
 

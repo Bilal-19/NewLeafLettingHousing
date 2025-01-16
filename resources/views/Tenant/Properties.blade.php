@@ -26,7 +26,7 @@
             <form action="{{ route('Properties') }}" method="get" autocomplete="off">
                 <div class="input-group">
                     <input type="search" name="search" class="form-control"
-                        placeholder="Search properties by location, price range, size, or amenities.." value="{{old('search')}}">
+                        placeholder="Search properties by location, size, or amenities.." value="{{old('search')}}">
                     <button type="submit" class="btn btn-success">
                         <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>
                         Search
