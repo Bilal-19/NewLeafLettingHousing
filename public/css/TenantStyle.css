@@ -366,11 +366,6 @@ body {
         margin-bottom: 10px;
     }
 
-    .slider{
-        border: 1px solid black;
-        width: 200px;
-    }
-
     .service-card {
         width: 300px;
         height: fit-content;
@@ -441,5 +436,10 @@ body {
         height: fit-content;
         width: 96%;
         margin: auto;
+    }
+
+    .swiper-slide{
+        border: 1px solid black;
+        width: 200px;
     }
 }

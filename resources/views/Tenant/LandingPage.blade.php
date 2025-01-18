@@ -68,11 +68,11 @@
                     class="text-forest-green">Landlords</span> Are Saying</h3>
         </div>
         <div class="col-md-3 mx-auto">
-            <h4 class="fw-bold fs-32 fs-sm-25">Testimonials</h4>
+            <h4 class="fw-bold fs-32 fs-sm-25 text-sm-center text-center">Testimonials</h4>
         </div>
 
         <div class="row d-flex justify-content-center align-items-center mb-5">
-            <div class="col-md-11 col-sm-12 d-flex align-items-center">
+            <div class="col-sm-12 col-12 d-flex align-items-center">
                 <a onclick="swiper.slidePrev()" class="pagination-arrow">
                     <img src="{{ asset('images/leftArrow.png') }}" alt="left arrow icon">
                 </a>
