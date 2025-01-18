@@ -47,11 +47,17 @@
                     <div class="col-md-6">
                         <h4 class="fs-40 text-forest-green fw-semibold fs-sm-28">{{ $record->property_name }}</h4>
                         <p class="fw-regular fs-24 fs-sm-18">{{ Str::limit($record->property_description, 200) }}</p>
-                        <p class="fw-medium fs-24 fs-sm-18 d-flex justify-content-between">
-                            <span>Bedrooms: {{ $record->bedrooms }}</span>
-                            <span>Bathrooms: {{ $record->bathrooms }}</span>
-                            <span>Receptions: {{ $record->reception }}</span>
-                        </p>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <p class="fw-medium fs-24 fs-sm-18">Bedrooms: {{ $record->bedrooms }}</p>
+                            </div>
+                            <div class="col-md-4">
+                                <p class="fw-medium fs-24 fs-sm-18">Bathrooms: {{ $record->bathrooms }}</p>
+                            </div>
+                            <div class="col-md-4">
+                                <p class="fw-medium fs-24 fs-sm-18">Receptions: {{ $record->reception }}</p>
+                            </div>
+                        </div>
                         <a href="{{route('View.Detail.Property', ['id' => $record->id])}}" class="btn btn-success">View Property</a>
                     </div>
                 </div>
