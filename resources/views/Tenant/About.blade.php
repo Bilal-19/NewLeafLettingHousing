@@ -101,7 +101,7 @@
         @foreach ($fetchTeamMembersRec as $record)
             <div class="col-md-3 team-member-card shadow">
                 <img src="{{ asset('Team/' . $record->profile_picture) }}" alt="{{ $record->name }}"
-                    class="d-block mx-auto">
+                    class="d-block mx-auto img-fluid">
                 <h5 class="fw-semibold fs-32 fs-sm-25 text-dark-charcoal mt-3 mb-0">{{ $record->name }}</h5>
                 <p class="fs-20 fs-sm-18 text-forest-green mt-0">{{ $record->position }}</p>
                 <p class="fs-20 fs-sm-18 text-dark-gray mx-auto">{{ $record->description }}</p>

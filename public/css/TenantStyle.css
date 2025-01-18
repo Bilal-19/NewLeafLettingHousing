@@ -403,10 +403,14 @@ body {
 
     .team-member-card {
         height: fit-content;
-        width: 80%;
+        width: 350px;
         /* padding: 10px 12px; */
         margin-top: 10px;
         margin-bottom: 10px;
+    }
+
+    .team-member-card > img {
+        width: 200px;
     }
 
     .partnership-card {
