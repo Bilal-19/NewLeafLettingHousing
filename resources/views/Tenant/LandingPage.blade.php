@@ -72,7 +72,7 @@
         </div>
 
         <div class="row d-flex justify-content-center align-items-center mb-5">
-            <div class="col-md-11 d-flex align-items-center">
+            <div class="col-md-11 col-sm-12 d-flex align-items-center">
                 <a onclick="swiper.slidePrev()" class="pagination-arrow">
                     <img src="{{ asset('images/leftArrow.png') }}" alt="left arrow icon">
                 </a>
@@ -81,7 +81,7 @@
                     <div class="swiper-wrapper">
                         <!-- Slides -->
                         @foreach ($fetchLandlordFeedback as $record)
-                            <div class="swiper-slide p-5">
+                            <div class="swiper-slide p-5 slider">
                                 <img src="{{ asset('images/startComma.png') }}" alt="Inverted comma start icon">
                                 <p class="text-center">{{ $record->message }}</p>
                                 <p class="user-profile">

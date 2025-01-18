@@ -366,14 +366,14 @@ body {
         margin-bottom: 10px;
     }
 
-    .swiper-slide {
-        width: 550px;
-        height: 300px;
-        padding: 15px;
+    .slider{
+        border: 1px solid black;
+        width: 200px;
     }
+
     .service-card {
-        width: 350px;
-        height: 400px;
+        width: 300px;
+        height: fit-content;
         padding: 15px;
         margin-top: 10px;
         margin-bottom: 10px;
