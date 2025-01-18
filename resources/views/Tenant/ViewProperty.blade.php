@@ -53,7 +53,7 @@
             margin: 0;
         }
 
-        .border-radius-12{
+        .border-radius-12 {
             border-radius: 12px;
         }
 
@@ -145,7 +145,9 @@
     <div class="row">
         <div class="col-11 col-md-11 bg-white mx-auto border-radius-12">
             <div class="row mt-5">
-                <div class="col-md-4"><p class="fs-24 fw-medium text-forest-green mx-3">Details</p></div>
+                <div class="col-md-4">
+                    <p class="fs-24 fw-medium text-forest-green mx-3">Details</p>
+                </div>
             </div>
             <div class="row">
                 <div class="col-md-4 property-detail-card">
@@ -168,7 +170,7 @@
                 <div class="col-md-4 property-detail-card">
                     <h6 class="fs-24 fw-medium fs-sm-18">Area:</h6>
                     <p class="fs-24 fs-sm-18 fw-regular">
-                       {{$findProperty->square_feet_area}} Sq.ft
+                        {{ $findProperty->square_feet_area }} Sq.ft
                     </p>
                 </div>
             </div>
@@ -371,9 +373,9 @@
                     <select name="childrens" class="form-select">
                         <option>Select No of Childrens</option>
                         @for ($i = 1; $i <= 4; $i++)
-                        <option value="{{ $i }}" {{ old('childrens') == $i ? 'selected' : '' }}>
-                            {{ $i }}
-                        </option>
+                            <option value="{{ $i }}" {{ old('childrens') == $i ? 'selected' : '' }}>
+                                {{ $i }}
+                            </option>
                         @endfor
                     </select>
                     <small class="text-danger">
@@ -388,9 +390,9 @@
                     <select name="monthsToStay" class="form-select">
                         <option>Select Total Months to Stay</option>
                         @for ($i = 1; $i <= 4; $i++)
-                        <option value="{{ $i }}" {{ old('monthsToStay') == $i ? 'selected' : '' }}>
-                            {{ $i }}
-                        </option>
+                            <option value="{{ $i }}" {{ old('monthsToStay') == $i ? 'selected' : '' }}>
+                                {{ $i }}
+                            </option>
                         @endfor
                     </select>
                     <small class="text-danger">
@@ -402,7 +404,7 @@
 
                 <div>
                     <input type="text" name="accountTitle" class="form-control"
-                        placeholder="Enter your Account Title" value="{{old('accountTitle')}}">
+                        placeholder="Enter your Account Title" value="{{ old('accountTitle') }}">
                     <small class="text-danger">
                         @error('accountTitle')
                             {{ $message }}
@@ -411,7 +413,8 @@
                 </div>
 
                 <div>
-                    <input type="number" name="cardNumber" class="form-control" placeholder="Enter your Card Number" value="{{old('cardNumber')}}">
+                    <input type="number" name="cardNumber" class="form-control" placeholder="Enter your Card Number"
+                        value="{{ old('cardNumber') }}">
                     <small class="text-danger">
                         @error('cardNumber')
                             {{ $message }}
@@ -421,7 +424,8 @@
 
                 <div class="d-flex justify-content-between">
                     <div>
-                        <input type="number" name="cvc" class="form-control" placeholder="Ex. 123" value="{{old('cvc')}}">
+                        <input type="number" name="cvc" class="form-control" placeholder="Ex. 123"
+                            value="{{ old('cvc') }}">
                         <small class="text-danger">
                             @error('cvc')
                                 {{ 'Enter card verificatio code' }}
@@ -430,7 +434,8 @@
                     </div>
 
                     <div>
-                        <input type="number" name="expMonth" class="form-control" placeholder="Exp Month" value="{{old('expMonth')}}">
+                        <input type="number" name="expMonth" class="form-control" placeholder="Exp Month"
+                            value="{{ old('expMonth') }}">
                         <small class="text-danger">
                             @error('expMonth')
                                 {{ 'Enter expiration month' }}
@@ -439,7 +444,8 @@
                     </div>
 
                     <div>
-                        <input type="number" name="expYear" class="form-control" placeholder="Exp Year" value="{{old('expYear')}}">
+                        <input type="number" name="expYear" class="form-control" placeholder="Exp Year"
+                            value="{{ old('expYear') }}">
                         <small class="text-danger">
                             @error('expYear')
                                 {{ 'Enter expiration year' }}
