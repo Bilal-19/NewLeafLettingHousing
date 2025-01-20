@@ -72,7 +72,7 @@
         </div>
 
         <div class="row d-flex justify-content-center align-items-center mb-5">
-            <div class="col-sm-12 col-12 d-flex align-items-center">
+            <div class="col-12 col-sm-12 d-flex align-items-center flex-md-row">
                 <a onclick="swiper.slidePrev()" class="pagination-arrow">
                     <img src="{{ asset('images/leftArrow.png') }}" alt="left arrow icon">
                 </a>
